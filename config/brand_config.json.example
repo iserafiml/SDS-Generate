@@ -1,0 +1,11 @@
+{
+  "company_name": "Your Company Name",
+  "logo_path": "",
+  "primary": "#0078C8",
+  "secondary": "#005FA3",
+  "accent": "#F47920",
+  "light_bg": "#EBF5FC",
+  "website": "https://www.yourcompany.com",
+  "email": "info@yourcompany.com",
+  "phone": "(000) 000-0000"
+}

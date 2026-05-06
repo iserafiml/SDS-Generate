@@ -1,0 +1,206 @@
+# cas_input.txt — SDS Generator raw material list
+# Format: RM_NUMBER<tab>CAS_NUMBER<tab>Display_Name
+# Lines starting with # are comments. Multi-CAS entries use primary CAS.
+# "Not found" / non-haz entries omitted.
+
+RM0001	7722-84-1	Hydrogen Peroxide 50% TG
+RM001.5	7722-84-1	Hydrogen Peroxide 50% FG
+RM0002	2809-21-4	HEDP Liquid Tech Grade 60%
+RM0003	7664-93-9	Sulfuric Acid 50%
+RM0004	64-19-7	Acetic Acid Glacial
+RM0005	10102-40-6	Sodium Molybdate Dihydrate
+RM0006	64665-57-2	Sodium Tolytriazole 50%
+RM0007	26099-09-2	HPMA (Homopolymer of Maleic Acid) 50%
+RM0008	37971-36-1	PBTC
+RM0009	7664-38-2	Phosphoric Acid 75%
+RM0010	9003-04-7	Propenoic Acid Homopolymer Sodium Salt
+RM0011	23783-26-8	HPAA Hydroxy Phosphonoacetic Acid 50%
+RM0012	102-71-6	TEA Triethanolamine 85% Solution
+RM0013	1310-73-2	Sodium Hydroxide 50%
+RM0014	1300-72-7	Sodium Xylene Sulfonate 40% (SXS-40)
+RM0015	68603-42-9	Cocoamide DEA
+RM0016	7647-15-6	Sodium Bromide 40% Solution
+RM0017	7758-29-4	Sodium Tripolyphosphate (STPP)
+RM0018	9003-04-7	NorthQuest 1000
+RM0020	141-43-5	Monoethanolamine (MEA)
+RM0021	1310-58-3	Potassium Hydroxide 45%
+RM0022	1643-20-5	NORFOX LDA
+RM0023	7681-52-9	Bleach 12.5%
+RM0024	6834-92-0	Sodium Metasilicate Anhydrous
+RM0025	68439-50-9	C12 Linear Alcohol Ethoxylate
+RM0026	26172-55-4	Isothiazalone 1.5% (CMIT component)
+RM0027	1310-73-2	Caustic Soda Beads
+RM0028	11138-66-2	Xanthan Gum Powder
+RM0029	99-76-3	Methyl Paraben Powder
+RM0030	94-13-3	Propyl Paraben Powder
+RM0031	63148-62-9	Silicone PDMS Emulsion 30%
+RM0033	56-81-5	Berol 226 SA Non-ionic Surfactant
+RM0034	9016-45-9	NP-12 Nonylphenol Ethoxylate
+RM0035	68439-46-3	C10 Linear Alcohol Ethoxylate (SURFONIC LF-17)
+RM0036	119345-04-9	Sodium Diphenyl Oxide Disulfonate
+RM0037	79-14-1	Glycolic Acid 70% Solution
+RM0038	7647-01-0	Hydrochloric Acid 35%
+RM0039	68459-50-7	Polyethylene Glycol Oleamide (PEG-6)
+RM0040	77-92-9	Citric Acid Powder Food Grade
+RM0041	57-13-6	Urea Bulk
+RM0043	68439-46-3	Norfox 609 9 MOL Alcohol Ethoxylate
+RM0044	527-07-1	Sodium Gluconate Granular
+RM0045	40623-75-4	Aquatreat AR 546
+RM0046	67-63-0	Isopropyl Alcohol 99%
+RM0047	499-83-2	DPA Dipicolinic Acid
+RM0048	7664-93-9	Sulfuric Acid 93% Tech Grade
+RM0049	2809-21-4	HEDP Powder 90% Low Metals
+RM0050	1310-58-3	Potassium Hydroxide 50%
+RM0052	8002-09-3	Pine Oil 85% Tech Grade
+RM0053	7783-20-2	Ammonium Sulfate
+RM0054	1341-49-7	Ammonium Bifluoride Solid
+RM0055	27176-87-0	Dodecylbenzene Sulfonic Acid (DDBSA)
+RM0056	34590-94-8	Glycol Ether DPM
+RM0057	68921-24-4	Deceth 4 Phosphate
+RM0058	7664-93-9	Sulfuric Acid Tech Pure 96%
+RM0059	111-76-2	Glycol Ether EB
+RM0060	68604-71-7	Colateric 2CM
+RM0061	64-02-8	EDTA Tetrasodium
+RM0062	7646-85-7	Zinc Chloride 62.5%
+RM0063	9016-45-9	NP-9 Nonylphenol Ethoxylate
+RM0064	39464-69-2	Lubrhophos LB 400
+RM0065	7697-37-2	Nitric Acid 37%
+RM0066	64-17-5	Ethanol 200 Proof SDA 40B
+RM0068	1344-09-8	Sodium Silicate 40%
+RM0069	29132-58-9	Maleic Acid Copolymer
+RM0070	119345-04-9	DOWFAX 2A1
+RM0071	5329-14-6	Sulfamic Acid
+RM0072	68515-73-1	Milcoside 303N
+RM0073	51580-86-0	Dichloroisocyanuric Acid Sodium Salt Dihydrate (NaDCC)
+RM0074	68515-73-1	Capryl Glucoside
+RM0075	68515-73-1	Alkyl Glucoside
+RM0076	7647-14-5	Salt Kiln Dried Medium Grade
+RM0077	68411-30-3	Sodium Alkylbenzene Sulfonate (LAS)
+RM0078	7647-14-5	Salt Kiln Dried Coarse Grade
+RM0079	68298-20-4	Burco HCS 50NF
+RM0080	1305-62-0	Calcium Hydroxide Powder
+RM0082	68439-47-4	Iodophor AE 20 Concentrate
+RM0083	15630-89-4	Sodium Percarbonate
+RM0084	67-56-1	Methanol Tech Grade
+RM0087	7757-82-6	Sodium Sulfate
+RM0088	5989-27-5	D-Limonene
+RM0089	7320-34-5	Tetrapotassium Pyrophosphate (TKPP)
+RM0090	2605-79-0	Decyl Amine Oxide
+RM0091	64-17-5	Ethanol 190 Proof SDA 40B
+RM0092	151-21-3	Sodium Lauryl Sulfate 30% (SLS)
+RM0093	68439-57-6	AOS 40
+RM0094	7681-57-4	Sodium Metabisulfite
+RM0095	68603-82-9	Norfox DCSA (Disodium Cocoamphodiacetate)
+RM0096	68584-24-7	Isopropylamine Dodecylbenzene Sulfonate
+RM0097	68603-42-9	Norfox DC
+RM0098	7601-54-9	Trisodium Phosphate Anhydrous (TSP)
+RM0099	111163-74-7	Alkyl Naphthalene Sulfonate
+RM0100	9003-11-6	Block Copolymer Surfactant (Poloxamer)
+RM0101	151-21-3	Sodium Lauryl Sulfate Dry
+RM0102	7632-00-0	Sodium Nitrite
+RM0103	7664-38-2	Phosphoric Acid 85%
+RM0104	68424-85-1	GBS Q-24 (Benzalkonium Chloride)
+RM0105	68410-69-5	ACCOSOFT 501 DR400
+RM0106	10213-79-3	Sodium Metasilicate Pentahydrate
+RM0107	497-19-8	Soda Ash Dense (Sodium Carbonate)
+RM0108	9004-32-4	CMC (Carboxymethyl Cellulose)
+RM0109	7681-52-9	Sodium Hypochlorite 16%
+RM0110	61790-12-3	Tall Oil Fatty Acid
+RM0111	61789-30-8	Norfox 1101 (Sodium Cocoate)
+RM0112	27119-07-9	Rheocare HSP-1180 (Hydroxyethyl Cellulose)
+RM0113	57-13-6	Urea
+RM0114	139-08-2	Alkyldimethylbenzylammonium Chloride (ADBAC)
+RM0115	7697-37-2	Nitric Acid 57%
+RM0116	18662-53-8	NTA Powder (Nitrilotriacetic Acid)
+RM0117	112-80-1	Oleic Acid
+RM0118	68891-38-3	SLES 70% (Sodium Laureth Sulfate)
+RM0119	124-07-2	Caprylic Acid
+RM0120	6419-19-8	ATMP 50%
+RM0121	526-95-4	Gluconic Acid 50%
+RM0122	8061-51-6	Sodium Lignosulfonate
+RM0123	68391-01-5	MAQUAT MQ 2525M 50%
+RM0125	63148-62-9	AE002A Silicone Emulsion
+RM0127	108-91-8	Cyclohexylamine TG
+RM0128	8042-47-5	Mineral Oil
+RM0129	102-71-6	TEA 99%
+RM0130	79-33-4	Lactic Acid 88%
+RM0131	72379-23-8	Cretum ME-100 (End-Capped Nonionic Surfactant)
+RM0132	11138-66-2	Xanthan Gum
+RM0133	104-15-4	p-Toluenesulfonic Acid (From Pyxis)
+RM0134	7631-86-9	LEVASIL (Colloidal Silica)
+RM0135	75-05-8	Acetonitrile (OPTIMA)
+RM0136	540-72-7	Sodium Thiocyanate
+RM0138	1310-58-3	Potassium Hydroxide 90%
+RM0140	541-02-6	CALCHEM D5 (Decamethylcyclopentasiloxane)
+RM0141	126-73-8	CALCHEM TBP (Tributyl Phosphate)
+RM0143	100-37-8	DEAE (Diethylethanolamine)
+RM0144	1303-96-4	Sodium Borate (Borax)
+RM0145	72379-23-8	End-Capped Nonionic Surfactant
+RM0146	10026-24-1	Cobaltous Sulfate Heptahydrate
+RM0147	56-81-5	Glycerine 99.5%
+RM0148	298-14-6	Potassium Bicarbonate
+RM0149	57-55-6	Propylene Glycol 99.9% Tech
+RM0150	57-55-6	Propylene Glycol 99.9% USP
+RM0151	1312-76-1	Potassium Silicate Anhydrous
+RM0152	119345-04-9	Sodium Dodecyl Diphenyl Ether Disulfonate 45%
+RM0153	64742-88-7	Mineral Spirits
+RM0154	526-83-0	Tartaric Acid
+RM0155	110-91-8	Morpholine
+RM0156	53-43-0	Dehydroepiandrosterone (DHEA)
+RM0157	64-17-5	Ethanol 190 Proof SDA 40B
+RM0158	7647-14-5	Kiln Dried Solar Salt
+RM0159	7664-39-3	Hydrofluoric Acid 49%
+RM0160	7631-86-9	AMSOL 30 Colloidal Silica
+RM0161	15827-60-8	DTPMPA
+RM0162	7758-19-2	Sodium Chlorite 31%
+RM0163	1310-58-3	Potassium Hydroxide 90%
+RM0164	122-99-6	Phenoxyethanol (Cola-Fax 3383)
+RM0165	9003-01-4	Northquest 6000 Polyacrylic Acid
+RM0166	68439-57-6	AOS40 (Alpha-Olefin Sulfonate)
+RM0167	10043-01-3	Aluminum Sulfate Dry Iron Free
+RM0168	10043-52-4	Calcium Chloride FG
+RM0169	9002-84-0	PTFE Dispersion
+RM0170	79-09-4	Propionic Acid
+RM0171	144-55-8	Sodium Bicarbonate
+RM0172	2809-21-4	HEDP
+RM0174	104-15-4	PTSA (p-Toluenesulfonic Acid)
+RM0176	7722-64-7	Potassium Permanganate
+RM0177	1330-20-7	Xylene
+RM0178	7778-54-3	Calcium Hypochlorite
+RM0179	61789-30-8	Potassium Cocoate
+RM0180	7553-56-2	Iodine
+RM0182	6915-15-7	DL-Malic Acid
+RM0183	64742-48-9	Odorless Mineral Spirits (OMS)
+RM0184	9012-76-4	Chitosan
+RM0187	97-59-6	Allantoin
+RM0188	50-70-4	Sorbitol
+RM0189	10026-22-9	Cobalt Nitrate Hexahydrate
+RM0190	3710-84-7	Diethylhydroxylamine (DEHA)
+RM0191	181828-06-8	Sodium Polyaspartate (PASP)
+RM0195	1344-09-8	Sodium Silicate
+RM0197	7775-27-1	Sodium Persulfate
+RM0198	16731-55-8	Potassium Metabisulfite (KMBS)
+RM0199	62-54-4	Calcium Acetate
+RM0202	584-08-7	Potassium Carbonate
+RM0203	10124-56-8	Sodium Hexametaphosphate (SHMP)
+RM0204	68514-28-3	Potassium Humate
+RM0205	7631-90-5	Sodium Bisulfite
+RM0300	7758-98-7	Copper Sulfate Crystals
+RM0301	7758-98-7	Copper Sulfate EPA
+RM0400	67-63-0	IPA (Isopropyl Alcohol)
+RM0405	64-19-7	Acetic Acid Glacial
+RM0410	1310-58-3	Potassium Hydroxide
+RM0411	77-92-9	Citric Acid
+RM0412	61790-12-3	Tall Oil Fatty Acid
+RM0414	60-00-4	EDTA Free Acid
+RM0415	7664-38-2	Phosphoric Acid
+RM0416	13780-06-8	Calcium Nitrite
+RM1000	7732-18-5	RO Water
+RM1001	7732-18-5	Soft Water
+RM9201	68410-69-5	Global Fabric Softener
+RM9300	532-82-1	Chrysoidine Y (Basic Orange 2)
+RM9302	3844-45-9	FD&C Blue 1 (Brilliant Blue FCF)
+RM9304	81-88-9	Rhodamine B 400%
+RM9306	518-47-8	Permalon Uranine (Fluorescein Sodium)
+RM9308	25956-17-6	FD&C Red Dye 40 (Allura Red)
+RM9309	38775-22-3	Tricoblanc CBS Powder (Optical Brightener)

@@ -1,0 +1,806 @@
+{
+  "RM0001": {
+    "cas": "7722-84-1",
+    "name": "Hydrogen Peroxide 50% TG"
+  },
+  "RM001.5": {
+    "cas": "7722-84-1",
+    "name": "Hydrogen Peroxide 50% FG"
+  },
+  "RM0002": {
+    "cas": "2809-21-4",
+    "name": "HEDP Liquid Tech Grade 60%"
+  },
+  "RM0003": {
+    "cas": "7664-93-9",
+    "name": "Sulfuric Acid 50%"
+  },
+  "RM0004": {
+    "cas": "64-19-7",
+    "name": "Acetic Acid Glacial"
+  },
+  "RM0005": {
+    "cas": "10102-40-6",
+    "name": "Sodium Molybdate Dihydrate"
+  },
+  "RM0006": {
+    "cas": "64665-57-2",
+    "name": "Sodium Tolytriazole 50%"
+  },
+  "RM0007": {
+    "cas": "26099-09-2",
+    "name": "HPMA (Homopolymer of Maleic Acid) 50%"
+  },
+  "RM0008": {
+    "cas": "37971-36-1",
+    "name": "PBTC"
+  },
+  "RM0009": {
+    "cas": "7664-38-2",
+    "name": "Phosphoric Acid 75%"
+  },
+  "RM0010": {
+    "cas": "9003-04-7",
+    "name": "Propenoic Acid Homopolymer Sodium Salt"
+  },
+  "RM0011": {
+    "cas": "23783-26-8",
+    "name": "HPAA Hydroxy Phosphonoacetic Acid 50%"
+  },
+  "RM0012": {
+    "cas": "102-71-6",
+    "name": "TEA Triethanolamine 85% Solution"
+  },
+  "RM0013": {
+    "cas": "1310-73-2",
+    "name": "Sodium Hydroxide 50%"
+  },
+  "RM0014": {
+    "cas": "1300-72-7",
+    "name": "Sodium Xylene Sulfonate 40% (SXS-40)"
+  },
+  "RM0015": {
+    "cas": "68603-42-9",
+    "name": "Cocoamide DEA"
+  },
+  "RM0016": {
+    "cas": "7647-15-6",
+    "name": "Sodium Bromide 40% Solution"
+  },
+  "RM0017": {
+    "cas": "7758-29-4",
+    "name": "Sodium Tripolyphosphate (STPP)"
+  },
+  "RM0018": {
+    "cas": "9003-04-7",
+    "name": "NorthQuest 1000"
+  },
+  "RM0020": {
+    "cas": "141-43-5",
+    "name": "Monoethanolamine (MEA)"
+  },
+  "RM0021": {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide 45%"
+  },
+  "RM0022": {
+    "cas": "1643-20-5",
+    "name": "NORFOX LDA"
+  },
+  "RM0023": {
+    "cas": "7681-52-9",
+    "name": "Bleach 12.5%"
+  },
+  "RM0024": {
+    "cas": "6834-92-0",
+    "name": "Sodium Metasilicate Anhydrous"
+  },
+  "RM0025": {
+    "cas": "68439-50-9",
+    "name": "C12 Linear Alcohol Ethoxylate"
+  },
+  "RM0026": {
+    "cas": "26172-55-4",
+    "name": "Isothiazalone 1.5% (CMIT component)"
+  },
+  "RM0027": {
+    "cas": "1310-73-2",
+    "name": "Caustic Soda Beads"
+  },
+  "RM0028": {
+    "cas": "11138-66-2",
+    "name": "Xanthan Gum Powder"
+  },
+  "RM0029": {
+    "cas": "99-76-3",
+    "name": "Methyl Paraben Powder"
+  },
+  "RM0030": {
+    "cas": "94-13-3",
+    "name": "Propyl Paraben Powder"
+  },
+  "RM0031": {
+    "cas": "63148-62-9",
+    "name": "Silicone PDMS Emulsion 30%"
+  },
+  "RM0033": {
+    "cas": "56-81-5",
+    "name": "Berol 226 SA Non-ionic Surfactant"
+  },
+  "RM0034": {
+    "cas": "9016-45-9",
+    "name": "NP-12 Nonylphenol Ethoxylate"
+  },
+  "RM0035": {
+    "cas": "68439-46-3",
+    "name": "C10 Linear Alcohol Ethoxylate (SURFONIC LF-17)"
+  },
+  "RM0036": {
+    "cas": "119345-04-9",
+    "name": "Sodium Diphenyl Oxide Disulfonate"
+  },
+  "RM0037": {
+    "cas": "79-14-1",
+    "name": "Glycolic Acid 70% Solution"
+  },
+  "RM0038": {
+    "cas": "7647-01-0",
+    "name": "Hydrochloric Acid 35%"
+  },
+  "RM0039": {
+    "cas": "68459-50-7",
+    "name": "Polyethylene Glycol Oleamide (PEG-6)"
+  },
+  "RM0040": {
+    "cas": "77-92-9",
+    "name": "Citric Acid Powder Food Grade"
+  },
+  "RM0041": {
+    "cas": "57-13-6",
+    "name": "Urea Bulk"
+  },
+  "RM0043": {
+    "cas": "68439-46-3",
+    "name": "Norfox 609 9 MOL Alcohol Ethoxylate"
+  },
+  "RM0044": {
+    "cas": "527-07-1",
+    "name": "Sodium Gluconate Granular"
+  },
+  "RM0045": {
+    "cas": "40623-75-4",
+    "name": "Aquatreat AR 546"
+  },
+  "RM0046": {
+    "cas": "67-63-0",
+    "name": "Isopropyl Alcohol 99%"
+  },
+  "RM0047": {
+    "cas": "499-83-2",
+    "name": "DPA Dipicolinic Acid"
+  },
+  "RM0048": {
+    "cas": "7664-93-9",
+    "name": "Sulfuric Acid 93% Tech Grade"
+  },
+  "RM0049": {
+    "cas": "2809-21-4",
+    "name": "HEDP Powder 90% Low Metals"
+  },
+  "RM0050": {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide 50%"
+  },
+  "RM0052": {
+    "cas": "8002-09-3",
+    "name": "Pine Oil 85% Tech Grade"
+  },
+  "RM0053": {
+    "cas": "7783-20-2",
+    "name": "Ammonium Sulfate"
+  },
+  "RM0054": {
+    "cas": "1341-49-7",
+    "name": "Ammonium Bifluoride Solid"
+  },
+  "RM0055": {
+    "cas": "27176-87-0",
+    "name": "Dodecylbenzene Sulfonic Acid (DDBSA)"
+  },
+  "RM0056": {
+    "cas": "34590-94-8",
+    "name": "Glycol Ether DPM"
+  },
+  "RM0057": {
+    "cas": "68921-24-4",
+    "name": "Deceth 4 Phosphate"
+  },
+  "RM0058": {
+    "cas": "7664-93-9",
+    "name": "Sulfuric Acid Tech Pure 96%"
+  },
+  "RM0059": {
+    "cas": "111-76-2",
+    "name": "Glycol Ether EB"
+  },
+  "RM0060": {
+    "cas": "68604-71-7",
+    "name": "Colateric 2CM"
+  },
+  "RM0061": {
+    "cas": "64-02-8",
+    "name": "EDTA Tetrasodium"
+  },
+  "RM0062": {
+    "cas": "7646-85-7",
+    "name": "Zinc Chloride 62.5%"
+  },
+  "RM0063": {
+    "cas": "9016-45-9",
+    "name": "NP-9 Nonylphenol Ethoxylate"
+  },
+  "RM0064": {
+    "cas": "39464-69-2",
+    "name": "Lubrhophos LB 400"
+  },
+  "RM0065": {
+    "cas": "7697-37-2",
+    "name": "Nitric Acid 37%"
+  },
+  "RM0066": {
+    "cas": "64-17-5",
+    "name": "Ethanol 200 Proof SDA 40B"
+  },
+  "RM0068": {
+    "cas": "1344-09-8",
+    "name": "Sodium Silicate 40%"
+  },
+  "RM0069": {
+    "cas": "29132-58-9",
+    "name": "Maleic Acid Copolymer"
+  },
+  "RM0070": {
+    "cas": "119345-04-9",
+    "name": "DOWFAX 2A1"
+  },
+  "RM0071": {
+    "cas": "5329-14-6",
+    "name": "Sulfamic Acid"
+  },
+  "RM0072": {
+    "cas": "68515-73-1",
+    "name": "Milcoside 303N"
+  },
+  "RM0073": {
+    "cas": "51580-86-0",
+    "name": "Dichloroisocyanuric Acid Sodium Salt Dihydrate (NaDCC)"
+  },
+  "RM0074": {
+    "cas": "68515-73-1",
+    "name": "Capryl Glucoside"
+  },
+  "RM0075": {
+    "cas": "68515-73-1",
+    "name": "Alkyl Glucoside"
+  },
+  "RM0076": {
+    "cas": "7647-14-5",
+    "name": "Salt Kiln Dried Medium Grade"
+  },
+  "RM0077": {
+    "cas": "68411-30-3",
+    "name": "Sodium Alkylbenzene Sulfonate (LAS)"
+  },
+  "RM0078": {
+    "cas": "7647-14-5",
+    "name": "Salt Kiln Dried Coarse Grade"
+  },
+  "RM0079": {
+    "cas": "68298-20-4",
+    "name": "Burco HCS 50NF"
+  },
+  "RM0080": {
+    "cas": "1305-62-0",
+    "name": "Calcium Hydroxide Powder"
+  },
+  "RM0082": {
+    "cas": "68439-47-4",
+    "name": "Iodophor AE 20 Concentrate"
+  },
+  "RM0083": {
+    "cas": "15630-89-4",
+    "name": "Sodium Percarbonate"
+  },
+  "RM0084": {
+    "cas": "67-56-1",
+    "name": "Methanol Tech Grade"
+  },
+  "RM0087": {
+    "cas": "7757-82-6",
+    "name": "Sodium Sulfate"
+  },
+  "RM0088": {
+    "cas": "5989-27-5",
+    "name": "D-Limonene"
+  },
+  "RM0089": {
+    "cas": "7320-34-5",
+    "name": "Tetrapotassium Pyrophosphate (TKPP)"
+  },
+  "RM0090": {
+    "cas": "2605-79-0",
+    "name": "Decyl Amine Oxide"
+  },
+  "RM0091": {
+    "cas": "64-17-5",
+    "name": "Ethanol 190 Proof SDA 40B"
+  },
+  "RM0092": {
+    "cas": "151-21-3",
+    "name": "Sodium Lauryl Sulfate 30% (SLS)"
+  },
+  "RM0093": {
+    "cas": "68439-57-6",
+    "name": "AOS 40"
+  },
+  "RM0094": {
+    "cas": "7681-57-4",
+    "name": "Sodium Metabisulfite"
+  },
+  "RM0095": {
+    "cas": "68603-82-9",
+    "name": "Norfox DCSA (Disodium Cocoamphodiacetate)"
+  },
+  "RM0096": {
+    "cas": "68584-24-7",
+    "name": "Isopropylamine Dodecylbenzene Sulfonate"
+  },
+  "RM0097": {
+    "cas": "68603-42-9",
+    "name": "Norfox DC"
+  },
+  "RM0098": {
+    "cas": "7601-54-9",
+    "name": "Trisodium Phosphate Anhydrous (TSP)"
+  },
+  "RM0099": {
+    "cas": "111163-74-7",
+    "name": "Alkyl Naphthalene Sulfonate"
+  },
+  "RM0100": {
+    "cas": "9003-11-6",
+    "name": "Block Copolymer Surfactant (Poloxamer)"
+  },
+  "RM0101": {
+    "cas": "151-21-3",
+    "name": "Sodium Lauryl Sulfate Dry"
+  },
+  "RM0102": {
+    "cas": "7632-00-0",
+    "name": "Sodium Nitrite"
+  },
+  "RM0103": {
+    "cas": "7664-38-2",
+    "name": "Phosphoric Acid 85%"
+  },
+  "RM0104": {
+    "cas": "68424-85-1",
+    "name": "GBS Q-24 (Benzalkonium Chloride)"
+  },
+  "RM0105": {
+    "cas": "68410-69-5",
+    "name": "ACCOSOFT 501 DR400"
+  },
+  "RM0106": {
+    "cas": "10213-79-3",
+    "name": "Sodium Metasilicate Pentahydrate"
+  },
+  "RM0107": {
+    "cas": "497-19-8",
+    "name": "Soda Ash Dense (Sodium Carbonate)"
+  },
+  "RM0108": {
+    "cas": "9004-32-4",
+    "name": "CMC (Carboxymethyl Cellulose)"
+  },
+  "RM0109": {
+    "cas": "7681-52-9",
+    "name": "Sodium Hypochlorite 16%"
+  },
+  "RM0110": {
+    "cas": "61790-12-3",
+    "name": "Tall Oil Fatty Acid"
+  },
+  "RM0111": {
+    "cas": "61789-30-8",
+    "name": "Norfox 1101 (Sodium Cocoate)"
+  },
+  "RM0112": {
+    "cas": "27119-07-9",
+    "name": "Rheocare HSP-1180 (Hydroxyethyl Cellulose)"
+  },
+  "RM0113": {
+    "cas": "57-13-6",
+    "name": "Urea"
+  },
+  "RM0114": {
+    "cas": "139-08-2",
+    "name": "Alkyldimethylbenzylammonium Chloride (ADBAC)"
+  },
+  "RM0115": {
+    "cas": "7697-37-2",
+    "name": "Nitric Acid 57%"
+  },
+  "RM0116": {
+    "cas": "18662-53-8",
+    "name": "NTA Powder (Nitrilotriacetic Acid)"
+  },
+  "RM0117": {
+    "cas": "112-80-1",
+    "name": "Oleic Acid"
+  },
+  "RM0118": {
+    "cas": "68891-38-3",
+    "name": "SLES 70% (Sodium Laureth Sulfate)"
+  },
+  "RM0119": {
+    "cas": "124-07-2",
+    "name": "Caprylic Acid"
+  },
+  "RM0120": {
+    "cas": "6419-19-8",
+    "name": "ATMP 50%"
+  },
+  "RM0121": {
+    "cas": "526-95-4",
+    "name": "Gluconic Acid 50%"
+  },
+  "RM0122": {
+    "cas": "8061-51-6",
+    "name": "Sodium Lignosulfonate"
+  },
+  "RM0123": {
+    "cas": "68391-01-5",
+    "name": "MAQUAT MQ 2525M 50%"
+  },
+  "RM0125": {
+    "cas": "63148-62-9",
+    "name": "AE002A Silicone Emulsion"
+  },
+  "RM0127": {
+    "cas": "108-91-8",
+    "name": "Cyclohexylamine TG"
+  },
+  "RM0128": {
+    "cas": "8042-47-5",
+    "name": "Mineral Oil"
+  },
+  "RM0129": {
+    "cas": "102-71-6",
+    "name": "TEA 99%"
+  },
+  "RM0130": {
+    "cas": "79-33-4",
+    "name": "Lactic Acid 88%"
+  },
+  "RM0131": {
+    "cas": "72379-23-8",
+    "name": "Cretum ME-100 (End-Capped Nonionic Surfactant)"
+  },
+  "RM0132": {
+    "cas": "11138-66-2",
+    "name": "Xanthan Gum"
+  },
+  "RM0133": {
+    "cas": "104-15-4",
+    "name": "p-Toluenesulfonic Acid (From Pyxis)"
+  },
+  "RM0134": {
+    "cas": "7631-86-9",
+    "name": "LEVASIL (Colloidal Silica)"
+  },
+  "RM0135": {
+    "cas": "75-05-8",
+    "name": "Acetonitrile (OPTIMA)"
+  },
+  "RM0136": {
+    "cas": "540-72-7",
+    "name": "Sodium Thiocyanate"
+  },
+  "RM0138": {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide 90%"
+  },
+  "RM0140": {
+    "cas": "541-02-6",
+    "name": "CALCHEM D5 (Decamethylcyclopentasiloxane)"
+  },
+  "RM0141": {
+    "cas": "126-73-8",
+    "name": "CALCHEM TBP (Tributyl Phosphate)"
+  },
+  "RM0143": {
+    "cas": "100-37-8",
+    "name": "DEAE (Diethylethanolamine)"
+  },
+  "RM0144": {
+    "cas": "1303-96-4",
+    "name": "Sodium Borate (Borax)"
+  },
+  "RM0145": {
+    "cas": "72379-23-8",
+    "name": "End-Capped Nonionic Surfactant"
+  },
+  "RM0146": {
+    "cas": "10026-24-1",
+    "name": "Cobaltous Sulfate Heptahydrate"
+  },
+  "RM0147": {
+    "cas": "56-81-5",
+    "name": "Glycerine 99.5%"
+  },
+  "RM0148": {
+    "cas": "298-14-6",
+    "name": "Potassium Bicarbonate"
+  },
+  "RM0149": {
+    "cas": "57-55-6",
+    "name": "Propylene Glycol 99.9% Tech"
+  },
+  "RM0150": {
+    "cas": "57-55-6",
+    "name": "Propylene Glycol 99.9% USP"
+  },
+  "RM0151": {
+    "cas": "1312-76-1",
+    "name": "Potassium Silicate Anhydrous"
+  },
+  "RM0152": {
+    "cas": "119345-04-9",
+    "name": "Sodium Dodecyl Diphenyl Ether Disulfonate 45%"
+  },
+  "RM0153": {
+    "cas": "64742-88-7",
+    "name": "Mineral Spirits"
+  },
+  "RM0154": {
+    "cas": "526-83-0",
+    "name": "Tartaric Acid"
+  },
+  "RM0155": {
+    "cas": "110-91-8",
+    "name": "Morpholine"
+  },
+  "RM0156": {
+    "cas": "53-43-0",
+    "name": "Dehydroepiandrosterone (DHEA)"
+  },
+  "RM0157": {
+    "cas": "64-17-5",
+    "name": "Ethanol 190 Proof SDA 40B"
+  },
+  "RM0158": {
+    "cas": "7647-14-5",
+    "name": "Kiln Dried Solar Salt"
+  },
+  "RM0159": {
+    "cas": "7664-39-3",
+    "name": "Hydrofluoric Acid 49%"
+  },
+  "RM0160": {
+    "cas": "7631-86-9",
+    "name": "AMSOL 30 Colloidal Silica"
+  },
+  "RM0161": {
+    "cas": "15827-60-8",
+    "name": "DTPMPA"
+  },
+  "RM0162": {
+    "cas": "7758-19-2",
+    "name": "Sodium Chlorite 31%"
+  },
+  "RM0163": {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide 90%"
+  },
+  "RM0164": {
+    "cas": "122-99-6",
+    "name": "Phenoxyethanol (Cola-Fax 3383)"
+  },
+  "RM0165": {
+    "cas": "9003-01-4",
+    "name": "Northquest 6000 Polyacrylic Acid"
+  },
+  "RM0166": {
+    "cas": "68439-57-6",
+    "name": "AOS40 (Alpha-Olefin Sulfonate)"
+  },
+  "RM0167": {
+    "cas": "10043-01-3",
+    "name": "Aluminum Sulfate Dry Iron Free"
+  },
+  "RM0168": {
+    "cas": "10043-52-4",
+    "name": "Calcium Chloride FG"
+  },
+  "RM0169": {
+    "cas": "9002-84-0",
+    "name": "PTFE Dispersion"
+  },
+  "RM0170": {
+    "cas": "79-09-4",
+    "name": "Propionic Acid"
+  },
+  "RM0171": {
+    "cas": "144-55-8",
+    "name": "Sodium Bicarbonate"
+  },
+  "RM0172": {
+    "cas": "2809-21-4",
+    "name": "HEDP"
+  },
+  "RM0174": {
+    "cas": "104-15-4",
+    "name": "PTSA (p-Toluenesulfonic Acid)"
+  },
+  "RM0176": {
+    "cas": "7722-64-7",
+    "name": "Potassium Permanganate"
+  },
+  "RM0177": {
+    "cas": "1330-20-7",
+    "name": "Xylene"
+  },
+  "RM0178": {
+    "cas": "7778-54-3",
+    "name": "Calcium Hypochlorite"
+  },
+  "RM0179": {
+    "cas": "61789-30-8",
+    "name": "Potassium Cocoate"
+  },
+  "RM0180": {
+    "cas": "7553-56-2",
+    "name": "Iodine"
+  },
+  "RM0182": {
+    "cas": "6915-15-7",
+    "name": "DL-Malic Acid"
+  },
+  "RM0183": {
+    "cas": "64742-48-9",
+    "name": "Odorless Mineral Spirits (OMS)"
+  },
+  "RM0184": {
+    "cas": "9012-76-4",
+    "name": "Chitosan"
+  },
+  "RM0187": {
+    "cas": "97-59-6",
+    "name": "Allantoin"
+  },
+  "RM0188": {
+    "cas": "50-70-4",
+    "name": "Sorbitol"
+  },
+  "RM0189": {
+    "cas": "10026-22-9",
+    "name": "Cobalt Nitrate Hexahydrate"
+  },
+  "RM0190": {
+    "cas": "3710-84-7",
+    "name": "Diethylhydroxylamine (DEHA)"
+  },
+  "RM0191": {
+    "cas": "181828-06-8",
+    "name": "Sodium Polyaspartate (PASP)"
+  },
+  "RM0195": {
+    "cas": "1344-09-8",
+    "name": "Sodium Silicate"
+  },
+  "RM0197": {
+    "cas": "7775-27-1",
+    "name": "Sodium Persulfate"
+  },
+  "RM0198": {
+    "cas": "16731-55-8",
+    "name": "Potassium Metabisulfite (KMBS)"
+  },
+  "RM0199": {
+    "cas": "62-54-4",
+    "name": "Calcium Acetate"
+  },
+  "RM0202": {
+    "cas": "584-08-7",
+    "name": "Potassium Carbonate"
+  },
+  "RM0203": {
+    "cas": "10124-56-8",
+    "name": "Sodium Hexametaphosphate (SHMP)"
+  },
+  "RM0204": {
+    "cas": "68514-28-3",
+    "name": "Potassium Humate"
+  },
+  "RM0205": {
+    "cas": "7631-90-5",
+    "name": "Sodium Bisulfite"
+  },
+  "RM0300": {
+    "cas": "7758-98-7",
+    "name": "Copper Sulfate Crystals"
+  },
+  "RM0301": {
+    "cas": "7758-98-7",
+    "name": "Copper Sulfate EPA"
+  },
+  "RM0400": {
+    "cas": "67-63-0",
+    "name": "IPA (Isopropyl Alcohol)"
+  },
+  "RM0405": {
+    "cas": "64-19-7",
+    "name": "Acetic Acid Glacial"
+  },
+  "RM0410": {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide"
+  },
+  "RM0411": {
+    "cas": "77-92-9",
+    "name": "Citric Acid"
+  },
+  "RM0412": {
+    "cas": "61790-12-3",
+    "name": "Tall Oil Fatty Acid"
+  },
+  "RM0414": {
+    "cas": "60-00-4",
+    "name": "EDTA Free Acid"
+  },
+  "RM0415": {
+    "cas": "7664-38-2",
+    "name": "Phosphoric Acid"
+  },
+  "RM0416": {
+    "cas": "13780-06-8",
+    "name": "Calcium Nitrite"
+  },
+  "RM1000": {
+    "cas": "7732-18-5",
+    "name": "RO Water"
+  },
+  "RM1001": {
+    "cas": "7732-18-5",
+    "name": "Soft Water"
+  },
+  "RM9201": {
+    "cas": "68410-69-5",
+    "name": "Global Fabric Softener"
+  },
+  "RM9300": {
+    "cas": "532-82-1",
+    "name": "Chrysoidine Y (Basic Orange 2)"
+  },
+  "RM9302": {
+    "cas": "3844-45-9",
+    "name": "FD&C Blue 1 (Brilliant Blue FCF)"
+  },
+  "RM9304": {
+    "cas": "81-88-9",
+    "name": "Rhodamine B 400%"
+  },
+  "RM9306": {
+    "cas": "518-47-8",
+    "name": "Permalon Uranine (Fluorescein Sodium)"
+  },
+  "RM9308": {
+    "cas": "25956-17-6",
+    "name": "FD&C Red Dye 40 (Allura Red)"
+  },
+  "RM9309": {
+    "cas": "38775-22-3",
+    "name": "Tricoblanc CBS Powder (Optical Brightener)"
+  }
+}

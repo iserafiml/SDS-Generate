@@ -1,0 +1,702 @@
+================================================================================
+SDS GENERATION ENGINE — IMPLEMENTATION PLAN
+================================================================================
+Target: /Users/linkshen/Documents/SDS Generator/
+Reference TDS system: /Users/linkshen/Documents/TDS Generator/
+Gold Standard Output: OxyStrike CC1383 SDS (Capacity Chemical LLC)
+Standard: OSHA HCS 2012 / GHS Rev.7, 16-section layout
+================================================================================
+
+
+OVERVIEW
+--------
+Build a modular Safety Data Sheet (SDS) PDF generation engine that mirrors the
+existing TDS Generator's ReportLab Platypus architecture. Key design principle:
+SDS requires FULL ingredient transparency (CAS numbers + concentrations fully
+disclosed). This is the opposite of the TDS which hides them via _filter_components().
+
+Same ReportLab primitives will be reused verbatim:
+  - _section_bar(), _two_col_table(), _hex(), _esc()
+  - _logo_cell(), _logo_width()
+  - BaseDocTemplate + Frame + PageTemplate + onPage footer pattern
+  - BrandConfig system (brand_config.py copied from TDS Generator)
+
+
+================================================================================
+OUTPUT DIRECTORY LAYOUT
+================================================================================
+
+/Users/linkshen/Documents/SDS Generator/
+├── config/
+│   ├── api_config.json          (copy from TDS Generator — same Anthropic key)
+│   └── brand_config.json        (copy from TDS Generator — Capacity Chemical)
+├── data/
+│   └── raw_material_db.json     (chemical database, 5 OxyStrike ingredients)
+├── assets/
+│   └── pictograms/              (optional: GHS01.png … GHS09.png)
+├── output/                      (generated SDS PDFs go here)
+├── sds_data_model.py            (THE SHARED BRAIN — all dataclasses)
+├── ghs_classifier.py            (THE LOGIC CENTER — classification engine)
+├── sds_generator.py             (main orchestrator + Claude API calls)
+├── sds_pdf_builder.py           (16-section PDF builder)
+├── brand_config.py              (copy from TDS Generator verbatim)
+└── requirements.txt             (same as TDS Generator)
+
+
+================================================================================
+FILE 1: sds_data_model.py — THE SHARED BRAIN
+================================================================================
+
+All dataclasses use field(default_factory=...) for mutable defaults.
+Pattern mirrors data_model.py from TDS Generator exactly.
+
+DATACLASSES:
+
+SDSIngredient
+  name: str
+  cas_number: str
+  wt_percent_low: float       <- split floats (not "20-25%" string)
+  wt_percent_high: float         enables classifier threshold comparisons
+  function: str
+  trade_secret: bool = False
+
+GHSHazardCategory             <- one classified hazard
+  class_name: str             "Oxidizing liquids"
+  category: str               "2" or "1A" (string, not int)
+  h_codes: list[str]
+  p_codes: list[str]
+  pictogram_codes: list[str]
+
+GHSClassification             <- aggregated classifier output
+  signal_word: str
+  categories: list[GHSHazardCategory]
+  pictograms_needed: list[str]    (deduplicated)
+  all_h_statements: list[str]     (ordered by code number)
+  all_p_statements: list[str]     (grouped P2xx / P3xx / P4xx / P5xx)
+
+OELEntry                      <- one row of Section 8 OEL table
+  substance_name: str
+  cas: str
+  authority: str              "ACGIH" | "NIOSH" | "OSHA" | "CA"
+  oel_type: str               "TWA" | "STEL" | "IDLH" | "Ceiling" | "TWA-PEL"
+  value: str                  string preserves ">" prefix
+  unit: str                   "ppm" | "mg/m³"
+
+ToxicologyRecord              <- one row of Section 11 LD50/LC50 table
+  substance: str
+  route: str                  "Oral" | "Dermal" | "Inhalation ATE"
+  species: str
+  result: str                 "LD50 Rat: 693.7 mg/kg"
+
+AquaticToxRecord              <- one row of Section 12 aquatic table
+  substance: str
+  organism_type: str          "Fish" | "Aquatic Invertebrates" | "Aquatic Plants"
+  organism: str               "Pimephales promelas"
+  metric: str                 "LC50" | "EC50" | "NOEC"
+  value: str                  "16.4 mg/L"
+  endpoint: str               "mortality" | "growth rate"
+
+TransportInfo                 <- one record per transport mode
+  mode: str                   "DOT" | "IMDG" | "IATA"
+  un_number: str
+  proper_shipping_name: str
+  hazard_class: str
+  packing_group: str
+  labels_required: str
+  environmental_hazard: str
+  special_precautions: str
+
+RegulatoryListing             <- one row of Section 15 regulatory table
+  substance_name: str
+  cas: str
+  tsca_listed: bool
+  sara_302: bool
+  sara_313: bool
+  cercla_listed: bool
+  cercla_rq_lbs: str          "1000" or ""
+  rcra_code: str
+  caa_112r: bool
+  prop_65: bool
+  prop_65_warning: str
+  rtk_states: list[str]       ["MA", "NJ", "NY", "PA"]
+
+ManufacturerInfo
+  company_name: str
+  address_line1: str
+  city_state_zip: str
+  country: str
+  phone: str
+  website: str
+  email: str
+  emergency_phone: str
+  emergency_provider: str     "CHEMTREC"
+  emergency_account: str
+
+SDSPhysicalProperties         <- extends TDS version with all SDS-required fields
+  appearance, odour, odour_threshold, pH, melting_point, boiling_point,
+  flash_point, evaporation_rate, flammability, upper_explosive_limit,
+  lower_explosive_limit, vapour_pressure, vapour_density, density,
+  relative_density, solubility, partition_coefficient, auto_ignition_temp,
+  decomposition_temp, viscosity
+
+SDSProduct                    <- MASTER OBJECT (fields organised by SDS section)
+  Section 1:  product_name, product_code, product_type, manufacturer,
+              recommended_use, restrictions_on_use
+  Section 2:  classification (GHSClassification), label_notes
+  Section 3:  ingredients (list[SDSIngredient]), additional_ingredient_info
+  Section 4:  first_aid_inhalation, first_aid_skin, first_aid_eye,
+              first_aid_ingestion, first_aid_general, first_aid_symptoms,
+              first_aid_doctor_notes
+  Section 5:  extinguishing_media, unsuitable_extinguishing_media,
+              firefighting_hazards, firefighting_ppe, firefighting_precautions
+  Section 6:  spill_personal_precautions, spill_environmental_precautions,
+              spill_containment_cleanup
+  Section 7:  handling_precautions, storage_conditions, specific_end_use
+  Section 8:  control_parameters (list[OELEntry]), engineering_controls,
+              ppe_respiratory, ppe_hand, ppe_eye, ppe_skin, hygienic_measures
+  Section 9:  physical_properties (SDSPhysicalProperties)
+  Section 10: reactivity, chemical_stability, hazardous_reactions,
+              conditions_to_avoid, incompatible_materials, hazardous_decomposition
+  Section 11: toxicology_records, skin_corrosion_result, eye_damage_result,
+              sensitisation, mutagenicity, carcinogenicity_iarc, carcinogenicity_ntp,
+              reproductive_toxicity, stot_single, stot_repeated, aspiration_hazard
+  Section 12: aquatic_tox_records, chronic_tox_records,
+              persistence_degradability (list[tuple[str,str]]),
+              bioaccumulation, mobility, pbt_vpvb, other_adverse_effects
+  Section 13: disposal_methods, disposal_container
+  Section 14: transport (list[TransportInfo])
+  Section 15: regulatory_listings (list[RegulatoryListing]),
+              tsca_inventory, prop_65_warning_text
+  Section 16: prepared_by, preparation_date, revision_date, revision_number,
+              supersedes, disclaimer, nfpa_ratings, hmis_ratings, abbreviations
+
+SDSDocument
+  product: SDSProduct
+  version: str = "1.0"
+  preparation_date: str
+
+Also include dict_to_sds_product(d: dict) -> SDSProduct using the same
+safe-conversion pattern as dict_to_product() in TDS data_model.py.
+
+
+================================================================================
+FILE 2: data/raw_material_db.json — CHEMICAL DATABASE
+================================================================================
+
+Array of records, loaded and indexed by CAS string at runtime.
+Pre-populate all 5 OxyStrike ingredients with complete data sourced from
+the gold-standard SDS.
+
+RECORD SCHEMA:
+{
+  "cas": "7722-84-1",
+  "name": "Hydrogen peroxide",
+  "synonyms": ["H2O2", "Hydrogen dioxide"],
+  "ghs_triggers": {
+    "oxidizing_liquid":   {"threshold_pct": 8.0, "category": "2"},
+    "skin_corrosion":     {"threshold_pct": 8.0, "category": "1A"},
+    "serious_eye_damage": {"threshold_pct": 8.0, "category": "1"},
+    "stot_se":            {"threshold_pct": 1.0,  "category": "3"}
+  },
+  "oels": [
+    {"authority":"ACGIH","type":"TWA",      "value":"1",   "unit":"ppm"},
+    {"authority":"NIOSH","type":"TWA",      "value":"1.4", "unit":"mg/m³"},
+    {"authority":"NIOSH","type":"IDLH",     "value":"75",  "unit":"ppm"},
+    {"authority":"OSHA", "type":"TWA-PEL", "value":"1.4", "unit":"mg/m³ (1 ppm)"},
+    {"authority":"CA",   "type":"TWA-PEL", "value":"1.4", "unit":"mg/m³ (1 ppm)"}
+  ],
+  "toxicology": {
+    "oral_ld50":       {"species":"Rat",    "result":"693.7 mg/kg"},
+    "inhalation_lc50": {"species":"Rat",    "result":"11 mg/L (4 hr)"},
+    "dermal_ld50":     {"species":"Rabbit", "result":">2000 mg/kg"},
+    "skin_result":     "Causes severe skin burns.",
+    "eye_result":      "Causes serious eye damage.",
+    "stot_result":     "May cause respiratory irritation."
+  },
+  "aquatic_toxicology": {
+    "acute": [
+      {"type":"Fish",        "organism":"Pimephales promelas","metric":"LC50",
+       "value":"16.4 mg/L", "duration_hr":96},
+      {"type":"Aquatic Invertebrates","organism":"Daphnia carinate","metric":"EC50",
+       "value":"2 mg/L",   "duration_hr":48,"endpoint":"mortality"},
+      {"type":"Aquatic Plants","organism":"Skeletonema costatum","metric":"EC50",
+       "value":"1.38 mg/L","duration_hr":72,"endpoint":"growth rate"}
+    ],
+    "chronic": [
+      {"type":"Aquatic Invertebrates","organism":"Daphnia magna","metric":"NOEC",
+       "value":"0.63 mg/L","duration_days":21,"endpoint":"reproduction"},
+      {"type":"Fish","organism":"Solea solea","metric":"NOEC",
+       "value":"48 mg/L","duration_days":18,"endpoint":"mortality"}
+    ]
+  },
+  "persistence": "Inorganic compound — persistence assessment not relevant.",
+  "bioaccumulation": "Inorganic compound — BCF assessment not relevant.",
+  "mobility": "Inorganic compound — KOC/Kd assessment not relevant.",
+  "iarc_classification": "Group 3",
+  "ntp_classification": "Not Applicable",
+  "regulatory": {
+    "tsca_listed": true,
+    "sara_302": true,  "sara_313": false,
+    "cercla_listed": false, "cercla_rq_lbs": null,
+    "rcra_code": null, "caa_112r": false,
+    "prop_65": false,  "prop_65_warning": null,
+    "rtk_states": ["MA","NJ","NY","PA"]
+  }
+}
+
+ALL 5 OXYSTRIKE RECORDS SUMMARY:
+
+CAS        Name               SARA302 SARA313 CERCLA     NTP             Prop65
+7722-84-1  Hydrogen peroxide  Yes     No      No         Not Applicable  No
+7697-37-2  Nitric acid        No      Yes     Yes/1000lb Not Applicable  No
+64-19-7    Acetic acid        No      No      Yes/5000lb Not Applicable  No
+79-21-0    Peracetic acid     Yes     Yes     No         Not Applicable  No
+7664-93-9  Sulfuric acid      Yes     No      Yes/1000lb Known carcinogen Yes (acid mists)
+
+GHS triggers by ingredient:
+  H2O2:          oxidizing_liquid@8%, skin_corrosion@8%, serious_eye@8%, stot_se@1%
+  Nitric acid:   oxidizing_liquid@1%, skin_corrosion@5%, corrosive_metals@any%
+  Acetic acid:   skin_corrosion@80% (NOT triggered at 4-8%)
+  Peracetic acid: oxidizing_liquid@5%, skin_corrosion@1%, stot_se@0.1%
+  Sulfuric acid: skin_corrosion@1%, corrosive_metals@any%
+
+
+================================================================================
+FILE 3: ghs_classifier.py — THE LOGIC CENTER
+================================================================================
+
+CLASS: GHSClassifier
+
+Class-level constants (hardcoded — these are regulatory text, not product data):
+
+H_STATEMENTS dict (H-code -> full text), including at minimum:
+  H271: "May cause fire or explosion; strong oxidizer"
+  H272: "May intensify fire; oxidizer"
+  H290: "May be corrosive to metals"
+  H314: "Causes severe skin burns and eye damage"
+  H315: "Causes skin irritation"
+  H318: "Causes serious eye damage"
+  H319: "Causes serious eye irritation"
+  H330: "Fatal if inhaled"
+  H335: "May cause respiratory irritation"
+  H400: "Very toxic to aquatic life"
+  H411: "Toxic to aquatic life with long lasting effects"
+  (... full GHS H-code set)
+
+P_STATEMENTS dict (P-code -> full text)
+
+PICTOGRAM_MAP:
+  "oxidizing_liquid"    -> "GHS03"  (flame over circle)
+  "corrosive_to_metals" -> "GHS05"  (corrosion diamond)
+  "skin_corrosion"      -> "GHS05"
+  "serious_eye_damage"  -> "GHS05"
+  "stot_se"             -> "GHS07"  (exclamation mark)
+  "flammable_liquid"    -> "GHS02"
+  "acute_toxicity"      -> "GHS06"
+  "environmental"       -> "GHS09"
+
+HAZARD_CLASS_DISPLAY_NAMES:
+  "oxidizing_liquid"    -> "Oxidizing liquids"
+  "corrosive_to_metals" -> "Corrosive to metals"
+  "skin_corrosion"      -> "Skin corrosion"
+  "serious_eye_damage"  -> "Serious eye damage"
+  "stot_se"             -> "Specific target organ toxicity - single exposure"
+  (etc.)
+
+CATEGORY_P_CODES (hazard_class + "_" + category -> list of P-codes):
+  "oxidizing_liquid_2"    -> [P210, P220, P221, P260, P264, P270, P271, P280,
+                               P301+P330+P331, P303+P361+P353, P370+P378, P501]
+  "corrosive_to_metals_1" -> [P234, P390, P404]
+  "skin_corrosion_1A"     -> [P260, P264, P280, P301+P330+P331, P303+P361+P353,
+                               P304+P340, P305+P351+P338, P310, P321, P363, P405, P501]
+  "serious_eye_damage_1"  -> [P280, P305+P351+P338, P310]  (subset, deduped)
+  "stot_se_3"             -> [P260, P261, P271, P304+P340, P312]
+
+SEVERITY_ORDER (for most-severe-category selection):
+  "1A":0, "1B":1, "1C":2, "1":0, "2":1, "3":2, "4":3
+
+CLASSIFY ALGORITHM:
+
+  def classify(self, ingredients: list[SDSIngredient]) -> GHSClassification:
+      triggered = {}  # hazard_class -> (worst_category, trigger_ingredient_name)
+
+      for ing in ingredients:
+          conc = ing.wt_percent_high   # USE UPPER BOUND (conservative / safety-correct)
+          rec = self._db.get(ing.cas_number.strip())
+          if not rec:
+              continue
+          for hazard_class, trigger in rec["ghs_triggers"].items():
+              if conc >= trigger["threshold_pct"]:
+                  cat = str(trigger["category"])
+                  if (hazard_class not in triggered or
+                          self._is_more_severe(cat, triggered[hazard_class][0])):
+                      triggered[hazard_class] = (cat, ing.name)
+
+      categories = self._build_categories(triggered)
+      signal_word = self._determine_signal_word(triggered)
+      pictograms = sorted({c for cat in categories for c in cat.pictogram_codes})
+      h_stmts = self._collect_h_statements(categories)
+      p_stmts = self._collect_p_statements(triggered)
+
+      return GHSClassification(
+          signal_word=signal_word,
+          categories=categories,
+          pictograms_needed=pictograms,
+          all_h_statements=h_stmts,
+          all_p_statements=p_stmts,
+      )
+
+SIGNAL WORD RULE:
+  DANGER  if any Cat 1 (any suffix), Cat 2 oxidizing liquid, Cat 2 acute toxicity
+  WARNING if only Cat 3-4 STOT or Cat 3-4 acute toxicity
+  DANGER beats WARNING when both apply
+
+OXYSTRIKE EXPECTED CLASSIFIER OUTPUT:
+  triggered: {
+    "oxidizing_liquid":    ("2",  "Hydrogen peroxide"),
+    "corrosive_to_metals": ("1",  "Nitric acid"),
+    "skin_corrosion":      ("1A", "Hydrogen peroxide"),
+    "serious_eye_damage":  ("1",  "Hydrogen peroxide"),
+    "stot_se":             ("3",  "Hydrogen peroxide"),
+  }
+  signal_word: "DANGER"
+  pictograms_needed: ["GHS03", "GHS05", "GHS07"]
+  all_h_statements: [
+    "H272 May intensify fire; oxidizer",
+    "H290 May be corrosive to metals",
+    "H314 Causes severe skin burns and eye damage",
+    "H318 Causes serious eye damage",
+    "H335 May cause respiratory irritation",
+  ]
+
+
+================================================================================
+FILE 4: sds_generator.py — MAIN ORCHESTRATOR
+================================================================================
+
+CLASS: SDSGenerator
+
+  __init__(self, db_path, api_config_path):
+    - Load raw_material_db.json -> dict keyed by CAS string
+    - Load Anthropic client from api_config.json (same key as TDS Generator)
+    - Instantiate GHSClassifier(db)
+
+  generate(self, product: SDSProduct) -> SDSDocument:
+    1. product.classification = self._classifier.classify(product.ingredients)
+    2. self._enrich_from_db(product)
+    3. self._generate_first_aid(product)      <- Claude API call
+    4. self._generate_firefighting(product)   <- Claude API call
+    5. if not product.transport:
+         product.transport = self._build_transport(product)
+    6. product.generated_date = date.today().isoformat()
+    7. return SDSDocument(product=product)
+
+  _enrich_from_db(self, product):
+    For each ingredient, lookup DB record and populate:
+    - product.control_parameters  (OELEntry list — extend, no duplicates by key)
+    - product.toxicology_records  (ToxicologyRecord list)
+    - product.aquatic_tox_records / chronic_tox_records
+    - product.regulatory_listings (RegulatoryListing list)
+    - product.skin_corrosion_result, eye_damage_result, stot_single
+    - product.carcinogenicity_iarc, carcinogenicity_ntp (strings)
+    - product.persistence_degradability, bioaccumulation, mobility lists
+
+  _generate_first_aid(self, product):
+    Claude API call:
+    - System: "You are a GHS-compliant SDS technical writer..."
+    - User: JSON with product_name, classification (signal word + H-codes), ingredient names
+    - Response: structured JSON with inhalation, skin, eye, ingestion,
+                general_notes, doctor_notes fields
+    - Use ephemeral cache_control on system prompt (same pattern as TDS Generator)
+    - temperature=0 for deterministic output
+
+  _generate_firefighting(self, product):
+    Similar Claude API call -> extinguishing_media, unsuitable_media,
+                               hazards, ppe, precautions fields
+
+  _build_transport(self, product) -> list[TransportInfo]:
+    Rule-based (no API needed):
+    - Peracetic acid + oxidizing liquid classified -> UN3139
+    - DOT: UN3139, "Oxidizing liquid (Hydrogen peroxide, Nitric acid)", 5.1(8), PG II
+    - IMDG: same UN3139 with marine pollutant note (Peroxyacetic acid)
+    - IATA: Not regulated (per gold standard)
+
+FACTORY FUNCTION: sds_from_oxystrike() -> SDSProduct
+  Pre-populate OxyStrike CC1383 for testing without API calls:
+  - 5 SDSIngredient objects with exact OxyStrike concentrations from Section 3
+  - ManufacturerInfo for Capacity Chemical LLC (from Section 1)
+  - SDSPhysicalProperties from Section 9 of gold standard:
+      appearance="Clear and colorless"
+      odour="Pungent, Strong vinegar-like"
+      pH="< 2"
+      density="1.169"
+  - Section 10 text from gold standard
+  - classification left as GHSClassification() (populated by generate())
+
+MAIN GUARD:
+  if __name__ == "__main__":
+      BASE = Path(__file__).parent
+      gen = SDSGenerator(BASE / "data/raw_material_db.json",
+                         BASE / "config/api_config.json")
+      product = sds_from_oxystrike()
+      sds_doc = gen.generate(product)
+      out = build_sds_pdf(sds_doc, BASE / "output/OxyStrike_SDS.pdf", load_brand())
+      print(f"SDS generated: {out}")
+
+
+================================================================================
+FILE 5: sds_pdf_builder.py — 16-SECTION PDF BUILDER
+================================================================================
+
+ARCHITECTURE:
+  Copy verbatim from tds_pdf_builder.py:
+    _hex(), _esc(), _section_bar(), _two_col_table()
+    _hdr_para(), _cell_para(), _logo_cell(), _logo_width()
+    _build_doc() (update footer call to _draw_sds_footer)
+    PAGE_W, PAGE_H, MARGIN, CONTENT_W, FONT_BODY, FONT_BOLD, FONT_IT constants
+
+  Extend _make_styles() with 3 SDS-specific styles:
+    "warning_red"  <- signal word banner (fontSize=16, bold, white)
+    "h_code"       <- H-statement codes (fontSize=8, bold, secondary color)
+    "table_note"   <- footnotes under tables (fontSize=7, italic, gray)
+
+  SDS footer differs from TDS footer:
+    Left:  "[company] | [product] SDS | Version [x] | [date]"
+    Right: "EMERGENCY: CHEMTREC 1-800-424-9300 ... Page N"
+
+MAIN API:
+  build_sds_pdf(doc: SDSDocument, output_path, brand=None) -> Path
+
+STORY ASSEMBLY (no explicit PageBreak — natural Platypus flow):
+  story = []
+  story += _build_sds_cover_header(p, brand, styles)
+  story += build_section_1_identification(p, brand, styles)
+  story += build_section_2_hazards(p, brand, styles)
+  story += build_section_3_composition(p, brand, styles)
+  story += build_section_4_first_aid(p, brand, styles)
+  story += build_section_5_firefighting(p, brand, styles)
+  story += build_section_6_release(p, brand, styles)
+  story += build_section_7_handling(p, brand, styles)
+  story += build_section_8_exposure(p, brand, styles)
+  story += build_section_9_properties(p, brand, styles)
+  story += build_section_10_stability(p, brand, styles)
+  story += build_section_11_toxicology(p, brand, styles)
+  story += build_section_12_ecology(p, brand, styles)
+  story += build_section_13_disposal(p, brand, styles)
+  story += build_section_14_transport(p, brand, styles)
+  story += build_section_15_regulatory(p, brand, styles)
+  story += build_section_16_other(p, brand, styles)
+
+Use KeepTogether() around each section's subhead + first table to prevent
+orphaned section headers across page breaks.
+
+SECTION LAYOUT TABLE:
+(all column widths verified to sum to CONTENT_W = 180mm)
+
+Sec  Title                  Layout             Columns / Width Split
+---  -----                  ------             --------------------
+1    Identification         _two_col_table     28% / 72%
+2    Hazard Identification  banner+pictograms  signal word + pictogram row + bullets
+3    Composition            5-col Table        75/35/25/20/25mm (Name/CAS/Low/High/Function)
+4    First Aid              _two_col_table     25% / 75%
+5    Firefighting           _two_col_table     30% / 70%
+6    Accidental Release     _two_col_table     30% / 70%
+7    Handling & Storage     _two_col_table x2  30% / 70%
+8    Exposure Controls      4-col OEL table    35/75/25/45mm (Auth/Substance/Type/Value)
+                           + _two_col_table PPE
+9    Physical Properties    _two_col_table     35% / 65% (20 rows)
+10   Stability              _two_col_table     30% / 70% (6 rows)
+11   Toxicology             5-col LD50 table   45/25/30/30/50mm
+                           + _two_col_table    35% / 65%
+12   Ecological Info        5-col aquatic tbl  45/35/25/25/50mm
+                           + _two_col_table    35% / 65%
+13   Disposal               _two_col_table     30% / 70%
+14   Transport Info         3 sub-tables       35% / 65% per mode
+15   Regulatory             7-col SARA table   35/15/15/15/25/20/55mm
+                           + _two_col_table RTK
+16   Other Information      _two_col_table     30% / 70% + disclaimer Paragraph
+
+SECTION 2 PICTOGRAM DRAWING (_draw_pictogram_row):
+  1. Try PNG load: assets/pictograms/<code>.png (e.g. GHS03.png)
+  2. Programmatic fallback using ReportLab Drawing + Polygon:
+     - 25mm × 25mm Drawing canvas
+     - Diamond Polygon with vertices at midpoints:
+         top=(12.5, 25), right=(25, 12.5), bottom=(12.5, 0), left=(0, 12.5)
+     - White fill, red stroke (2pt)
+     - Symbol text centered: "OX" for GHS03, "COR" for GHS05, "!" for GHS07
+  All pictograms placed in single-row Table with 28mm column width per pictogram
+
+SECTION 3 KEY DETAIL:
+  Header row: Name | CAS Number | Wt% Low | Wt% High | Function
+  Rows show FULL unredacted CAS and concentration ranges for every ingredient
+  This is the explicit legal inversion of TDS which calls _filter_components()
+
+SECTION 8 OEL TABLE DETAIL:
+  Group rows by substance using a colored sub-header row (brand.light_bg bg)
+  Footnote below table (styles["table_note"]):
+    "TWA=Time-Weighted Average; STEL=Short-Term Exposure Limit;
+     IDLH=Immediately Dangerous to Life or Health; PEL=Permissible Exposure Limit"
+
+SECTION 15 REGULATORY TABLE:
+  7-column table (35/15/15/15/25/20/55mm = 180mm):
+    Substance | TSCA | SARA 302 | SARA 313 | CERCLA/RQ | CAA 112(r) | Prop 65
+  Followed by separate _two_col_table for State RTK listings:
+    State | Listed Substances
+
+
+================================================================================
+IMPLEMENTATION ORDER
+================================================================================
+
+PHASE 1 — Foundation (no Claude API needed, verify at each step)
+  1. mkdir -p config data assets/pictograms output
+  2. Copy brand_config.py from TDS Generator
+  3. Copy config/api_config.json and config/brand_config.json from TDS Generator
+  4. Copy requirements.txt from TDS Generator
+  5. Implement sds_data_model.py (all dataclasses + dict_to_sds_product)
+     VERIFY: python3 sds_data_model.py prints an SDSProduct without errors
+  6. Implement data/raw_material_db.json (all 5 OxyStrike records)
+     VERIFY: python3 -c "import json; data=json.load(open('data/raw_material_db.json')); print(len(data), 'records')"
+
+PHASE 2 — Classification Engine
+  7. Implement ghs_classifier.py (H/P tables + GHSClassifier.classify())
+     VERIFY standalone:
+       from ghs_classifier import GHSClassifier
+       from sds_data_model import SDSIngredient
+       import json
+       db = {r["cas"]:r for r in json.load(open("data/raw_material_db.json"))}
+       clf = GHSClassifier(db)
+       ings = [SDSIngredient("Hydrogen peroxide","7722-84-1",20,25),
+               SDSIngredient("Nitric acid","7697-37-2",5,10), ...]
+       result = clf.classify(ings)
+       assert result.signal_word == "DANGER"
+       assert "GHS03" in result.pictograms_needed
+       assert "GHS05" in result.pictograms_needed
+       assert "GHS07" in result.pictograms_needed
+
+PHASE 3 — Generator (no PDF yet)
+  8. Implement SDSGenerator.__init__, _lookup_db, _enrich_from_db, _build_transport
+  9. Implement sds_from_oxystrike() factory function
+  10. Implement generate() (without Claude API calls yet — stub first_aid/firefighting)
+      VERIFY: gen.generate(sds_from_oxystrike()) populates all fields; print them
+
+PHASE 4 — PDF Builder (section by section, simplest first)
+  11. Copy all helper primitives from tds_pdf_builder.py
+  12. Implement _build_doc() and _draw_sds_footer()
+  13. Implement sections in this order (easiest to hardest):
+        1 → 9 → 13 → 4 → 5 → 6 → 7 → 10 → 3 → 14 → 8 → 15 → 16 → 11 → 12 → 2
+  14. Implement _draw_pictogram_row() — PNG first, programmatic fallback second
+  15. Wire _build_story() and build_sds_pdf()
+
+PHASE 5 — Claude API (Sections 4 and 5)
+  16. Implement _generate_first_aid() with ephemeral cache_control on system prompt
+  17. Implement _generate_firefighting()
+
+PHASE 6 — Verification against gold standard
+  18. Run: python3 sds_generator.py
+      Output: output/OxyStrike_SDS.pdf
+  19. Open PDF and verify these checkpoints against OxyStrike gold-standard SDS:
+
+      Section 1:  Manufacturer = Capacity Chemical LLC, Westley CA 95387
+                  Emergency = CHEMTREC 1-800-424-9300 Account 1014335
+      Section 2:  Signal word = DANGER (red banner)
+                  3 pictograms: flame-over-circle, corrosion, exclamation
+                  H-codes: H272, H290, H314, H318, H335 (in order)
+      Section 3:  All 5 ingredients visible with CAS numbers and wt% ranges
+                  (NO redaction — unlike TDS output)
+      Section 8:  OEL table shows ACGIH/NIOSH/OSHA/CA rows for H2O2 and HNO3
+      Section 9:  pH = "< 2", density = 1.169
+      Section 11: LD50 Rat oral H2O2 = 693.7 mg/kg
+      Section 12: Ethaneperoxoic acid Fish LC50 = 0.53 mg/L
+      Section 14: DOT: UN3139, 5.1(8), PG II
+      Section 15: SARA 302 Yes for H2O2, HNO3, H2SO4, peracetic
+                  Prop 65 warning for sulfuric acid (acid mists)
+
+
+================================================================================
+DATA FLOW SUMMARY
+================================================================================
+
+raw_material_db.json
+       |
+       v
+SDSGenerator.__init__()  -->  GHSClassifier(db)
+       |                              |
+       |                    classify(ingredients)
+       |                              |
+       |                       GHSClassification
+       |
+_enrich_from_db(product)
+  --> populates: control_parameters, toxicology_records,
+                 aquatic_tox_records, regulatory_listings,
+                 carcinogenicity strings, persistence strings
+       |
+_generate_first_aid()   -->  Anthropic API (Claude Sonnet 4.6)
+_generate_firefighting() --> Anthropic API (Claude Sonnet 4.6)
+       |
+SDSDocument (fully populated)
+       |
+build_sds_pdf(doc, output_path, brand)
+  --> _build_story() calls 16 section builders in order
+  --> each section builder reads from doc.product fields
+  --> _build_doc() wraps story in BaseDocTemplate with onPage footer
+  --> writes output/OxyStrike_SDS.pdf
+
+
+================================================================================
+KEY DESIGN DECISIONS
+================================================================================
+
+1. CONCENTRATION AS FLOATS NOT STRINGS
+   SDSIngredient uses wt_percent_low: float and wt_percent_high: float.
+   This enables direct threshold comparison in the classifier (conc >= 8.0)
+   without regex parsing. The PDF builder formats these as "20–25%" when rendering.
+
+2. CONSERVATIVE CLASSIFICATION (upper bound)
+   GHSClassifier always uses ing.wt_percent_high for threshold comparisons.
+   This is the regulatory-correct approach for worst-case safety assessment.
+
+3. NO PAGEBREAK INSERTIONS
+   The 16 sections are dense enough that natural ReportLab flow handles
+   pagination. KeepTogether() wrappers prevent orphaned section headers.
+
+4. DB-SOURCED OEL / TOXICOLOGY / REGULATORY DATA
+   All numerical data (LD50, OELs, regulatory flags) comes from raw_material_db.json,
+   not from Claude API. Claude is only used for narrative text (first aid language,
+   firefighting instructions). This ensures data accuracy and auditability.
+
+5. SAME BRAND SYSTEM
+   BrandConfig is shared with TDS Generator (copied verbatim). Both systems
+   produce PDFs with the same Capacity Chemical branding. Path resolution in
+   brand_config.py uses Path(__file__).parent, which correctly resolves to
+   the SDS Generator directory after copying.
+
+6. PICTOGRAM RENDERING
+   Primary: PNG files from assets/pictograms/ (GHS03.png, GHS05.png, GHS07.png)
+   Fallback: Programmatic ReportLab Drawing with diamond Polygon geometry
+   The fallback ensures the PDF renders correctly even without asset files.
+
+7. FULL REGULATORY TRANSPARENCY (LEGAL REQUIREMENT)
+   Section 3 shows all CAS numbers and concentration ranges with NO filtering.
+   Section 15 lists all applicable federal and state regulatory citations.
+   This is non-negotiable for OSHA HCS 2012 compliance.
+
+
+================================================================================
+CRITICAL REFERENCE FILES
+================================================================================
+
+TDS Generator (source for copy/mirror):
+  /Users/linkshen/Documents/TDS Generator/tds_pdf_builder.py   (819 lines)
+  /Users/linkshen/Documents/TDS Generator/data_model.py        (197 lines)
+  /Users/linkshen/Documents/TDS Generator/brand_config.py      (46 lines)
+  /Users/linkshen/Documents/TDS Generator/config/api_config.json
+
+Gold Standard SDS:
+  CC1383 - OxyStrike SDS - CapacityChemical.pdf (provided in conversation)
+  16 pages, all section content used verbatim for DB population and verification
+
+
+================================================================================
+END OF PLAN
+================================================================================

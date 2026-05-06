@@ -1,0 +1,23 @@
+# ── Secrets & local config (NEVER commit) ──────────────────────────────
+config/api_config.json
+config/brand_config.json
+
+# ── Claude Code local settings (machine-specific paths) ─────────────────
+.claude/
+
+# ── Generated output ────────────────────────────────────────────────────
+output/
+
+# ── Intermediate build files ────────────────────────────────────────────
+data/new_entries.json
+
+# ── Python ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# ── macOS ───────────────────────────────────────────────────────────────
+.DS_Store

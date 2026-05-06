@@ -1,0 +1,5571 @@
+[
+  {
+    "cas": "7722-84-1",
+    "name": "Hydrogen Peroxide 50% TG",
+    "rm_numbers": [
+      "RM0001",
+      "RM001.5"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7697-37-2",
+    "name": "Nitric Acid 37%",
+    "rm_numbers": [
+      "RM0065",
+      "RM0115"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "64-19-7",
+    "name": "Acetic Acid Glacial",
+    "rm_numbers": [
+      "RM0004",
+      "RM0405"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "79-21-0",
+    "name": "Ethaneperoxoic acid",
+    "synonyms": [
+      "Peracetic acid",
+      "Peroxyacetic acid",
+      "PAA",
+      "Acetyl hydroperoxide"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 5.0,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1A"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 0.1,
+        "category": "3"
+      }
+    },
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "STEL",
+        "value": "0.4",
+        "unit": "ppm"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 80 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: 60 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: 0.2 mg/L (4 hr [aerosol])"
+      },
+      "skin_result": "Causes severe skin burns.",
+      "eye_result": "Causes serious eye damage."
+    },
+    "aquatic_toxicology": {
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LC50",
+          "value": "0.53 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "0.27 mg/L",
+          "duration_hr": 48,
+          "endpoint": "development of larvae to D-stage"
+        },
+        {
+          "type": "Aquatic Plants",
+          "organism": "Raphidocelis subcapitata",
+          "metric": "EC50",
+          "value": "0.16 mg/L",
+          "duration_hr": 72,
+          "endpoint": "growth rate"
+        }
+      ],
+      "chronic": [
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "NOEC",
+          "value": "0.012 mg/L",
+          "duration_days": 21,
+          "endpoint": ""
+        },
+        {
+          "type": "Fish",
+          "organism": "Danio rerio",
+          "metric": "NOEC",
+          "value": "0.002 mg/L",
+          "duration_days": 33,
+          "endpoint": "post hatch success"
+        }
+      ]
+    },
+    "persistence": "The substance is readily biodegradable in water. 98% degradation in water, measured by DOC removal, after 28 days.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate in organisms [BCF: 1.61].",
+    "mobility": "The substance is highly mobile; therefore, adsorption to soil is not expected (Koc: 1.5 L/kg).",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": true,
+      "sara_302_tpq_lbs": "500",
+      "sara_313": true,
+      "cercla_listed": false,
+      "cercla_rq_lbs": null,
+      "rcra_code": null,
+      "caa_112r": true,
+      "prop_65": false,
+      "prop_65_warning": null,
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "NY",
+        "PA"
+      ]
+    }
+  },
+  {
+    "cas": "7664-93-9",
+    "name": "Sulfuric Acid 50%",
+    "rm_numbers": [
+      "RM0003",
+      "RM0048",
+      "RM0058"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "2809-21-4",
+    "name": "HEDP Liquid Tech Grade 60%",
+    "rm_numbers": [
+      "RM0002",
+      "RM0049",
+      "RM0172"
+    ],
+    "ghs_triggers": {
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10102-40-6",
+    "name": "Sodium Molybdate Dihydrate",
+    "rm_numbers": [
+      "RM0005"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "64665-57-2",
+    "name": "Sodium Tolytriazole 50%",
+    "rm_numbers": [
+      "RM0006"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "37971-36-1",
+    "name": "PBTC",
+    "rm_numbers": [
+      "RM0008"
+    ],
+    "ghs_triggers": {
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7664-38-2",
+    "name": "Phosphoric Acid 75%",
+    "rm_numbers": [
+      "RM0009",
+      "RM0103",
+      "RM0415"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "23783-26-8",
+    "name": "HPAA Hydroxy Phosphonoacetic Acid 50%",
+    "rm_numbers": [
+      "RM0011"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "102-71-6",
+    "name": "TEA Triethanolamine 85% Solution",
+    "rm_numbers": [
+      "RM0012",
+      "RM0129"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1310-73-2",
+    "name": "Sodium Hydroxide 50%",
+    "rm_numbers": [
+      "RM0013",
+      "RM0027"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1300-72-7",
+    "name": "Sodium Xylene Sulfonate 40% (SXS-40)",
+    "rm_numbers": [
+      "RM0014"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7647-15-6",
+    "name": "Sodium Bromide 40% Solution",
+    "rm_numbers": [
+      "RM0016"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7758-29-4",
+    "name": "Sodium Tripolyphosphate (STPP)",
+    "rm_numbers": [
+      "RM0017"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "141-43-5",
+    "name": "Monoethanolamine (MEA)",
+    "rm_numbers": [
+      "RM0020"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1310-58-3",
+    "name": "Potassium Hydroxide 45%",
+    "rm_numbers": [
+      "RM0021",
+      "RM0050",
+      "RM0138",
+      "RM0163",
+      "RM0410"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1643-20-5",
+    "name": "NORFOX LDA",
+    "rm_numbers": [
+      "RM0022"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7681-52-9",
+    "name": "Bleach 12.5%",
+    "rm_numbers": [
+      "RM0023",
+      "RM0109"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "6834-92-0",
+    "name": "Sodium Metasilicate Anhydrous",
+    "rm_numbers": [
+      "RM0024"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "26172-55-4",
+    "name": "Isothiazalone 1.5% (CMIT component)",
+    "rm_numbers": [
+      "RM0026"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "99-76-3",
+    "name": "Methyl Paraben Powder",
+    "rm_numbers": [
+      "RM0029"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "94-13-3",
+    "name": "Propyl Paraben Powder",
+    "rm_numbers": [
+      "RM0030"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "56-81-5",
+    "name": "Berol 226 SA Non-ionic Surfactant",
+    "rm_numbers": [
+      "RM0033",
+      "RM0147"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9016-45-9",
+    "name": "NP-12 Nonylphenol Ethoxylate",
+    "rm_numbers": [
+      "RM0034",
+      "RM0063"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "79-14-1",
+    "name": "Glycolic Acid 70% Solution",
+    "rm_numbers": [
+      "RM0037"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7647-01-0",
+    "name": "Hydrochloric Acid 35%",
+    "rm_numbers": [
+      "RM0038"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "77-92-9",
+    "name": "Citric Acid Powder Food Grade",
+    "rm_numbers": [
+      "RM0040",
+      "RM0411"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "57-13-6",
+    "name": "Urea Bulk",
+    "rm_numbers": [
+      "RM0041",
+      "RM0113"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "527-07-1",
+    "name": "Sodium Gluconate Granular",
+    "rm_numbers": [
+      "RM0044"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "67-63-0",
+    "name": "Isopropyl Alcohol 99%",
+    "rm_numbers": [
+      "RM0046",
+      "RM0400"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "499-83-2",
+    "name": "DPA Dipicolinic Acid",
+    "rm_numbers": [
+      "RM0047"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7783-20-2",
+    "name": "Ammonium Sulfate",
+    "rm_numbers": [
+      "RM0053"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1341-49-7",
+    "name": "Ammonium Bifluoride Solid",
+    "rm_numbers": [
+      "RM0054"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "34590-94-8",
+    "name": "Glycol Ether DPM",
+    "rm_numbers": [
+      "RM0056"
+    ],
+    "ghs_triggers": {
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "111-76-2",
+    "name": "Glycol Ether EB",
+    "rm_numbers": [
+      "RM0059"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "64-02-8",
+    "name": "EDTA Tetrasodium",
+    "rm_numbers": [
+      "RM0061"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7646-85-7",
+    "name": "Zinc Chloride 62.5%",
+    "rm_numbers": [
+      "RM0062"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "39464-69-2",
+    "name": "Lubrhophos LB 400",
+    "rm_numbers": [
+      "RM0064"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "64-17-5",
+    "name": "Ethanol 200 Proof SDA 40B",
+    "rm_numbers": [
+      "RM0066",
+      "RM0091",
+      "RM0157"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1344-09-8",
+    "name": "Sodium Silicate 40%",
+    "rm_numbers": [
+      "RM0068",
+      "RM0195"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "5329-14-6",
+    "name": "Sulfamic Acid",
+    "rm_numbers": [
+      "RM0071"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "51580-86-0",
+    "name": "Dichloroisocyanuric Acid Sodium Salt Dihydrate (NaDCC)",
+    "rm_numbers": [
+      "RM0073"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7647-14-5",
+    "name": "Salt Kiln Dried Medium Grade",
+    "rm_numbers": [
+      "RM0076",
+      "RM0078",
+      "RM0158"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68298-20-4",
+    "name": "Burco HCS 50NF",
+    "rm_numbers": [
+      "RM0079"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1305-62-0",
+    "name": "Calcium Hydroxide Powder",
+    "rm_numbers": [
+      "RM0080"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "15630-89-4",
+    "name": "Sodium Percarbonate",
+    "rm_numbers": [
+      "RM0083"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "67-56-1",
+    "name": "Methanol Tech Grade",
+    "rm_numbers": [
+      "RM0084"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7757-82-6",
+    "name": "Sodium Sulfate",
+    "rm_numbers": [
+      "RM0087"
+    ],
+    "ghs_triggers": {
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "5989-27-5",
+    "name": "D-Limonene",
+    "rm_numbers": [
+      "RM0088"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7320-34-5",
+    "name": "Tetrapotassium Pyrophosphate (TKPP)",
+    "rm_numbers": [
+      "RM0089"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "2605-79-0",
+    "name": "Decyl Amine Oxide",
+    "rm_numbers": [
+      "RM0090"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "151-21-3",
+    "name": "Sodium Lauryl Sulfate 30% (SLS)",
+    "rm_numbers": [
+      "RM0092",
+      "RM0101"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7681-57-4",
+    "name": "Sodium Metabisulfite",
+    "rm_numbers": [
+      "RM0094"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7601-54-9",
+    "name": "Trisodium Phosphate Anhydrous (TSP)",
+    "rm_numbers": [
+      "RM0098"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7632-00-0",
+    "name": "Sodium Nitrite",
+    "rm_numbers": [
+      "RM0102"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10213-79-3",
+    "name": "Sodium Metasilicate Pentahydrate",
+    "rm_numbers": [
+      "RM0106"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "497-19-8",
+    "name": "Soda Ash Dense (Sodium Carbonate)",
+    "rm_numbers": [
+      "RM0107"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9004-32-4",
+    "name": "CMC (Carboxymethyl Cellulose)",
+    "rm_numbers": [
+      "RM0108"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "139-08-2",
+    "name": "Alkyldimethylbenzylammonium Chloride (ADBAC)",
+    "rm_numbers": [
+      "RM0114"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "18662-53-8",
+    "name": "NTA Powder (Nitrilotriacetic Acid)",
+    "rm_numbers": [
+      "RM0116"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "112-80-1",
+    "name": "Oleic Acid",
+    "rm_numbers": [
+      "RM0117"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "124-07-2",
+    "name": "Caprylic Acid",
+    "rm_numbers": [
+      "RM0119"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "6419-19-8",
+    "name": "ATMP 50%",
+    "rm_numbers": [
+      "RM0120"
+    ],
+    "ghs_triggers": {
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "526-95-4",
+    "name": "Gluconic Acid 50%",
+    "rm_numbers": [
+      "RM0121"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "8061-51-6",
+    "name": "Sodium Lignosulfonate",
+    "rm_numbers": [
+      "RM0122"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "108-91-8",
+    "name": "Cyclohexylamine TG",
+    "rm_numbers": [
+      "RM0127"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "79-33-4",
+    "name": "Lactic Acid 88%",
+    "rm_numbers": [
+      "RM0130"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "104-15-4",
+    "name": "p-Toluenesulfonic Acid (From Pyxis)",
+    "rm_numbers": [
+      "RM0133",
+      "RM0174"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7631-86-9",
+    "name": "LEVASIL (Colloidal Silica)",
+    "rm_numbers": [
+      "RM0134",
+      "RM0160"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "75-05-8",
+    "name": "Acetonitrile (OPTIMA)",
+    "rm_numbers": [
+      "RM0135"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "540-72-7",
+    "name": "Sodium Thiocyanate",
+    "rm_numbers": [
+      "RM0136"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "541-02-6",
+    "name": "CALCHEM D5 (Decamethylcyclopentasiloxane)",
+    "rm_numbers": [
+      "RM0140"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "126-73-8",
+    "name": "CALCHEM TBP (Tributyl Phosphate)",
+    "rm_numbers": [
+      "RM0141"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "100-37-8",
+    "name": "DEAE (Diethylethanolamine)",
+    "rm_numbers": [
+      "RM0143"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1303-96-4",
+    "name": "Sodium Borate (Borax)",
+    "rm_numbers": [
+      "RM0144"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "4"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10026-24-1",
+    "name": "Cobaltous Sulfate Heptahydrate",
+    "rm_numbers": [
+      "RM0146"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "298-14-6",
+    "name": "Potassium Bicarbonate",
+    "rm_numbers": [
+      "RM0148"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "57-55-6",
+    "name": "Propylene Glycol 99.9% Tech",
+    "rm_numbers": [
+      "RM0149",
+      "RM0150"
+    ],
+    "ghs_triggers": {
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "526-83-0",
+    "name": "Tartaric Acid",
+    "rm_numbers": [
+      "RM0154"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "110-91-8",
+    "name": "Morpholine",
+    "rm_numbers": [
+      "RM0155"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "53-43-0",
+    "name": "Dehydroepiandrosterone (DHEA)",
+    "rm_numbers": [
+      "RM0156"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7664-39-3",
+    "name": "Hydrofluoric Acid 49%",
+    "rm_numbers": [
+      "RM0159"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "15827-60-8",
+    "name": "DTPMPA",
+    "rm_numbers": [
+      "RM0161"
+    ],
+    "ghs_triggers": {
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7758-19-2",
+    "name": "Sodium Chlorite 31%",
+    "rm_numbers": [
+      "RM0162"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "122-99-6",
+    "name": "Phenoxyethanol (Cola-Fax 3383)",
+    "rm_numbers": [
+      "RM0164"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10043-01-3",
+    "name": "Aluminum Sulfate Dry Iron Free",
+    "rm_numbers": [
+      "RM0167"
+    ],
+    "ghs_triggers": {
+      "corrosive_to_metals": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10043-52-4",
+    "name": "Calcium Chloride FG",
+    "rm_numbers": [
+      "RM0168"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "79-09-4",
+    "name": "Propionic Acid",
+    "rm_numbers": [
+      "RM0170"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "144-55-8",
+    "name": "Sodium Bicarbonate",
+    "rm_numbers": [
+      "RM0171"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7722-64-7",
+    "name": "Potassium Permanganate",
+    "rm_numbers": [
+      "RM0176"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7778-54-3",
+    "name": "Calcium Hypochlorite",
+    "rm_numbers": [
+      "RM0178"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7553-56-2",
+    "name": "Iodine",
+    "rm_numbers": [
+      "RM0180"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_inh": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "6915-15-7",
+    "name": "DL-Malic Acid",
+    "rm_numbers": [
+      "RM0182"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "97-59-6",
+    "name": "Allantoin",
+    "rm_numbers": [
+      "RM0187"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "50-70-4",
+    "name": "Sorbitol",
+    "rm_numbers": [
+      "RM0188"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10026-22-9",
+    "name": "Cobalt Nitrate Hexahydrate",
+    "rm_numbers": [
+      "RM0189"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "3710-84-7",
+    "name": "Diethylhydroxylamine (DEHA)",
+    "rm_numbers": [
+      "RM0190"
+    ],
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7775-27-1",
+    "name": "Sodium Persulfate",
+    "rm_numbers": [
+      "RM0197"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "16731-55-8",
+    "name": "Potassium Metabisulfite (KMBS)",
+    "rm_numbers": [
+      "RM0198"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "62-54-4",
+    "name": "Calcium Acetate",
+    "rm_numbers": [
+      "RM0199"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "584-08-7",
+    "name": "Potassium Carbonate",
+    "rm_numbers": [
+      "RM0202"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7631-90-5",
+    "name": "Sodium Bisulfite",
+    "rm_numbers": [
+      "RM0205"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7758-98-7",
+    "name": "Copper Sulfate Crystals",
+    "rm_numbers": [
+      "RM0300",
+      "RM0301"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "60-00-4",
+    "name": "EDTA Free Acid",
+    "rm_numbers": [
+      "RM0414"
+    ],
+    "ghs_triggers": {
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "acute_toxicity_inh": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "13780-06-8",
+    "name": "Calcium Nitrite",
+    "rm_numbers": [
+      "RM0416"
+    ],
+    "ghs_triggers": {
+      "oxidizing_liquid": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 0.1,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_se": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7732-18-5",
+    "name": "RO Water",
+    "rm_numbers": [
+      "RM1000",
+      "RM1001"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "532-82-1",
+    "name": "Chrysoidine Y (Basic Orange 2)",
+    "rm_numbers": [
+      "RM9300"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "3844-45-9",
+    "name": "FD&C Blue 1 (Brilliant Blue FCF)",
+    "rm_numbers": [
+      "RM9302"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "81-88-9",
+    "name": "Rhodamine B 400%",
+    "rm_numbers": [
+      "RM9304"
+    ],
+    "ghs_triggers": {
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "3"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 1.0,
+        "category": "1"
+      },
+      "environmental": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "stot_se": {
+        "threshold_pct": 20.0,
+        "category": "3"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "518-47-8",
+    "name": "Permalon Uranine (Fluorescein Sodium)",
+    "rm_numbers": [
+      "RM9306"
+    ],
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "2"
+      }
+    },
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "25956-17-6",
+    "name": "FD&C Red Dye 40 (Allura Red)",
+    "rm_numbers": [
+      "RM9308"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "38775-22-3",
+    "name": "Tricoblanc CBS Powder (Optical Brightener)",
+    "rm_numbers": [
+      "RM9309"
+    ],
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": true,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  }
+]
