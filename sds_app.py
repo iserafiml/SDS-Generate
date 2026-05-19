@@ -150,7 +150,7 @@ def _parse_product(data: dict) -> SDSProduct:
         for row in data.get("ingredients", [])
     ]
 
-    return SDSProduct(
+    product = SDSProduct(
         product_name=data.get("product_name", ""),
         product_code=data.get("product_code", ""),
         product_type=data.get("product_type", ""),
@@ -183,6 +183,13 @@ def _parse_product(data: dict) -> SDSProduct:
         tsca_snur="None of the ingredients are listed.",
         tsca_export="None of the ingredients are listed.",
     )
+    # Optional manual NFPA/HMIS override (blank → auto-derived in generate()).
+    import nfpa_hmis
+    ov = nfpa_hmis.parse_override(data.get("nfpa_override", ""),
+                                  data.get("hmis_override", ""))
+    if ov:
+        product.nfpa, product.hmis = ov["nfpa"], ov["hmis"]
+    return product
 
 
 def _parse_manual_categories(data: dict) -> list:

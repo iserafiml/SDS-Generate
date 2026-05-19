@@ -114,7 +114,14 @@ class SDSGenerator:
         # 6. Consistency cross-check (log contradictions)
         self._consistency_pass(product)
 
-        # 7. Meta fields
+        # 7. NFPA / HMIS — auto-derive unless a manual override was supplied
+        import nfpa_hmis
+        if not product.nfpa and not product.hmis:
+            r = nfpa_hmis.derive(product.classification,
+                                  product.physical_properties)
+            product.nfpa, product.hmis = r["nfpa"], r["hmis"]
+
+        # 8. Meta fields
         _cb(95, "Finalizing document...")
         product.generated_date = date.today().isoformat()
         if not product.preparation_date:

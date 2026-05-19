@@ -320,8 +320,12 @@ class SDSProduct:
         "guidance for safe handling, use, storage, transportation and disposal and is "
         "not to be considered a warranty or quality specification."
     )
-    nfpa_ratings: str = "0-0-0"
-    hmis_ratings: str = "0-0-0"
+    nfpa_ratings: str = "0-0-0"   # legacy text fallback
+    hmis_ratings: str = "0-0-0"   # legacy text fallback
+    # Structured ratings (auto-derived from GHS, or manual override).
+    # nfpa: {health,flammability,instability,special}; hmis adds physical,chronic
+    nfpa: dict = field(default_factory=dict)
+    hmis: dict = field(default_factory=dict)
     abbreviations: str = "None"
     generated_date: str = ""
 

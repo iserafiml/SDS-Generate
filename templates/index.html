@@ -210,6 +210,15 @@
         <label class="form-label">Density (g/mL)</label>
         <input id="density" type="text" class="form-control" placeholder="e.g. 1.169">
       </div>
+      <div class="col-md-6">
+        <label class="form-label">NFPA 704 override <small class="text-muted">(blank = auto)</small></label>
+        <input id="nfpaOverride" type="text" class="form-control" placeholder="Health-Flam-Instab [+OX], e.g. 3-0-2 OX">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">HMIS III override <small class="text-muted">(blank = auto)</small></label>
+        <input id="hmisOverride" type="text" class="form-control" placeholder="Health-Flam-Phys, e.g. 3*-0-1">
+      </div>
+      <div class="col-12"><small class="text-muted">NFPA/HMIS are auto-derived from the GHS classification (industry heuristic). Fill these only to override.</small></div>
     </div>
   </details>
 
@@ -766,6 +775,8 @@ function buildPayload() {
     ingredients,
     company_id: document.getElementById("companyId").value,
     emergency_id: document.getElementById("emergencySel").value,
+    nfpa_override: document.getElementById("nfpaOverride").value.trim(),
+    hmis_override: document.getElementById("hmisOverride").value.trim(),
     fuzzy_formula: document.getElementById("fuzzyFormula").checked,
     physical: {
       appearance: document.getElementById("appearance").value.trim(),

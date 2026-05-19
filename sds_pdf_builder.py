@@ -944,15 +944,15 @@ def build_section_16_other(p: SDSProduct, brand: BrandConfig, styles: dict) -> l
     _r("Revision Number",          p.revision_number)
     _r("Supersedes",               p.supersedes)
     _r("Prepared By",              p.prepared_by)
-    _r("NFPA",                     p.nfpa_ratings)
-    _r("HMIS",                     p.hmis_ratings)
     _r("Abbreviations",            p.abbreviations)
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.28, CONTENT_W * 0.72])
 
-    elems.append(CondPageBreak(28 * mm))
+    elems.append(CondPageBreak(70 * mm))
     elems.append(KeepTogether([
         _section_bar("SECTION 16: OTHER INFORMATION", styles, brand),
         Spacer(1, 2*mm), tbl,
+        Spacer(1, 4*mm),
+        *_nfpa_hmis_block(p, styles),
     ]))
     elems.append(Spacer(1, 3 * mm))
 
@@ -995,6 +995,82 @@ _PICTOGRAM_COLORS = {
     "GHS08": "#CC0000",
     "GHS09": "#008800",
 }
+
+
+def _nfpa_hmis_block(p: SDSProduct, styles: dict) -> list:
+    """NFPA 704 colour diamond + HMIS III colour bar (derived ratings)."""
+    from reportlab.graphics.shapes import Drawing, Polygon, String
+
+    nf = p.nfpa or {}
+    hm = p.hmis or {}
+    nh, nf_, ni = (str(nf.get("health", 0)), str(nf.get("flammability", 0)),
+                   str(nf.get("instability", 0)))
+    nsp = nf.get("special", "") or ""
+
+    # --- NFPA diamond (45 mm) — square rotated 45°, split into 4 triangles ---
+    S = 45 * mm
+    d = Drawing(S, S)
+    c = S / 2
+    h = S * 0.34                       # quadrant half-diagonal
+    tris = [
+        ((c - h, c), (c, c + h), (c, c), "#0000FF", nh),     # left
+        ((c, c + h), (c + h, c), (c, c), "#FF0000", nf_),     # top
+        ((c + h, c), (c, c - h), (c, c), "#FFFF00", ni),      # right
+        ((c, c - h), (c - h, c), (c, c), "#FFFFFF", nsp),     # bottom
+    ]
+    for (ax, ay), (bx, by), (mx, my), col, val in tris:
+        d.add(Polygon([ax, ay, bx, by, mx, my],
+                      fillColor=colors.HexColor(col),
+                      strokeColor=colors.black, strokeWidth=1))
+        tx, ty = (ax + bx + mx) / 3, (ay + by + my) / 3
+        fs = 14 if len(str(val)) <= 1 else 9
+        d.add(String(tx, ty - fs * 0.36, str(val), fontName=FONT_BOLD,
+                      fontSize=fs, textAnchor="middle",
+                      fillColor=colors.white if col in ("#0000FF", "#FF0000")
+                      else colors.black))
+    for lx, ly, txt in ((c, S - 2, "Flammability"), (3, c, "Health"),
+                         (S - 3, c, "Instability"), (c, 4, "Special")):
+        d.add(String(lx, ly, txt, fontName=FONT_BODY, fontSize=6,
+                      textAnchor="middle", fillColor=colors.HexColor("#444444")))
+
+    # --- HMIS III bar ---
+    hh = str(hm.get("health", 0)) + ("*" if hm.get("chronic") else "")
+    rows = [("HEALTH", "#0000FF", hh),
+            ("FLAMMABILITY", "#FF0000", str(hm.get("flammability", 0))),
+            ("PHYSICAL HAZARD", "#FFD700", str(hm.get("physical", 0)))]
+    th = ParagraphStyle("hmL", fontName=FONT_BOLD, fontSize=9,
+                         textColor=colors.white, leading=11)
+    tv = ParagraphStyle("hmV", fontName=FONT_BOLD, fontSize=11,
+                         textColor=colors.black, alignment=TA_CENTER, leading=13)
+    hmis_tbl = Table([[Paragraph(lbl, th if col != "#FFD700"
+                                 else ParagraphStyle("hmLk", parent=th,
+                                                     textColor=colors.black)),
+                       Paragraph(val, tv)] for lbl, col, val in rows],
+                     colWidths=[42 * mm, 14 * mm], rowHeights=[8 * mm] * 3)
+    hmis_tbl.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (0, 0), colors.HexColor("#0000FF")),
+        ("BACKGROUND", (0, 1), (0, 1), colors.HexColor("#FF0000")),
+        ("BACKGROUND", (0, 2), (0, 2), colors.HexColor("#FFD700")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.black),
+        ("GRID", (0, 0), (-1, -1), 0.5, colors.black),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+    ]))
+    legend = Paragraph(
+        "0 = Not significant · 1 = Slight · 2 = Moderate · 3 = High · "
+        "4 = Extreme · * = Chronic", styles["body_small"])
+    note = Paragraph(
+        "<i>NFPA 704 / HMIS III ratings are derived from the GHS "
+        "classification (industry heuristic) — review before use.</i>",
+        styles["body_small"])
+
+    grid = Table([[
+        [Paragraph("<b>NFPA 704</b>", styles["body"]), d],
+        [Paragraph("<b>HMIS III</b>", styles["body"]), Spacer(1, 1 * mm),
+         hmis_tbl, Spacer(1, 1.5 * mm), legend],
+    ]], colWidths=[CONTENT_W * 0.42, CONTENT_W * 0.58])
+    grid.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP")]))
+    return [grid, Spacer(1, 2 * mm), note]
 
 
 def _draw_pictogram_row(codes: list[str], brand: BrandConfig) -> list:
