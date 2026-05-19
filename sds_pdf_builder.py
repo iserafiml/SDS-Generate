@@ -172,25 +172,29 @@ def _build_sds_cover_header(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
     c_primary = _hex(brand.primary)
     c_white   = colors.white
 
-    logo_cell = _logo_cell(brand, 18 * mm)
-    logo_w = min(_logo_width(brand, 14 * mm, 32 * mm) + 4 * mm, CONTENT_W * 0.4)
+    # Logo gets a fixed, bounded box on the left so it can never bleed
+    # under the title; title block is right-aligned, away from the logo.
+    logo_w = 42 * mm
     code_w = 35 * mm
     mid_w  = CONTENT_W - logo_w - code_w
+    logo_cell = _logo_cell(brand, 16 * mm, logo_w - 4 * mm)
 
     name_para = Paragraph(
         _esc(p.product_name or "Product Name"),
         ParagraphStyle("CvrName", fontName=FONT_BOLD, fontSize=16,
-                       textColor=c_white, leading=20),
+                       textColor=c_white, leading=20, alignment=TA_RIGHT),
     )
     sub_para = Paragraph(
         _esc(f"Safety Data Sheet  |  {p.product_type}".strip(" |")),
         ParagraphStyle("CvrSub", fontName=FONT_BODY, fontSize=8,
-                       textColor=colors.HexColor("#C8D8F8"), leading=11),
+                       textColor=colors.HexColor("#C8D8F8"), leading=11,
+                       alignment=TA_RIGHT),
     )
     std_para = Paragraph(
         "According to OSHA Hazard Communication Standard, 29 CFR 1910.1200",
         ParagraphStyle("CvrStd", fontName=FONT_IT, fontSize=7,
-                       textColor=colors.HexColor("#A0C0E8"), leading=10),
+                       textColor=colors.HexColor("#A0C0E8"), leading=10,
+                       alignment=TA_RIGHT),
     )
     code_para = Paragraph(
         _esc(p.product_code),
@@ -1232,7 +1236,7 @@ def _two_col_table(rows: list, brand: BrandConfig,
     return tbl
 
 
-def _logo_cell(brand: BrandConfig, height: float):
+def _logo_cell(brand: BrandConfig, height: float, max_w: float | None = None):
     if brand.logo_path:
         logo_p = _resolve_logo(brand.logo_path)
         if logo_p.exists():
@@ -1243,6 +1247,11 @@ def _logo_cell(brand: BrandConfig, height: float):
                 aspect = iw / ih
                 logo_h = height
                 logo_w = logo_h * aspect
+                # Never let a wide wordmark overflow its column and bleed
+                # under the title — clamp to max_w, shrink height to match.
+                if max_w and logo_w > max_w:
+                    logo_w = max_w
+                    logo_h = logo_w / aspect
                 return Image(str(logo_p), width=logo_w, height=logo_h)
             except Exception:
                 pass

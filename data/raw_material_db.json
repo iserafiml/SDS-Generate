@@ -623,10 +623,6 @@
         "threshold_pct": 0.1,
         "category": "1"
       },
-      "carcinogenicity": {
-        "threshold_pct": 0.1,
-        "category": "1A"
-      },
       "stot_re": {
         "threshold_pct": 10.0,
         "category": "1"
@@ -729,7 +725,8 @@
       "date": "2026-05-18",
       "model": "claude-sonnet-4-6",
       "v": 3
-    }
+    },
+    "_locked": true
   },
   {
     "cas": "2809-21-4",

@@ -79,6 +79,17 @@ rebuilt the chemical library from the company's authoritative data.
 - Refreshed `CLAUDE.md` (architecture), added this `CHANGELOG.md`, a
   `USAGE.md` user guide, and an in-app help / important-notes panel.
 
+### Fixes (post-v1.0)
+
+- **Over-classification**: removed a spurious carcinogenicity 1A trigger on
+  sulfuric acid (the IARC Group 1 applies to *strong inorganic acid mists*,
+  not to sulfuric-acid solutions). A PAA blend no longer shows a bogus
+  cancer pictogram; record locked so re-enrichment cannot re-add it.
+- **Cover header**: a wide logo was scaled by aspect with no width cap and
+  bled under the title as a faint watermark. The logo is now clamped to a
+  fixed left box and the product name / subtitle are right-aligned, so they
+  never overlap.
+
 ### Known limitations
 
 AI-estimated content and the NFPA/HMIS heuristic must be reviewed before a
