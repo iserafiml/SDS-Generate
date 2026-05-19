@@ -400,6 +400,7 @@ def add_material_route():
             name=(data.get("name") or "").strip(),
             cas=(data.get("cas") or "").strip(),
             strength_pct=data.get("strength"),
+            rm=(data.get("rm") or "").strip() or None,
             synonyms=(data.get("synonyms") or "").strip(),
         )
         _reload_library()              # usable immediately, no restart

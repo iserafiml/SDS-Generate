@@ -312,9 +312,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-2">
-          <label class="form-label">Material name <span class="text-danger">*</span></label>
-          <input id="amName" class="form-control" placeholder="e.g. Sodium Gluconate 60%">
+        <div class="row g-2 mb-2">
+          <div class="col-5">
+            <label class="form-label">RM # <small class="text-muted">(blank = auto)</small></label>
+            <input id="amRm" class="form-control" placeholder="e.g. RM0231" style="text-transform:uppercase">
+          </div>
+          <div class="col-7">
+            <label class="form-label">Material name <span class="text-danger">*</span></label>
+            <input id="amName" class="form-control" placeholder="e.g. Sodium Gluconate 60%">
+          </div>
         </div>
         <div class="mb-2">
           <label class="form-label">CAS <small class="text-muted">(blank = look up via PubChem, flagged for review)</small></label>
@@ -693,6 +699,7 @@ async function submitNewMaterial() {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
+        rm: document.getElementById("amRm").value.trim().toUpperCase(),
         cas: document.getElementById("amCas").value.trim(),
         strength: sv === "" ? null : parseFloat(sv),
         synonyms: document.getElementById("amSyn").value.trim(),
@@ -706,7 +713,7 @@ async function submitNewMaterial() {
       `strength ${d.strength_pct}% (af ${d.active_fraction})` +
       (d.needs_review ? '<br><span class="text-warning">⚠ CAS auto-resolved — confirm before production use</span>' : "") +
       '<br><span class="text-muted">Now searchable in the material box above.</span>';
-    ["amName","amCas","amStrength","amSyn"].forEach(i => document.getElementById(i).value = "");
+    ["amRm","amName","amCas","amStrength","amSyn"].forEach(i => document.getElementById(i).value = "");
   } catch (e) {
     out.innerHTML = '<span class="text-danger">Network error.</span>';
   }
