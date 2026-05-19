@@ -7013,5 +7013,237 @@
       "prop_65_warning": "",
       "rtk_states": []
     }
+  },
+  {
+    "cas": "10124-56-8",
+    "name": "Sodium hexametaphosphate (SHMP)",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "10141-05-6",
+    "name": "Cobalt Nitrate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "127-09-3",
+    "name": "Sodium Acetate Anhyd",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1330-20-7",
+    "name": "Xylene",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7447-40-7",
+    "name": "Potassium Chloride Cry",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7558-79-4",
+    "name": "Disodium Phosphate Anhydrous Granular",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "7558-80-7",
+    "name": "Monosodium Phosphate Anhydrous",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9012-76-4",
+    "name": "Chitosan",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
   }
 ]

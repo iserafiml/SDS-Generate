@@ -236,7 +236,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0020": {
     "cas": "141-43-5",
@@ -500,7 +501,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0043": {
     "cas": "68439-46-3",
@@ -606,7 +608,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0052": {
     "cas": "8002-09-3",
@@ -796,7 +799,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0068": {
     "cas": "1344-09-8",
@@ -962,7 +966,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0082": {
     "cas": "68439-47-4",
@@ -1009,7 +1014,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0086": {
     "cas": "",
@@ -1019,7 +1025,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0087": {
     "cas": "7757-82-6",
@@ -1489,7 +1496,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0127": {
     "cas": "108-91-8",
@@ -1619,7 +1627,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0138": {
     "cas": "1310-58-3",
@@ -1641,7 +1650,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0140": {
     "cas": "541-02-6",
@@ -1675,7 +1685,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0143": {
     "cas": "100-37-8",
@@ -2003,34 +2014,43 @@
     "needs_review": true
   },
   "RM0170": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "79-09-4",
+    "cas_all": [
+      "79-09-4"
+    ],
     "name": "Propionic acid",
     "synonyms": "16151007 - ALMN SULFATE FE FREE BAG114",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0171": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "144-55-8",
+    "cas_all": [
+      "144-55-8"
+    ],
     "name": "Sodium Bicarbonate",
     "synonyms": "Sodium Bicarbonate",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0172": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "2809-21-4",
+    "cas_all": [
+      "2809-21-4"
+    ],
     "name": "HEDP 60% liquid, low metal",
     "synonyms": "HEDP Powder, 60% low metal",
     "active_fraction": 0.6,
     "strength_pct": 60.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0173": {
     "cas": "",
@@ -2040,17 +2060,21 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0174": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "104-15-4",
+    "cas_all": [
+      "104-15-4"
+    ],
     "name": "PTSA 98% Powder",
     "synonyms": "PTSA 98% Powder",
     "active_fraction": 0.98,
     "strength_pct": 98.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0175": {
     "cas": "",
@@ -2060,37 +2084,47 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0176": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7722-64-7",
+    "cas_all": [
+      "7722-64-7"
+    ],
     "name": "KMnO4",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0177": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1330-20-7",
+    "cas_all": [
+      "1330-20-7"
+    ],
     "name": "Xylene",
     "synonyms": "Xylene",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0178": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7778-54-3",
+    "cas_all": [
+      "7778-54-3"
+    ],
     "name": "Calcium Hypochlorite",
     "synonyms": "Calcium Hypochlorite",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0179": {
     "cas": "",
@@ -2100,17 +2134,21 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0180": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7553-56-2",
+    "cas_all": [
+      "7553-56-2"
+    ],
     "name": "Iodine 10%",
     "synonyms": "Iodine 10%",
     "active_fraction": 0.1,
     "strength_pct": 10.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0181": {
     "cas": "",
@@ -2120,17 +2158,21 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0182": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "6915-15-7",
+    "cas_all": [
+      "6915-15-7"
+    ],
     "name": "Malic Acid FG",
     "synonyms": "Malic Acid FG",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0183": {
     "cas": "",
@@ -2140,17 +2182,21 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0184": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "9012-76-4",
+    "cas_all": [
+      "9012-76-4"
+    ],
     "name": "Chitosan",
     "synonyms": "Chitosan",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0185": {
     "cas": "",
@@ -2160,7 +2206,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0186": {
     "cas": "",
@@ -2170,47 +2217,60 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0187": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "97-59-6",
+    "cas_all": [
+      "97-59-6"
+    ],
     "name": "Allantoin Powder",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0188": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "50-70-4",
+    "cas_all": [
+      "50-70-4"
+    ],
     "name": "Sorbitol Sorbogem",
     "synonyms": "Sorbitol Sorbogem",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0189": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "10141-05-6",
+    "cas_all": [
+      "10141-05-6"
+    ],
     "name": "Cobalt Nitrate",
     "synonyms": "Cobalt Nitrate",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0190": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "3710-84-7",
+    "cas_all": [
+      "3710-84-7"
+    ],
     "name": "Diethylhydroxylamine",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0191": {
     "cas": "",
@@ -2220,7 +2280,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0192": {
     "cas": "",
@@ -2230,7 +2291,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0193": {
     "cas": "",
@@ -2240,7 +2302,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0194": {
     "cas": "",
@@ -2250,47 +2313,60 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "proprietary-no-cas"
   },
   "RM0195": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1344-09-8",
+    "cas_all": [
+      "1344-09-8"
+    ],
     "name": "Sodium Silicate",
     "synonyms": "Sodium Silicate",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0197": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7775-27-1",
+    "cas_all": [
+      "7775-27-1"
+    ],
     "name": "Sodium Persulfate 93%",
     "synonyms": "Sodium Persulfate 93%",
     "active_fraction": 0.93,
     "strength_pct": 93.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0198": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "16731-55-8",
+    "cas_all": [
+      "16731-55-8"
+    ],
     "name": "Potassium Metabisulphite (KMBS)",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0199": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "62-54-4",
+    "cas_all": [
+      "62-54-4"
+    ],
     "name": "calcium acetate powder",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0200": {
     "cas": "",
@@ -2300,7 +2376,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0201": {
     "cas": "",
@@ -2310,27 +2387,34 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0202": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "584-08-7",
+    "cas_all": [
+      "584-08-7"
+    ],
     "name": "Potassium Carbonate",
     "synonyms": "Potassium Carbonate",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0203": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "10124-56-8",
+    "cas_all": [
+      "10124-56-8"
+    ],
     "name": "Sodium hexametaphosphate (SHMP)",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0204": {
     "cas": "",
@@ -2340,57 +2424,73 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0205": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7631-90-5",
+    "cas_all": [
+      "7631-90-5"
+    ],
     "name": "Sodium Bisulfite Solution 25%",
     "synonyms": "",
     "active_fraction": 0.25,
     "strength_pct": 25.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0206": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "127-09-3",
+    "cas_all": [
+      "127-09-3"
+    ],
     "name": "Sodium Acetate Anhyd",
     "synonyms": "Sodium Acetate Anhyd",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0207": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7447-40-7",
+    "cas_all": [
+      "7447-40-7"
+    ],
     "name": "Potassium Chloride Cry",
     "synonyms": "Potassium Chloride Cry",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0208": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7558-79-4",
+    "cas_all": [
+      "7558-79-4"
+    ],
     "name": "Disodium Phosphate Anhydrous Granular",
     "synonyms": "Disodium Phosphate Anhydrous Granular",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0209": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7558-80-7",
+    "cas_all": [
+      "7558-80-7"
+    ],
     "name": "Monosodium Phosphate Anhydrous",
     "synonyms": "Monosodium Phosphate Anhydrous",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0300": {
     "cas": "7758-98-7",
@@ -2441,24 +2541,30 @@
     "needs_review": true
   },
   "RM0410": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1310-58-3",
+    "cas_all": [
+      "1310-58-3"
+    ],
     "name": "Potassium Hydroxide 90%, Cal Chem provided",
     "synonyms": "Potassium Hydroxide 90%, Cal chem provided",
     "active_fraction": 0.9,
     "strength_pct": 90.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0411": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "77-92-9",
+    "cas_all": [
+      "77-92-9"
+    ],
     "name": "Citric Acid FG, Cal chem provided",
     "synonyms": "Citric Acid FG, Cal chem provided",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0412": {
     "cas": "",
@@ -2468,7 +2574,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM0413": {
     "cas": "",
@@ -2478,37 +2585,47 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM0414": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "60-00-4",
+    "cas_all": [
+      "60-00-4"
+    ],
     "name": "EDTA Acid-Cal Chem",
     "synonyms": "EDTA Acid, Cal chem provided",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0415": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "7664-38-2",
+    "cas_all": [
+      "7664-38-2"
+    ],
     "name": "Phosphoric Acid 75% FG (Cal Chem Provided)",
     "synonyms": "Phosphoric Acid 75% FG (Cal Chem Provided)",
     "active_fraction": 0.75,
     "strength_pct": 75.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0416": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "13780-06-8",
+    "cas_all": [
+      "13780-06-8"
+    ],
     "name": "CALCIUM NITRITE 94% ANHYDROUS",
     "synonyms": "CALCIUM NITRITE 94% ANHYDROUS",
     "active_fraction": 0.94,
     "strength_pct": 94.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "pubchem-auto"
   },
   "RM0417": {
     "cas": "",
@@ -2518,7 +2635,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM1000": {
     "cas": "7732-18-5",
@@ -2552,7 +2670,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "unresolved"
   },
   "RM9201": {
     "cas": "68410-69-5",
@@ -2574,7 +2693,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9203": {
     "cas": "",
@@ -2584,7 +2704,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9300": {
     "cas": "532-82-1",
@@ -2606,7 +2727,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9302": {
     "cas": "3844-45-9",
@@ -2628,7 +2750,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9304": {
     "cas": "81-88-9",
@@ -2650,7 +2773,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9306": {
     "cas": "518-47-8",
@@ -2672,7 +2796,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9308": {
     "cas": "25956-17-6",
@@ -2706,7 +2831,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9311": {
     "cas": "",
@@ -2716,7 +2842,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM93110": {
     "cas": "",
@@ -2726,7 +2853,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "name",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9312": {
     "cas": "",
@@ -2736,7 +2864,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9313": {
     "cas": "",
@@ -2746,7 +2875,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9314": {
     "cas": "",
@@ -2756,7 +2886,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   },
   "RM9315": {
     "cas": "",
@@ -2766,6 +2897,7 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true
+    "needs_review": true,
+    "cas_source": "skipped-colorant"
   }
 }
