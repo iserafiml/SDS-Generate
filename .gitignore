@@ -21,3 +21,6 @@ env/
 
 # ── macOS ───────────────────────────────────────────────────────────────
 .DS_Store
+
+# Internal raw-material source exports (inventory data — keep local)
+data/sources/

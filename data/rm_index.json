@@ -1,806 +1,2771 @@
 {
   "RM0001": {
     "cas": "7722-84-1",
-    "name": "Hydrogen Peroxide 50% TG"
-  },
-  "RM001.5": {
-    "cas": "7722-84-1",
-    "name": "Hydrogen Peroxide 50% FG"
+    "cas_all": [
+      "7722-84-1"
+    ],
+    "name": "Hydrogen Peroxide 50% TG",
+    "synonyms": "Interox; Perxoal",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0002": {
     "cas": "2809-21-4",
-    "name": "HEDP Liquid Tech Grade 60%"
+    "cas_all": [
+      "2809-21-4"
+    ],
+    "name": "HEDP TECH Grade 60%",
+    "synonyms": "60% HEDP Liquid",
+    "active_fraction": 0.6,
+    "strength_pct": 60.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0003": {
     "cas": "7664-93-9",
-    "name": "Sulfuric Acid 50%"
+    "cas_all": [
+      "7664-93-9"
+    ],
+    "name": "Sulfuric Acid 50%",
+    "synonyms": "Sulfuric Acid 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0004": {
     "cas": "64-19-7",
-    "name": "Acetic Acid Glacial"
+    "cas_all": [
+      "64-19-7"
+    ],
+    "name": "Acetic Acid, Glacial",
+    "synonyms": "Acetic Acid, Glacial",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0005": {
     "cas": "10102-40-6",
-    "name": "Sodium Molybdate Dihydrate"
+    "cas_all": [
+      "10102-40-6"
+    ],
+    "name": "SODIUM MOLYBDATE DIHYDRATE",
+    "synonyms": "SODIUM MOLYBDATE DIHYDRATE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0006": {
     "cas": "64665-57-2",
-    "name": "Sodium Tolytriazole 50%"
+    "cas_all": [
+      "64665-57-2"
+    ],
+    "name": "Sodium Tolytriazole 50%",
+    "synonyms": "Sodium Tolytriazole 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0007": {
     "cas": "26099-09-2",
-    "name": "HPMA (Homopolymer of Maleic Acid) 50%"
+    "cas_all": [
+      "26099-09-2"
+    ],
+    "name": "HPMA (homopolymer of maleic acid) 50%",
+    "synonyms": "HPMA (homopolymer of maleic acid) 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0008": {
     "cas": "37971-36-1",
-    "name": "PBTC"
+    "cas_all": [
+      "37971-36-1"
+    ],
+    "name": "PBTC",
+    "synonyms": "Phosphonobutane Tricarboxylic Acid 50%",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0009": {
     "cas": "7664-38-2",
-    "name": "Phosphoric Acid 75%"
+    "cas_all": [
+      "7664-38-2"
+    ],
+    "name": "Phosphoric Acid 75%",
+    "synonyms": "Phosphoric Acid 75%",
+    "active_fraction": 0.75,
+    "strength_pct": 75.0,
+    "strength_source": "name",
+    "needs_review": false
+  },
+  "RM001.5": {
+    "cas": "7722-84-1",
+    "cas_all": [
+      "7722-84-1"
+    ],
+    "name": "Hydrogen Peroxide 50% FG",
+    "synonyms": "Hydrogen Peroxide, Food Grade 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0010": {
     "cas": "9003-04-7",
-    "name": "Propenoic Acid Homopolymer Sodium Salt"
+    "cas_all": [
+      "9003-04-7",
+      "25549-84-2"
+    ],
+    "name": "Propenoic Acid Homopolymer, Sodium Salt",
+    "synonyms": "Propenoic Acid Homopolymer, Sodium Salt",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0011": {
     "cas": "23783-26-8",
-    "name": "HPAA Hydroxy Phosphonoacetic Acid 50%"
+    "cas_all": [
+      "23783-26-8"
+    ],
+    "name": "HPAA Hydroxy phosphonoacetic acid 50%",
+    "synonyms": "HPAA Hydroxy phosphonoacetic acid 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0012": {
     "cas": "102-71-6",
-    "name": "TEA Triethanolamine 85% Solution"
+    "cas_all": [
+      "102-71-6"
+    ],
+    "name": "TEA Triethanolamine 85% Solution",
+    "synonyms": "TEA Triethanolamine 85% Solution",
+    "active_fraction": 0.85,
+    "strength_pct": 85.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0013": {
     "cas": "1310-73-2",
-    "name": "Sodium Hydroxide 50%"
+    "cas_all": [
+      "1310-73-2"
+    ],
+    "name": "Sodium Hydroxide 50%",
+    "synonyms": "Sodium Hydroxide 50% Liquid",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0014": {
     "cas": "1300-72-7",
-    "name": "Sodium Xylene Sulfonate 40% (SXS-40)"
+    "cas_all": [
+      "1300-72-7"
+    ],
+    "name": "Sodium Xylene Sulfonate 40% Solution",
+    "synonyms": "SXS Sodium Xylene Sulfonate 40% Solution",
+    "active_fraction": 0.4,
+    "strength_pct": 40.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0015": {
     "cas": "68603-42-9",
-    "name": "Cocoamide DEA"
+    "cas_all": [
+      "68603-42-9"
+    ],
+    "name": "Cocoamide DEA",
+    "synonyms": "Cocoamide DEA",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0016": {
     "cas": "7647-15-6",
-    "name": "Sodium Bromide 40% Solution"
+    "cas_all": [
+      "7647-15-6"
+    ],
+    "name": "Sodium Bromide 40% Solution",
+    "synonyms": "Sodium Bromide 40% Solution",
+    "active_fraction": 0.4,
+    "strength_pct": 40.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0017": {
     "cas": "7758-29-4",
-    "name": "Sodium Tripolyphosphate (STPP)"
+    "cas_all": [
+      "7758-29-4"
+    ],
+    "name": "Sodium Tri Poly Phosphate",
+    "synonyms": "Sodium Tri Poly Phosphate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0018": {
     "cas": "9003-04-7",
-    "name": "NorthQuest 1000"
+    "cas_all": [
+      "9003-04-7"
+    ],
+    "name": "NorthQuest 1000",
+    "synonyms": "Propenoic acid, Homopolymer, ACCUMER 1000",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0019": {
+    "cas": "",
+    "cas_all": [],
+    "name": "NORTHQUEST 499",
+    "synonyms": "Aquatreat AR 540 sulfonated acrylic polymer",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0020": {
     "cas": "141-43-5",
-    "name": "Monoethanolamine (MEA)"
+    "cas_all": [
+      "141-43-5"
+    ],
+    "name": "Monoethanolamine MEA",
+    "synonyms": "Monoethanolamine MEA",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0021": {
     "cas": "1310-58-3",
-    "name": "Potassium Hydroxide 45%"
+    "cas_all": [
+      "1310-58-3"
+    ],
+    "name": "Potassium Hydroxide 45%",
+    "synonyms": "Potassium Hydroxide 45%",
+    "active_fraction": 0.45,
+    "strength_pct": 45.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0022": {
     "cas": "1643-20-5",
-    "name": "NORFOX LDA"
+    "cas_all": [
+      "1643-20-5"
+    ],
+    "name": "Lauramine Oxide 30% Liquid",
+    "synonyms": "Lauryldimethylamine / Lauramine Oxide 30% Liquid",
+    "active_fraction": 0.3,
+    "strength_pct": 30.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0023": {
     "cas": "7681-52-9",
-    "name": "Bleach 12.5%"
+    "cas_all": [
+      "7681-52-9"
+    ],
+    "name": "Bleach 12.5%",
+    "synonyms": "Sodium Hypochlorite 12.5% Liquid",
+    "active_fraction": 0.125,
+    "strength_pct": 12.5,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0024": {
     "cas": "6834-92-0",
-    "name": "Sodium Metasilicate Anhydrous"
+    "cas_all": [
+      "6834-92-0"
+    ],
+    "name": "Sodium Metasilicate Anhydrous",
+    "synonyms": "Sodium Metasilicate, Anhydrous",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0025": {
     "cas": "68439-50-9",
-    "name": "C12 Linear Alcohol Ethoxylate"
+    "cas_all": [
+      "68439-50-9"
+    ],
+    "name": "C12 Linear Alcohol Ethoxylate",
+    "synonyms": "C12 Linear Alcohol Ethoxylate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0026": {
     "cas": "26172-55-4",
-    "name": "Isothiazalone 1.5% (CMIT component)"
+    "cas_all": [
+      "26172-55-4",
+      "2682-20-4"
+    ],
+    "name": "Isothiazalone 1.5%, MIT/CMIT",
+    "synonyms": "Isothiazalone 1.5%, MIT/CMIT",
+    "active_fraction": 0.015,
+    "strength_pct": 1.5,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0027": {
     "cas": "1310-73-2",
-    "name": "Caustic Soda Beads"
+    "cas_all": [
+      "1310-73-2"
+    ],
+    "name": "Caustic Soda Beads",
+    "synonyms": "Caustic Soda Beads (AGC)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0028": {
     "cas": "11138-66-2",
-    "name": "Xanthan Gum Powder"
+    "cas_all": [
+      "11138-66-2"
+    ],
+    "name": "Xanthan Gum Powder",
+    "synonyms": "Xanthan Gum Powder",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0029": {
     "cas": "99-76-3",
-    "name": "Methyl Paraben Powder"
+    "cas_all": [
+      "99-76-3"
+    ],
+    "name": "Methyl Paraben Powder",
+    "synonyms": "Methyl Paraben Powder",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0030": {
     "cas": "94-13-3",
-    "name": "Propyl Paraben Powder"
+    "cas_all": [
+      "94-13-3"
+    ],
+    "name": "Propyl Paraben Powder",
+    "synonyms": "Propyl Paraben Powder",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0031": {
     "cas": "63148-62-9",
-    "name": "Silicone PDMS Emulsion 30%"
+    "cas_all": [
+      "63148-62-9"
+    ],
+    "name": "Silicone PDMS emulsion, 30%",
+    "synonyms": "Silicone PDMS emulsion, 30%",
+    "active_fraction": 0.3,
+    "strength_pct": 30.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0033": {
     "cas": "56-81-5",
-    "name": "Berol 226 SA Non-ionic Surfactant"
+    "cas_all": [
+      "56-81-5",
+      "61791-10-4"
+    ],
+    "name": "Berol 226 SA Non-ionic surfactant",
+    "synonyms": "Berol 226 SA Non-ionic surfactant",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0034": {
     "cas": "9016-45-9",
-    "name": "NP-12 Nonylphenol Ethoxylate"
+    "cas_all": [
+      "9016-45-9"
+    ],
+    "name": "NP-12 Nonylphenol Ethoxylate",
+    "synonyms": "NP-12 Nonylphenol Ethoxylate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0035": {
     "cas": "68439-46-3",
-    "name": "C10 Linear Alcohol Ethoxylate (SURFONIC LF-17)"
+    "cas_all": [
+      "68439-46-3"
+    ],
+    "name": "C10 Linear Alcohol Ethoxylate/SURFONIC LF-17",
+    "synonyms": "Surfonic LF-17",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0036": {
     "cas": "119345-04-9",
-    "name": "Sodium Diphenyl Oxide Disulfonate"
+    "cas_all": [
+      "119345-04-9"
+    ],
+    "name": "Sodium Diphenyl Oxide Disulfonate",
+    "synonyms": "Sodium Diphenyl Oxide Disulfonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0037": {
     "cas": "79-14-1",
-    "name": "Glycolic Acid 70% Solution"
+    "cas_all": [
+      "79-14-1"
+    ],
+    "name": "Glycolic Acid 70% Solution",
+    "synonyms": "Glycolic Acid 70% Solution",
+    "active_fraction": 0.7,
+    "strength_pct": 70.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0038": {
     "cas": "7647-01-0",
-    "name": "Hydrochloric Acid 35%"
+    "cas_all": [
+      "7647-01-0"
+    ],
+    "name": "Hydrochloric Acid 35%",
+    "synonyms": "Hydrochloric Acid 35%",
+    "active_fraction": 0.35,
+    "strength_pct": 35.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0039": {
     "cas": "68459-50-7",
-    "name": "Polyethylene Glycol Oleamide (PEG-6)"
+    "cas_all": [
+      "68459-50-7"
+    ],
+    "name": "Polyethylene glycol oleamide (PEG-6)",
+    "synonyms": "Polyethylene glycol oleamide (PEG-6)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0040": {
     "cas": "77-92-9",
-    "name": "Citric Acid Powder Food Grade"
+    "cas_all": [
+      "77-92-9"
+    ],
+    "name": "Citric Acid Powder, Food Grade",
+    "synonyms": "Citric Acid Powder, Food Grade",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0041": {
     "cas": "57-13-6",
-    "name": "Urea Bulk"
+    "cas_all": [
+      "57-13-6"
+    ],
+    "name": "UREA BULK",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0042": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Acid Inhibitor",
+    "synonyms": "Crown L60B Inhibitor for Hydrochloric Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0043": {
     "cas": "68439-46-3",
-    "name": "Norfox 609 9 MOL Alcohol Ethoxylate"
+    "cas_all": [
+      "68439-46-3"
+    ],
+    "name": "9 MOL Alcohol Ethoxylate/Norfox 609",
+    "synonyms": "9 MOL Alcohol Ethoxylate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0044": {
     "cas": "527-07-1",
-    "name": "Sodium Gluconate Granular"
+    "cas_all": [
+      "527-07-1"
+    ],
+    "name": "Sodium Gluconate Granular",
+    "synonyms": "Sodium Gluconate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0045": {
     "cas": "40623-75-4",
-    "name": "Aquatreat AR 546"
+    "cas_all": [
+      "40623-75-4"
+    ],
+    "name": "Aquatreat AR 546",
+    "synonyms": "Aquatreat AR 546",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0046": {
     "cas": "67-63-0",
-    "name": "Isopropyl Alcohol 99%"
+    "cas_all": [
+      "67-63-0"
+    ],
+    "name": "Isopropyl Alcohol 99%",
+    "synonyms": "Isopropyl Alcohol 99%",
+    "active_fraction": 0.99,
+    "strength_pct": 99.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0047": {
     "cas": "499-83-2",
-    "name": "DPA Dipicolinic Acid"
+    "cas_all": [
+      "499-83-2"
+    ],
+    "name": "DPA Dipicolininc Acid",
+    "synonyms": "DPA Dipicolininc Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0048": {
     "cas": "7664-93-9",
-    "name": "Sulfuric Acid 93% Tech Grade"
+    "cas_all": [
+      "7664-93-9"
+    ],
+    "name": "Sulfuric Acid 93% Tech Grade",
+    "synonyms": "Sulfuric Acid 93% Tech Grade",
+    "active_fraction": 0.93,
+    "strength_pct": 93.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0049": {
     "cas": "2809-21-4",
-    "name": "HEDP Powder 90% Low Metals"
+    "cas_all": [
+      "2809-21-4"
+    ],
+    "name": "HEDP Powder, 90% Low Metals",
+    "synonyms": "HEDP Powder, 100%",
+    "active_fraction": 0.9,
+    "strength_pct": 90.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0050": {
     "cas": "1310-58-3",
-    "name": "Potassium Hydroxide 50%"
+    "cas_all": [
+      "1310-58-3"
+    ],
+    "name": "Potassium Hydroxide 50%",
+    "synonyms": "Potassium Hydroxide 50%",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
+  },
+  "RM0051": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Versaflex One Sulfonated Copolymer",
+    "synonyms": "Versaflex One Sulfonated Copolymer",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0052": {
     "cas": "8002-09-3",
-    "name": "Pine Oil 85% Tech Grade"
+    "cas_all": [
+      "8002-09-3"
+    ],
+    "name": "Pine Oil 85% Tech Grade",
+    "synonyms": "Pine Oil 85% Tech Grade",
+    "active_fraction": 0.85,
+    "strength_pct": 85.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0053": {
     "cas": "7783-20-2",
-    "name": "Ammonium Sulfate"
+    "cas_all": [
+      "7783-20-2"
+    ],
+    "name": "Ammonium Sulfate TOLL BLEND",
+    "synonyms": "Ammonium Sulfate TOLL BLEND",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0054": {
     "cas": "1341-49-7",
-    "name": "Ammonium Bifluoride Solid"
+    "cas_all": [
+      "1341-49-7"
+    ],
+    "name": "Ammonium Bifluoride Solid",
+    "synonyms": "Ammonium Bifluoride Solid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0055": {
     "cas": "27176-87-0",
-    "name": "Dodecylbenzene Sulfonic Acid (DDBSA)"
+    "cas_all": [
+      "27176-87-0"
+    ],
+    "name": "Dodecylbenzene (DDBSA)",
+    "synonyms": "Dodecylbenzene (DDBSA)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0056": {
     "cas": "34590-94-8",
-    "name": "Glycol Ether DPM"
+    "cas_all": [
+      "34590-94-8"
+    ],
+    "name": "Glycol Ether DPM",
+    "synonyms": "Glycol Ether DPM",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0057": {
     "cas": "68921-24-4",
-    "name": "Deceth 4 Phosphate"
+    "cas_all": [
+      "68921-24-4"
+    ],
+    "name": "PE 600 Deceth 4 Phosphate",
+    "synonyms": "Deceth 4 Phosphate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0058": {
     "cas": "7664-93-9",
-    "name": "Sulfuric Acid Tech Pure 96%"
+    "cas_all": [
+      "7664-93-9"
+    ],
+    "name": "Sulfuric Tech Pure 96%",
+    "synonyms": "Sulfuric Tech Pure 96%",
+    "active_fraction": 0.96,
+    "strength_pct": 96.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0059": {
     "cas": "111-76-2",
-    "name": "Glycol Ether EB"
+    "cas_all": [
+      "111-76-2"
+    ],
+    "name": "Glycol Ether EB",
+    "synonyms": "Glycol Either EB",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0060": {
     "cas": "68604-71-7",
-    "name": "Colateric 2CM"
+    "cas_all": [
+      "68604-71-7"
+    ],
+    "name": "Colateric 2CM",
+    "synonyms": "Disodium Cocoamphodipropionate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0061": {
     "cas": "64-02-8",
-    "name": "EDTA Tetrasodium"
+    "cas_all": [
+      "64-02-8"
+    ],
+    "name": "EDTA",
+    "synonyms": "Tetrasodium EDTA Liquid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0062": {
     "cas": "7646-85-7",
-    "name": "Zinc Chloride 62.5%"
+    "cas_all": [
+      "7646-85-7"
+    ],
+    "name": "Zinc Chloride 62.5%",
+    "synonyms": "Zinc Chloride 62.5%",
+    "active_fraction": 0.625,
+    "strength_pct": 62.5,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0063": {
     "cas": "9016-45-9",
-    "name": "NP-9 Nonylphenol Ethoxylate"
+    "cas_all": [
+      "9016-45-9"
+    ],
+    "name": "NP-9 Nonylphenol Ethoxylated",
+    "synonyms": "NP-9 Nonylphenol Ethoxylated",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0064": {
     "cas": "39464-69-2",
-    "name": "Lubrhophos LB 400"
+    "cas_all": [
+      "39464-69-2"
+    ],
+    "name": "Lubrhophos LB 400",
+    "synonyms": "Lubrhophos LB 400",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0065": {
     "cas": "7697-37-2",
-    "name": "Nitric Acid 37%"
+    "cas_all": [
+      "7697-37-2"
+    ],
+    "name": "Nitric Acid 37%",
+    "synonyms": "Nitric Acid 37%",
+    "active_fraction": 0.37,
+    "strength_pct": 37.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0066": {
     "cas": "64-17-5",
-    "name": "Ethanol 200 Proof SDA 40B"
+    "cas_all": [
+      "64-17-5"
+    ],
+    "name": "Ethanol 200 Proof SDA 40B",
+    "synonyms": "Ethanol 200 Proof SDA 40B",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0067": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Accusol 445 ND Powder/NorthQuest 5410",
+    "synonyms": "Accusol 445 ND Powder",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0068": {
     "cas": "1344-09-8",
-    "name": "Sodium Silicate 40%"
+    "cas_all": [
+      "1344-09-8"
+    ],
+    "name": "Sodium Silicate 40%",
+    "synonyms": "Sodium Silicate 40%",
+    "active_fraction": 0.4,
+    "strength_pct": 40.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0069": {
     "cas": "29132-58-9",
-    "name": "Maleic Acid Copolymer"
+    "cas_all": [
+      "29132-58-9"
+    ],
+    "name": "Maleic Acid Copolymer",
+    "synonyms": "Maleic Acid Copolymer",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0070": {
     "cas": "119345-04-9",
-    "name": "DOWFAX 2A1"
+    "cas_all": [
+      "119345-04-9"
+    ],
+    "name": "DOWFAX 2A1",
+    "synonyms": "Dowfax 2A1",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0071": {
     "cas": "5329-14-6",
-    "name": "Sulfamic Acid"
+    "cas_all": [
+      "5329-14-6"
+    ],
+    "name": "Sulfamic Acid",
+    "synonyms": "Sulfamic Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0072": {
     "cas": "68515-73-1",
-    "name": "Milcoside 303N"
+    "cas_all": [
+      "68515-73-1"
+    ],
+    "name": "Milcoside 303N",
+    "synonyms": "Decyl Glucoside",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0073": {
     "cas": "51580-86-0",
-    "name": "Dichloroisocyanuric Acid Sodium Salt Dihydrate (NaDCC)"
+    "cas_all": [
+      "51580-86-0"
+    ],
+    "name": "Dichloroisocyanuric Acid Sodium Salt Dihydrate",
+    "synonyms": "Dichloroisocyanuric Acid Sodium Salt Dihydrate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0074": {
     "cas": "68515-73-1",
-    "name": "Capryl Glucoside"
+    "cas_all": [
+      "68515-73-1"
+    ],
+    "name": "Capryl Glucoside",
+    "synonyms": "Cal Chem CCG APG, Milcoside 102 ND, Triton CG 50, Glucopon 225 DK",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0075": {
     "cas": "68515-73-1",
-    "name": "Alkyl Glucoside"
+    "cas_all": [
+      "68515-73-1"
+    ],
+    "name": "Alkyl Glucoside",
+    "synonyms": "Milcoside 303 N, Glucopon 425 N, Jarfactant 425 N",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0076": {
     "cas": "7647-14-5",
-    "name": "Salt Kiln Dried Medium Grade"
+    "cas_all": [
+      "7647-14-5"
+    ],
+    "name": "SALT KILN DRIED MEDIUM GRADE FEED MIXING",
+    "synonyms": "Kiln Dried Salt",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0077": {
     "cas": "68411-30-3",
-    "name": "Sodium Alkylbenzene Sulfonate (LAS)"
+    "cas_all": [
+      "68411-30-3"
+    ],
+    "name": "Sodium Alkylbenzene Sulfonate",
+    "synonyms": "Sodium Alkylbenzene Sulfonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0078": {
     "cas": "7647-14-5",
-    "name": "Salt Kiln Dried Coarse Grade"
+    "cas_all": [
+      "7647-14-5"
+    ],
+    "name": "SALT KILN DRIED COARSE GRADE",
+    "synonyms": "SALT KILN DRIED COARSE GRADE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0079": {
     "cas": "68298-20-4",
-    "name": "Burco HCS 50NF"
+    "cas_all": [
+      "68298-20-4"
+    ],
+    "name": "R Cleaner/ Burco HCS 50NF",
+    "synonyms": "Alkylether Hydroxypropyl Sultaine",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0080": {
     "cas": "1305-62-0",
-    "name": "Calcium Hydroxide Powder"
+    "cas_all": [
+      "1305-62-0"
+    ],
+    "name": "Calcium Hydroxide Powder",
+    "synonyms": "Calcium Hydroxide Powder (Slaked Lime)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0081": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Molasses",
+    "synonyms": "Molasses",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0082": {
     "cas": "68439-47-4",
-    "name": "Iodophor AE 20 Concentrate"
+    "cas_all": [
+      "68439-47-4",
+      "7553-56-2"
+    ],
+    "name": "IODOPHOR AE 20 CONCENTRATE",
+    "synonyms": "IODOPHOR AE 20 CONCENTRATE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0083": {
     "cas": "15630-89-4",
-    "name": "Sodium Percarbonate"
+    "cas_all": [
+      "15630-89-4"
+    ],
+    "name": "Sodium Percarbonate",
+    "synonyms": "Sodium Percarbonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0084": {
     "cas": "67-56-1",
-    "name": "Methanol Tech Grade"
+    "cas_all": [
+      "67-56-1"
+    ],
+    "name": "Methanol Tech Grade",
+    "synonyms": "Methanol Tech Grade",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0085": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Probac HC10710X",
+    "synonyms": "Probac HC10710X",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0086": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Opacifier E-Cyrl 2301",
+    "synonyms": "E-Cryl 2301, Alcoguard",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0087": {
     "cas": "7757-82-6",
-    "name": "Sodium Sulfate"
+    "cas_all": [
+      "7757-82-6"
+    ],
+    "name": "Sodium Sulfate",
+    "synonyms": "Sodium Sulfate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0088": {
     "cas": "5989-27-5",
-    "name": "D-Limonene"
+    "cas_all": [
+      "5989-27-5"
+    ],
+    "name": "D-Limonene",
+    "synonyms": "D-Limonene",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0089": {
     "cas": "7320-34-5",
-    "name": "Tetrapotassium Pyrophosphate (TKPP)"
+    "cas_all": [
+      "7320-34-5"
+    ],
+    "name": "Tetrapotassium Pyrophosphate",
+    "synonyms": "Tetrapotassium Pyrophosphate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0090": {
     "cas": "2605-79-0",
-    "name": "Decyl Amine Oxide"
+    "cas_all": [
+      "2605-79-0"
+    ],
+    "name": "Decyl Amine Oxide",
+    "synonyms": "Velox AO-10",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0091": {
     "cas": "64-17-5",
-    "name": "Ethanol 190 Proof SDA 40B"
+    "cas_all": [
+      "64-17-5"
+    ],
+    "name": "Ethanol 190 Proof SDA 40B",
+    "synonyms": "Ethanol 190 Proof SDA 40B",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0092": {
     "cas": "151-21-3",
-    "name": "Sodium Lauryl Sulfate 30% (SLS)"
+    "cas_all": [
+      "151-21-3"
+    ],
+    "name": "Sodium Lauryl Sulfate 30%",
+    "synonyms": "Sodium Lauryl Sulfate 30%",
+    "active_fraction": 0.3,
+    "strength_pct": 30.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0093": {
     "cas": "68439-57-6",
-    "name": "AOS 40"
+    "cas_all": [
+      "68439-57-6"
+    ],
+    "name": "AOS 40",
+    "synonyms": "Sodium Alpha Olefin Sulfonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0094": {
     "cas": "7681-57-4",
-    "name": "Sodium Metabisulfite"
+    "cas_all": [
+      "7681-57-4"
+    ],
+    "name": "Sodium Metabisulfite",
+    "synonyms": "Sodium Metabisulfite",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0095": {
     "cas": "68603-82-9",
-    "name": "Norfox DCSA (Disodium Cocoamphodiacetate)"
+    "cas_all": [
+      "68603-82-9"
+    ],
+    "name": "Norfox DCSA",
+    "synonyms": "Norfox DCSA",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0096": {
     "cas": "68584-24-7",
-    "name": "Isopropylamine Dodecylbenzene Sulfonate"
+    "cas_all": [
+      "68584-24-7"
+    ],
+    "name": "Isopropylamine Dodecylbenzene Sulfonate",
+    "synonyms": "Isopropylamine Dodecylbenzene Sulfonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0097": {
     "cas": "68603-42-9",
-    "name": "Norfox DC"
+    "cas_all": [
+      "68603-42-9"
+    ],
+    "name": "Norfox DC",
+    "synonyms": "2:1 Cocamide DEA",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0098": {
     "cas": "7601-54-9",
-    "name": "Trisodium Phosphate Anhydrous (TSP)"
+    "cas_all": [
+      "7601-54-9"
+    ],
+    "name": "Trisodium Phosphate Anhydrous Granular FCC",
+    "synonyms": "Trisodium Phosphate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0099": {
     "cas": "111163-74-7",
-    "name": "Alkyl Naphthalene Sulfonate"
+    "cas_all": [
+      "111163-74-7"
+    ],
+    "name": "Alkyl Naphthalene Sulfonate",
+    "synonyms": "Naxan AAL",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0100": {
     "cas": "9003-11-6",
-    "name": "Block Copolymer Surfactant (Poloxamer)"
+    "cas_all": [
+      "9003-11-6"
+    ],
+    "name": "Block Copolymer Surfactant",
+    "synonyms": "NORFOX L61, Poloxamer 181",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0101": {
     "cas": "151-21-3",
-    "name": "Sodium Lauryl Sulfate Dry"
+    "cas_all": [
+      "151-21-3"
+    ],
+    "name": "Sodium Laurel Sulfate (Dry)",
+    "synonyms": "Sodium Laurel Sulfate (Dry)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0102": {
     "cas": "7632-00-0",
-    "name": "Sodium Nitrite"
+    "cas_all": [
+      "7632-00-0"
+    ],
+    "name": "SODIUM NITRITE",
+    "synonyms": "Sodium Nitrite",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0103": {
     "cas": "7664-38-2",
-    "name": "Phosphoric Acid 85%"
+    "cas_all": [
+      "7664-38-2"
+    ],
+    "name": "Phosphoric Acid 85%",
+    "synonyms": "Phosphoric Acid 85% TG",
+    "active_fraction": 0.85,
+    "strength_pct": 85.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0104": {
     "cas": "68424-85-1",
-    "name": "GBS Q-24 (Benzalkonium Chloride)"
+    "cas_all": [
+      "68424-85-1",
+      "5538-94-3",
+      "32426-11-2",
+      "7173-51-5",
+      "67-17-5"
+    ],
+    "name": "GBS Q-24",
+    "synonyms": "QUATERNARY AMMONIUM COMPOUND",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0105": {
     "cas": "68410-69-5",
-    "name": "ACCOSOFT 501 DR400"
+    "cas_all": [
+      "68410-69-5"
+    ],
+    "name": "ACCOSOFT 501 DR400",
+    "synonyms": "ACCOSOFT 501 DR400",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0106": {
     "cas": "10213-79-3",
-    "name": "Sodium Metasilicate Pentahydrate"
+    "cas_all": [
+      "10213-79-3"
+    ],
+    "name": "SODIUM METASILICATE PENTAHYDRATE",
+    "synonyms": "SODIUM METASILICATE PENTAHYDRATE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0107": {
     "cas": "497-19-8",
-    "name": "Soda Ash Dense (Sodium Carbonate)"
+    "cas_all": [
+      "497-19-8"
+    ],
+    "name": "SODA ASH DENSE",
+    "synonyms": "SODA ASH DENSE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0108": {
     "cas": "9004-32-4",
-    "name": "CMC (Carboxymethyl Cellulose)"
+    "cas_all": [
+      "9004-32-4"
+    ],
+    "name": "Carboxymethyl Cellulose",
+    "synonyms": "Carboxymethyl Cellulose",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0109": {
     "cas": "7681-52-9",
-    "name": "Sodium Hypochlorite 16%"
+    "cas_all": [
+      "7681-52-9"
+    ],
+    "name": "Sodium Hypochlorite 16% Liquid",
+    "synonyms": "Sodium Hypochlorite 16% Liquid",
+    "active_fraction": 0.16,
+    "strength_pct": 16.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0110": {
     "cas": "61790-12-3",
-    "name": "Tall Oil Fatty Acid"
+    "cas_all": [
+      "61790-12-3"
+    ],
+    "name": "Tall Oil Fatty Acid",
+    "synonyms": "Tall Oil Fatty Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0111": {
     "cas": "61789-30-8",
-    "name": "Norfox 1101 (Sodium Cocoate)"
+    "cas_all": [
+      "61789-30-8"
+    ],
+    "name": "Norfox 1101",
+    "synonyms": "Potassium Cocoate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0112": {
     "cas": "27119-07-9",
-    "name": "Rheocare HSP-1180 (Hydroxyethyl Cellulose)"
+    "cas_all": [
+      "27119-07-9"
+    ],
+    "name": "Rheocare HSP-1180",
+    "synonyms": "Polyacrylamidomethylpropane Sulfonic Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0113": {
     "cas": "57-13-6",
-    "name": "Urea"
+    "cas_all": [
+      "57-13-6"
+    ],
+    "name": "Urea",
+    "synonyms": "Urea",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0114": {
     "cas": "139-08-2",
-    "name": "Alkyldimethylbenzylammonium Chloride (ADBAC)"
+    "cas_all": [
+      "139-08-2"
+    ],
+    "name": "Alkyldimethylbenzylammonium chloride ADBAC",
+    "synonyms": "Alkyldimethylbenzylammonium chloride ADBAC",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0115": {
     "cas": "7697-37-2",
-    "name": "Nitric Acid 57%"
+    "cas_all": [
+      "7697-37-2"
+    ],
+    "name": "Nitric Acid 57%",
+    "synonyms": "Nitric Acid 57%",
+    "active_fraction": 0.57,
+    "strength_pct": 57.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0116": {
     "cas": "18662-53-8",
-    "name": "NTA Powder (Nitrilotriacetic Acid)"
+    "cas_all": [
+      "18662-53-8"
+    ],
+    "name": "NTA Powder",
+    "synonyms": "Sodium Nitrilotriacetate Anyhdrous",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0117": {
     "cas": "112-80-1",
-    "name": "Oleic Acid"
+    "cas_all": [
+      "112-80-1"
+    ],
+    "name": "Oleic Acid",
+    "synonyms": "9 - Octacdecenoic Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0118": {
     "cas": "68891-38-3",
-    "name": "SLES 70% (Sodium Laureth Sulfate)"
+    "cas_all": [
+      "68891-38-3"
+    ],
+    "name": "SLES 70%",
+    "synonyms": "Sodium Laureth Sulfate",
+    "active_fraction": 0.7,
+    "strength_pct": 70.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0119": {
     "cas": "124-07-2",
-    "name": "Caprylic Acid"
+    "cas_all": [
+      "124-07-2"
+    ],
+    "name": "CAPRYLIC ACID",
+    "synonyms": "Caprylic Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0120": {
     "cas": "6419-19-8",
-    "name": "ATMP 50%"
+    "cas_all": [
+      "6419-19-8"
+    ],
+    "name": "ATMP 50%",
+    "synonyms": "Aminotrimethylene Phosphonic Acid",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0121": {
     "cas": "526-95-4",
-    "name": "Gluconic Acid 50%"
+    "cas_all": [
+      "526-95-4"
+    ],
+    "name": "GLUCONIC ACID 50%",
+    "synonyms": "GLUCONIC ACID (50%)",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0122": {
     "cas": "8061-51-6",
-    "name": "Sodium Lignosulfonate"
+    "cas_all": [
+      "8061-51-6"
+    ],
+    "name": "SODIUM LIGNOSULFONATE",
+    "synonyms": "Kelig 100\n\r\nSODIUM LIGNOSULFONATE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0123": {
     "cas": "68391-01-5",
-    "name": "MAQUAT MQ 2525M 50%"
+    "cas_all": [
+      "68391-01-5"
+    ],
+    "name": "MAQUAT MQ 2525M 50%",
+    "synonyms": "MAQUAT MQ 2525M 50%\n\r\nFor Control of Algae and Algal Slime Growth in Swimming Pools, Quat Active (MUP), Surfactant",
+    "active_fraction": 0.5,
+    "strength_pct": 50.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0125": {
     "cas": "63148-62-9",
-    "name": "AE002A Silicone Emulsion"
+    "cas_all": [
+      "63148-62-9"
+    ],
+    "name": "AE002A Silicone Emulsion",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0126": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Defoaming Agent",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0127": {
     "cas": "108-91-8",
-    "name": "Cyclohexylamine TG"
+    "cas_all": [
+      "108-91-8"
+    ],
+    "name": "Cyclohexylamine TG",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0128": {
     "cas": "8042-47-5",
-    "name": "Mineral Oil"
+    "cas_all": [
+      "8042-47-5"
+    ],
+    "name": "Mineral Oil",
+    "synonyms": "White Mineral Oil USP/NF",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0129": {
     "cas": "102-71-6",
-    "name": "TEA 99%"
+    "cas_all": [
+      "102-71-6"
+    ],
+    "name": "TEA 99%",
+    "synonyms": "Triethanolamine 99% Solution",
+    "active_fraction": 0.99,
+    "strength_pct": 99.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0130": {
     "cas": "79-33-4",
-    "name": "Lactic Acid 88%"
+    "cas_all": [
+      "79-33-4"
+    ],
+    "name": "Lactic Acid 88%",
+    "synonyms": "Lactic Acid 88%",
+    "active_fraction": 0.88,
+    "strength_pct": 88.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0131": {
     "cas": "72379-23-8",
-    "name": "Cretum ME-100 (End-Capped Nonionic Surfactant)"
+    "cas_all": [
+      "72379-23-8"
+    ],
+    "name": "Cretum ME-100",
+    "synonyms": "Methyl-Capped 91-6 (Cretum ME-100)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0132": {
     "cas": "11138-66-2",
-    "name": "Xanthan Gum"
+    "cas_all": [
+      "11138-66-2"
+    ],
+    "name": "Xantham Gum",
+    "synonyms": "Xantham Gum Food Grade",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0133": {
     "cas": "104-15-4",
-    "name": "p-Toluenesulfonic Acid (From Pyxis)"
+    "cas_all": [
+      "104-15-4"
+    ],
+    "name": "PTSA 10% liquid",
+    "synonyms": "for Krik",
+    "active_fraction": 0.1,
+    "strength_pct": 10.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0134": {
     "cas": "7631-86-9",
-    "name": "LEVASIL (Colloidal Silica)"
+    "cas_all": [
+      "7631-86-9"
+    ],
+    "name": "LEVASIL",
+    "synonyms": "for California Chemical production",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0135": {
     "cas": "75-05-8",
-    "name": "Acetonitrile (OPTIMA)"
+    "cas_all": [
+      "75-05-8"
+    ],
+    "name": "OPTIMA",
+    "synonyms": "for California Chemical production",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0136": {
     "cas": "540-72-7",
-    "name": "Sodium Thiocyanate"
+    "cas_all": [
+      "540-72-7"
+    ],
+    "name": "Sodium Thiocyanate",
+    "synonyms": "for California Chemical production",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0137": {
+    "cas": "",
+    "cas_all": [],
+    "name": "ALL CLEAN",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0138": {
     "cas": "1310-58-3",
-    "name": "Potassium Hydroxide 90%"
+    "cas_all": [
+      "1310-58-3"
+    ],
+    "name": "Potassium Hydroxide 90%",
+    "synonyms": "Potassium Hydroxide 90%",
+    "active_fraction": 0.9,
+    "strength_pct": 90.0,
+    "strength_source": "name",
+    "needs_review": false
+  },
+  "RM0139": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Greased Lightening",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0140": {
     "cas": "541-02-6",
-    "name": "CALCHEM D5 (Decamethylcyclopentasiloxane)"
+    "cas_all": [
+      "541-02-6"
+    ],
+    "name": "CALCHEM D5",
+    "synonyms": "Cyclopentasiloxane",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0141": {
     "cas": "126-73-8",
-    "name": "CALCHEM TBP (Tributyl Phosphate)"
+    "cas_all": [
+      "126-73-8"
+    ],
+    "name": "CALCHEM TBP",
+    "synonyms": "CALCHEM TBP",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0142": {
+    "cas": "",
+    "cas_all": [],
+    "name": "COLAMULSE HP500",
+    "synonyms": "Cationic Emulsifier-Vehicle Care",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0143": {
     "cas": "100-37-8",
-    "name": "DEAE (Diethylethanolamine)"
+    "cas_all": [
+      "100-37-8"
+    ],
+    "name": "DEAE",
+    "synonyms": "Diethylethanolamine",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0144": {
     "cas": "1303-96-4",
-    "name": "Sodium Borate (Borax)"
+    "cas_all": [
+      "1303-96-4"
+    ],
+    "name": "SODIUM BORATE",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0145": {
     "cas": "72379-23-8",
-    "name": "End-Capped Nonionic Surfactant"
+    "cas_all": [
+      "72379-23-8"
+    ],
+    "name": "End-Capped Nonionic Surfactant",
+    "synonyms": "End-Capped Nonionic Surfactant",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0146": {
     "cas": "10026-24-1",
-    "name": "Cobaltous Sulfate Heptahydrate"
+    "cas_all": [
+      "10026-24-1"
+    ],
+    "name": "Cobaltous sulfate heptahydrate",
+    "synonyms": "Cobalt Sulfate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0147": {
     "cas": "56-81-5",
-    "name": "Glycerine 99.5%"
+    "cas_all": [
+      "56-81-5"
+    ],
+    "name": "Glycerine 99.5%",
+    "synonyms": "Glycerine 99.5%",
+    "active_fraction": 0.995,
+    "strength_pct": 99.5,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0148": {
     "cas": "298-14-6",
-    "name": "Potassium Bicarbonate"
+    "cas_all": [
+      "298-14-6"
+    ],
+    "name": "Potassium BiCarbonate",
+    "synonyms": "Potassium BiCarbonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0149": {
     "cas": "57-55-6",
-    "name": "Propylene Glycol 99.9% Tech"
+    "cas_all": [
+      "57-55-6"
+    ],
+    "name": "Propylene Glycol 99.9% Tech",
+    "synonyms": "Propylene Glycol 99.9% Tech",
+    "active_fraction": 0.999,
+    "strength_pct": 99.9,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0150": {
     "cas": "57-55-6",
-    "name": "Propylene Glycol 99.9% USP"
+    "cas_all": [
+      "57-55-6"
+    ],
+    "name": "Propylene Glycol 99.9% USP",
+    "synonyms": "Propylene Glycol 99.9% USP",
+    "active_fraction": 0.999,
+    "strength_pct": 99.9,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0151": {
     "cas": "1312-76-1",
-    "name": "Potassium Silicate Anhydrous"
+    "cas_all": [
+      "1312-76-1"
+    ],
+    "name": "Potassium silicate, anhydrous",
+    "synonyms": "Potassium Silicate Powder",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0152": {
     "cas": "119345-04-9",
-    "name": "Sodium Dodecyl Diphenyl Ether Disulfonate 45%"
+    "cas_all": [
+      "119345-04-9"
+    ],
+    "name": "45% SODIUM DODECYL DIPHENYL ETHER DISULFONATE",
+    "synonyms": "45% SODIUM DODECYL DIPHENYL ETHER DISULFONATE as major ingredient\n\r\n+\n\r\n1% sodium sulfate",
+    "active_fraction": 0.45,
+    "strength_pct": 45.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0153": {
     "cas": "64742-88-7",
-    "name": "Mineral Spirits"
+    "cas_all": [
+      "64742-88-7"
+    ],
+    "name": "Mineral Spirit",
+    "synonyms": "Hydrocarbon Solvent",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0154": {
     "cas": "526-83-0",
-    "name": "Tartaric Acid"
+    "cas_all": [
+      "526-83-0"
+    ],
+    "name": "Tartaric Acid",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0155": {
     "cas": "110-91-8",
-    "name": "Morpholine"
+    "cas_all": [
+      "110-91-8"
+    ],
+    "name": "Morpholine",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0156": {
     "cas": "53-43-0",
-    "name": "Dehydroepiandrosterone (DHEA)"
+    "cas_all": [
+      "53-43-0"
+    ],
+    "name": "Dehydroepiandrosterone",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0157": {
     "cas": "64-17-5",
-    "name": "Ethanol 190 Proof SDA 40B"
+    "cas_all": [
+      "64-17-5"
+    ],
+    "name": "Ethanol 190 Proof SDA 40B",
+    "synonyms": "Ethanol 190 Proof SDA 40B",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0158": {
     "cas": "7647-14-5",
-    "name": "Kiln Dried Solar Salt"
+    "cas_all": [
+      "7647-14-5"
+    ],
+    "name": "Kiln Dried Solar Salt",
+    "synonyms": "Kiln Dried Solar Salt",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0159": {
     "cas": "7664-39-3",
-    "name": "Hydrofluoric Acid 49%"
+    "cas_all": [
+      "7664-39-3"
+    ],
+    "name": "Hydrofluoric acid 49%",
+    "synonyms": "",
+    "active_fraction": 0.49,
+    "strength_pct": 49.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0160": {
     "cas": "7631-86-9",
-    "name": "AMSOL 30 Colloidal Silica"
+    "cas_all": [
+      "7631-86-9"
+    ],
+    "name": "AMSOL 30 colloidal silica",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0161": {
     "cas": "15827-60-8",
-    "name": "DTPMPA"
+    "cas_all": [
+      "15827-60-8"
+    ],
+    "name": "DTPMPA",
+    "synonyms": "Diethylenetriamine Penta Methylene Phosphonic Acid",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0162": {
     "cas": "7758-19-2",
-    "name": "Sodium Chlorite 31%"
+    "cas_all": [
+      "7758-19-2"
+    ],
+    "name": "Sodium Chlorite 31% 10.6lb/gal",
+    "synonyms": "Sodium Chlorite 31%",
+    "active_fraction": 0.31,
+    "strength_pct": 31.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0163": {
     "cas": "1310-58-3",
-    "name": "Potassium Hydroxide 90%"
+    "cas_all": [
+      "1310-58-3"
+    ],
+    "name": "Potassium Hydroxide 90%, Cal Chem provided",
+    "synonyms": "Potassium Hydroxide 90%, Cal chem provided",
+    "active_fraction": 0.9,
+    "strength_pct": 90.0,
+    "strength_source": "name",
+    "needs_review": false
   },
   "RM0164": {
     "cas": "122-99-6",
-    "name": "Phenoxyethanol (Cola-Fax 3383)"
+    "cas_all": [
+      "122-99-6"
+    ],
+    "name": "Cola®Fax 3383",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0165": {
     "cas": "9003-01-4",
-    "name": "Northquest 6000 Polyacrylic Acid"
+    "cas_all": [
+      "9003-01-4",
+      "25133-97-5"
+    ],
+    "name": "Polyacrylic Acid (Versaflex SI)",
+    "synonyms": "Northquest 6000",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0166": {
     "cas": "68439-57-6",
-    "name": "AOS40 (Alpha-Olefin Sulfonate)"
+    "cas_all": [
+      "68439-57-6"
+    ],
+    "name": "AOS40/ Envirokem provided material",
+    "synonyms": "AOS40",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0167": {
     "cas": "10043-01-3",
-    "name": "Aluminum Sulfate Dry Iron Free"
+    "cas_all": [
+      "10043-01-3"
+    ],
+    "name": "Aluminum Sulfate Dry Iron free",
+    "synonyms": "16151007 - ALMN SULFATE FE FREE BAG114",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0168": {
     "cas": "10043-52-4",
-    "name": "Calcium Chloride FG"
+    "cas_all": [
+      "10043-52-4"
+    ],
+    "name": "Calcium Chloride FG",
+    "synonyms": "Calcium chloride",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0169": {
     "cas": "9002-84-0",
-    "name": "PTFE Dispersion"
+    "cas_all": [
+      "9002-84-0"
+    ],
+    "name": "PTFE Dispersion",
+    "synonyms": "Liquid Teflon",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0170": {
-    "cas": "79-09-4",
-    "name": "Propionic Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "Propionic acid",
+    "synonyms": "16151007 - ALMN SULFATE FE FREE BAG114",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0171": {
-    "cas": "144-55-8",
-    "name": "Sodium Bicarbonate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Bicarbonate",
+    "synonyms": "Sodium Bicarbonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0172": {
-    "cas": "2809-21-4",
-    "name": "HEDP"
+    "cas": "",
+    "cas_all": [],
+    "name": "HEDP 60% liquid, low metal",
+    "synonyms": "HEDP Powder, 60% low metal",
+    "active_fraction": 0.6,
+    "strength_pct": 60.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM0173": {
+    "cas": "",
+    "cas_all": [],
+    "name": "SA-1000",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0174": {
-    "cas": "104-15-4",
-    "name": "PTSA (p-Toluenesulfonic Acid)"
+    "cas": "",
+    "cas_all": [],
+    "name": "PTSA 98% Powder",
+    "synonyms": "PTSA 98% Powder",
+    "active_fraction": 0.98,
+    "strength_pct": 98.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM0175": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Tetranyl AT-7590",
+    "synonyms": "Tetranyl AT-7590\n\r\n\n\r\nACCOSOFT 501 DR400",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0176": {
-    "cas": "7722-64-7",
-    "name": "Potassium Permanganate"
+    "cas": "",
+    "cas_all": [],
+    "name": "KMnO4",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0177": {
-    "cas": "1330-20-7",
-    "name": "Xylene"
+    "cas": "",
+    "cas_all": [],
+    "name": "Xylene",
+    "synonyms": "Xylene",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0178": {
-    "cas": "7778-54-3",
-    "name": "Calcium Hypochlorite"
+    "cas": "",
+    "cas_all": [],
+    "name": "Calcium Hypochlorite",
+    "synonyms": "Calcium Hypochlorite",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0179": {
-    "cas": "61789-30-8",
-    "name": "Potassium Cocoate"
+    "cas": "",
+    "cas_all": [],
+    "name": "RM0179",
+    "synonyms": "Calcium Hypochlorite",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0180": {
-    "cas": "7553-56-2",
-    "name": "Iodine"
+    "cas": "",
+    "cas_all": [],
+    "name": "Iodine 10%",
+    "synonyms": "Iodine 10%",
+    "active_fraction": 0.1,
+    "strength_pct": 10.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM0181": {
+    "cas": "",
+    "cas_all": [],
+    "name": "RM0181",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0182": {
-    "cas": "6915-15-7",
-    "name": "DL-Malic Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "Malic Acid FG",
+    "synonyms": "Malic Acid FG",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0183": {
-    "cas": "64742-48-9",
-    "name": "Odorless Mineral Spirits (OMS)"
+    "cas": "",
+    "cas_all": [],
+    "name": "Odorless Mineral Spirits",
+    "synonyms": "OMS",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0184": {
-    "cas": "9012-76-4",
-    "name": "Chitosan"
+    "cas": "",
+    "cas_all": [],
+    "name": "Chitosan",
+    "synonyms": "Chitosan",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0185": {
+    "cas": "",
+    "cas_all": [],
+    "name": "RM0185",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0186": {
+    "cas": "",
+    "cas_all": [],
+    "name": "RM0186",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0187": {
-    "cas": "97-59-6",
-    "name": "Allantoin"
+    "cas": "",
+    "cas_all": [],
+    "name": "Allantoin Powder",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0188": {
-    "cas": "50-70-4",
-    "name": "Sorbitol"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sorbitol Sorbogem",
+    "synonyms": "Sorbitol Sorbogem",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0189": {
-    "cas": "10026-22-9",
-    "name": "Cobalt Nitrate Hexahydrate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Cobalt Nitrate",
+    "synonyms": "Cobalt Nitrate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0190": {
-    "cas": "3710-84-7",
-    "name": "Diethylhydroxylamine (DEHA)"
+    "cas": "",
+    "cas_all": [],
+    "name": "Diethylhydroxylamine",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0191": {
-    "cas": "181828-06-8",
-    "name": "Sodium Polyaspartate (PASP)"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Polyaspartate",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0192": {
+    "cas": "",
+    "cas_all": [],
+    "name": "NACHURS Humi-flex® MAX",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0193": {
+    "cas": "",
+    "cas_all": [],
+    "name": "urea-sulfuric acid",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0194": {
+    "cas": "",
+    "cas_all": [],
+    "name": "NACHURS Humi-flex® FA",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0195": {
-    "cas": "1344-09-8",
-    "name": "Sodium Silicate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Silicate",
+    "synonyms": "Sodium Silicate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0197": {
-    "cas": "7775-27-1",
-    "name": "Sodium Persulfate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Persulfate 93%",
+    "synonyms": "Sodium Persulfate 93%",
+    "active_fraction": 0.93,
+    "strength_pct": 93.0,
+    "strength_source": "name",
+    "needs_review": true
   },
   "RM0198": {
-    "cas": "16731-55-8",
-    "name": "Potassium Metabisulfite (KMBS)"
+    "cas": "",
+    "cas_all": [],
+    "name": "Potassium Metabisulphite (KMBS)",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0199": {
-    "cas": "62-54-4",
-    "name": "Calcium Acetate"
+    "cas": "",
+    "cas_all": [],
+    "name": "calcium acetate powder",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0200": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Silica powders (Precipitated)",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0201": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Tannin Extract",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0202": {
-    "cas": "584-08-7",
-    "name": "Potassium Carbonate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Potassium Carbonate",
+    "synonyms": "Potassium Carbonate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0203": {
-    "cas": "10124-56-8",
-    "name": "Sodium Hexametaphosphate (SHMP)"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium hexametaphosphate (SHMP)",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0204": {
-    "cas": "68514-28-3",
-    "name": "Potassium Humate"
+    "cas": "",
+    "cas_all": [],
+    "name": "Huma-K Humic Acid",
+    "synonyms": "Huma-K Humic Acid\n\r\nPotassium Humate",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0205": {
-    "cas": "7631-90-5",
-    "name": "Sodium Bisulfite"
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Bisulfite Solution 25%",
+    "synonyms": "",
+    "active_fraction": 0.25,
+    "strength_pct": 25.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM0206": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Sodium Acetate Anhyd",
+    "synonyms": "Sodium Acetate Anhyd",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0207": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Potassium Chloride Cry",
+    "synonyms": "Potassium Chloride Cry",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0208": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Disodium Phosphate Anhydrous Granular",
+    "synonyms": "Disodium Phosphate Anhydrous Granular",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0209": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Monosodium Phosphate Anhydrous",
+    "synonyms": "Monosodium Phosphate Anhydrous",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0300": {
     "cas": "7758-98-7",
-    "name": "Copper Sulfate Crystals"
+    "cas_all": [
+      "7758-98-7"
+    ],
+    "name": "Copper Sulfate Crystals",
+    "synonyms": "Copper Sulfate Crystals",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0301": {
     "cas": "7758-98-7",
-    "name": "Copper Sulfate EPA"
+    "cas_all": [
+      "7758-98-7"
+    ],
+    "name": "Copper Sulfate EPA",
+    "synonyms": "Copper Sulfate EPA registered",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0400": {
     "cas": "67-63-0",
-    "name": "IPA (Isopropyl Alcohol)"
+    "cas_all": [
+      "67-63-0"
+    ],
+    "name": "IPA (California Chemical Raw Material)",
+    "synonyms": "Isopropyl Alcohol 99%/Cal Chem",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0405": {
     "cas": "64-19-7",
-    "name": "Acetic Acid Glacial"
+    "cas_all": [
+      "64-19-7"
+    ],
+    "name": "Acetic acid, California Chemical Raw Material",
+    "synonyms": "Acetic Acid, Glacial",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0410": {
-    "cas": "1310-58-3",
-    "name": "Potassium Hydroxide"
+    "cas": "",
+    "cas_all": [],
+    "name": "Potassium Hydroxide 90%, Cal Chem provided",
+    "synonyms": "Potassium Hydroxide 90%, Cal chem provided",
+    "active_fraction": 0.9,
+    "strength_pct": 90.0,
+    "strength_source": "name",
+    "needs_review": true
   },
   "RM0411": {
-    "cas": "77-92-9",
-    "name": "Citric Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "Citric Acid FG, Cal chem provided",
+    "synonyms": "Citric Acid FG, Cal chem provided",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0412": {
-    "cas": "61790-12-3",
-    "name": "Tall Oil Fatty Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "Tall oil Fatty Acid (Cal Chem Provided)",
+    "synonyms": "Tall oil Fatty Acid (Cal Chem Provided)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM0413": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Bubble Gum Fragrance (Cal Chem Provided)",
+    "synonyms": "Bubble Gum Fragrance (Cal Chem Provided)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0414": {
-    "cas": "60-00-4",
-    "name": "EDTA Free Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "EDTA Acid-Cal Chem",
+    "synonyms": "EDTA Acid, Cal chem provided",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM0415": {
-    "cas": "7664-38-2",
-    "name": "Phosphoric Acid"
+    "cas": "",
+    "cas_all": [],
+    "name": "Phosphoric Acid 75% FG (Cal Chem Provided)",
+    "synonyms": "Phosphoric Acid 75% FG (Cal Chem Provided)",
+    "active_fraction": 0.75,
+    "strength_pct": 75.0,
+    "strength_source": "name",
+    "needs_review": true
   },
   "RM0416": {
-    "cas": "13780-06-8",
-    "name": "Calcium Nitrite"
+    "cas": "",
+    "cas_all": [],
+    "name": "CALCIUM NITRITE 94% ANHYDROUS",
+    "synonyms": "CALCIUM NITRITE 94% ANHYDROUS",
+    "active_fraction": 0.94,
+    "strength_pct": 94.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM0417": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Odorless Mineral Spirits (Cal Chem Provided)",
+    "synonyms": "Odorless Mineral Spirits (Cal Chem Provided)",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM1000": {
     "cas": "7732-18-5",
-    "name": "RO Water"
+    "cas_all": [
+      "7732-18-5"
+    ],
+    "name": "RO Water",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM1001": {
     "cas": "7732-18-5",
-    "name": "Soft Water"
+    "cas_all": [
+      "7732-18-5"
+    ],
+    "name": "Soft Water",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9200": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Super Odor Killer GLOB3326",
+    "synonyms": "Super Odor Killer",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9201": {
     "cas": "68410-69-5",
-    "name": "Global Fabric Softener"
+    "cas_all": [
+      "68410-69-5"
+    ],
+    "name": "GLOB6994 Global Fabric Softener",
+    "synonyms": "Global Fabric Softener",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9202": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Global Palmolive Fragrance GLOB1311",
+    "synonyms": "Global Palmolive",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9203": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Clean Cotton",
+    "synonyms": "Clean Cotton Laundry Detergent Fragrances.",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9300": {
     "cas": "532-82-1",
-    "name": "Chrysoidine Y (Basic Orange 2)"
+    "cas_all": [
+      "532-82-1"
+    ],
+    "name": "Chrysoidine Y",
+    "synonyms": "Chrysoidine Y",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9301": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Permalon Green FT-NG",
+    "synonyms": "Permalon Green FT-NG",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9302": {
     "cas": "3844-45-9",
-    "name": "FD&C Blue 1 (Brilliant Blue FCF)"
+    "cas_all": [
+      "3844-45-9"
+    ],
+    "name": "Permacol FD&C Blue 1 PDR",
+    "synonyms": "Permacol FD&C Blue 1 PDR",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9303": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Permalon Green 2G",
+    "synonyms": "Permalon Green 2G",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9304": {
     "cas": "81-88-9",
-    "name": "Rhodamine B 400%"
+    "cas_all": [
+      "81-88-9"
+    ],
+    "name": "Rhodamine B 400%",
+    "synonyms": "Rhodamine B 400%",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9305": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Permalon Brill Blue M5G",
+    "synonyms": "Permalon Brill Blue M5G",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9306": {
     "cas": "518-47-8",
-    "name": "Permalon Uranine (Fluorescein Sodium)"
+    "cas_all": [
+      "518-47-8"
+    ],
+    "name": "Permalon Uranine",
+    "synonyms": "Permalon Uranine",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9307": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Permalon Red 2G 150%",
+    "synonyms": "Permalon Red 2G 150%",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9308": {
     "cas": "25956-17-6",
-    "name": "FD&C Red Dye 40 (Allura Red)"
+    "cas_all": [
+      "25956-17-6"
+    ],
+    "name": "FD&C RED DYE #40",
+    "synonyms": "FD&C RED DYE",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   },
   "RM9309": {
     "cas": "38775-22-3",
-    "name": "Tricoblanc CBS Powder (Optical Brightener)"
+    "cas_all": [
+      "38775-22-3"
+    ],
+    "name": "Tricoblanc CBS Powder",
+    "synonyms": "KEYFLUOR WHITE CBS-X",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9310": {
+    "cas": "",
+    "cas_all": [],
+    "name": "KEYACID FAST GREEN 5050",
+    "synonyms": "KEYACID FAST GREEN 5050",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9311": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Caramel Color Aqueous",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM93110": {
+    "cas": "",
+    "cas_all": [],
+    "name": "100% Blue Dye",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "name",
+    "needs_review": true
+  },
+  "RM9312": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Lavander Fragrance WS",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9313": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Sea Water Fragrance",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9314": {
+    "cas": "",
+    "cas_all": [],
+    "name": "White Tea",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
+  },
+  "RM9315": {
+    "cas": "",
+    "cas_all": [],
+    "name": "Caramel Color Aqueous(provided by RMC)",
+    "synonyms": "",
+    "active_fraction": 1.0,
+    "strength_pct": 100.0,
+    "strength_source": "default",
+    "needs_review": true
   }
 }

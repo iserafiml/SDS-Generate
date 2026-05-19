@@ -5969,5 +5969,1049 @@
       "prop_65_warning": "",
       "rtk_states": []
     }
+  },
+  {
+    "cas": "111163-74-7",
+    "name": "Alkyl Naphthalene Sulfonate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "11138-66-2",
+    "name": "Xanthan Gum Powder",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "119345-04-9",
+    "name": "Sodium Diphenyl Oxide Disulfonate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "1312-76-1",
+    "name": "Potassium silicate, anhydrous",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "26099-09-2",
+    "name": "HPMA (homopolymer of maleic acid) 50%",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "27119-07-9",
+    "name": "Rheocare HSP-1180",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "27176-87-0",
+    "name": "Dodecylbenzene (DDBSA)",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "29132-58-9",
+    "name": "Maleic Acid Copolymer",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "40623-75-4",
+    "name": "Aquatreat AR 546",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "61789-30-8",
+    "name": "Norfox 1101",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "61790-12-3",
+    "name": "Tall Oil Fatty Acid",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "63148-62-9",
+    "name": "Silicone PDMS emulsion, 30%",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "64742-88-7",
+    "name": "Mineral Spirit",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68391-01-5",
+    "name": "MAQUAT MQ 2525M 50%",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68410-69-5",
+    "name": "ACCOSOFT 501 DR400",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68411-30-3",
+    "name": "Sodium Alkylbenzene Sulfonate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68424-85-1",
+    "name": "GBS Q-24",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68439-46-3",
+    "name": "C10 Linear Alcohol Ethoxylate/SURFONIC LF-17",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68439-47-4",
+    "name": "IODOPHOR AE 20 CONCENTRATE",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68439-50-9",
+    "name": "C12 Linear Alcohol Ethoxylate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68439-57-6",
+    "name": "AOS 40",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68459-50-7",
+    "name": "Polyethylene glycol oleamide (PEG-6)",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68515-73-1",
+    "name": "Milcoside 303N",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68584-24-7",
+    "name": "Isopropylamine Dodecylbenzene Sulfonate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68603-42-9",
+    "name": "Cocoamide DEA",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68603-82-9",
+    "name": "Norfox DCSA",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68604-71-7",
+    "name": "Colateric 2CM",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68891-38-3",
+    "name": "SLES 70%",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "68921-24-4",
+    "name": "PE 600 Deceth 4 Phosphate",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "72379-23-8",
+    "name": "Cretum ME-100",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "8002-09-3",
+    "name": "Pine Oil 85% Tech Grade",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "8042-47-5",
+    "name": "Mineral Oil",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9002-84-0",
+    "name": "PTFE Dispersion",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9003-01-4",
+    "name": "Polyacrylic Acid (Versaflex SI)",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9003-04-7",
+    "name": "Propenoic Acid Homopolymer, Sodium Salt",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
+  },
+  {
+    "cas": "9003-11-6",
+    "name": "Block Copolymer Surfactant",
+    "ghs_triggers": {},
+    "oels": [],
+    "toxicology": {},
+    "aquatic_toxicology": {
+      "acute": [],
+      "chronic": []
+    },
+    "persistence": "",
+    "bioaccumulation": "",
+    "mobility": "",
+    "iarc_classification": "Not Applicable",
+    "ntp_classification": "Not Applicable",
+    "regulatory": {
+      "tsca_listed": false,
+      "sara_302": false,
+      "sara_302_tpq_lbs": "",
+      "sara_313": false,
+      "cercla_listed": false,
+      "cercla_rq_lbs": "",
+      "rcra_code": "",
+      "caa_112r": false,
+      "prop_65": false,
+      "prop_65_warning": "",
+      "rtk_states": []
+    }
   }
 ]
