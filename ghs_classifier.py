@@ -385,12 +385,19 @@ class GHSClassifier:
                         if i.cas_number.strip() == "7732-18-5")
             oxidiser = ("oxidizing_liquid" in triggered
                         or "organic_peroxides" in triggered)
-            if not low_flash and (non_flam_text or oxidiser or water >= 25):
-                why = ("flash point indicates non-flammable" if non_flam_text
-                       else "oxidiser/organic-peroxide matrix"
-                       if oxidiser else f"{water:g}% water")
+            # Oxidiser / organic-peroxide systems are classified by their own
+            # class and are NOT dual-classified as flammable liquids under
+            # GHS — even if a combustible component drags the estimated
+            # flash point down, the mixture is governed by the oxidiser
+            # hazard. For non-oxidiser systems, respect non-flammable text
+            # or a high water fraction in the absence of a low-flash value.
+            suppress = oxidiser or non_flam_text or (water >= 25 and not low_flash)
+            if suppress:
+                why = ("oxidiser/organic-peroxide matrix" if oxidiser
+                       else "flash point indicates non-flammable"
+                       if non_flam_text else f"{water:g}% water")
                 print(f"[CONSISTENCY] flammable_liquid suppressed "
-                      f"(mixture rule: {why}; no low-flash evidence).")
+                      f"(mixture rule: {why}).")
                 triggered.pop("flammable_liquid", None)
 
         # Step 1c: acute toxicity by the GHS ATE additivity formula
