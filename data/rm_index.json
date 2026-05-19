@@ -229,15 +229,17 @@
     "needs_review": true
   },
   "RM0019": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "40623-75-4",
+    "cas_all": [
+      "40623-75-4"
+    ],
     "name": "NORTHQUEST 499",
     "synonyms": "Aquatreat AR 540 sulfonated acrylic polymer",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0020": {
     "cas": "141-43-5",
@@ -494,15 +496,17 @@
     "needs_review": true
   },
   "RM0042": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "68909-77-3",
+    "cas_all": [
+      "68909-77-3"
+    ],
     "name": "Acid Inhibitor",
     "synonyms": "Crown L60B Inhibitor for Hydrochloric Acid",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0043": {
     "cas": "68439-46-3",
@@ -601,15 +605,17 @@
     "needs_review": false
   },
   "RM0051": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "26951-83-5",
+    "cas_all": [
+      "26951-83-5"
+    ],
     "name": "Versaflex One Sulfonated Copolymer",
     "synonyms": "Versaflex One Sulfonated Copolymer",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0052": {
     "cas": "8002-09-3",
@@ -792,15 +798,17 @@
     "needs_review": true
   },
   "RM0067": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "9003-04-7",
+    "cas_all": [
+      "9003-04-7"
+    ],
     "name": "Accusol 445 ND Powder/NorthQuest 5410",
     "synonyms": "Accusol 445 ND Powder",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0068": {
     "cas": "1344-09-8",
@@ -959,15 +967,17 @@
     "needs_review": true
   },
   "RM0081": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "68476-78-8",
+    "cas_all": [
+      "68476-78-8"
+    ],
     "name": "Molasses",
     "synonyms": "Molasses",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0082": {
     "cas": "68439-47-4",
@@ -1007,26 +1017,32 @@
     "needs_review": true
   },
   "RM0085": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1303-96-4",
+    "cas_all": [
+      "1303-96-4",
+      "10043-35-3",
+      "68582-99-0"
+    ],
     "name": "Probac HC10710X",
     "synonyms": "Probac HC10710X",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0086": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "25133-97-5",
+    "cas_all": [
+      "25133-97-5"
+    ],
     "name": "Opacifier E-Cyrl 2301",
     "synonyms": "E-Cryl 2301, Alcoguard",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0087": {
     "cas": "7757-82-6",
@@ -1496,8 +1512,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "non-hazardous"
   },
   "RM0127": {
     "cas": "108-91-8",
@@ -1620,15 +1636,18 @@
     "needs_review": true
   },
   "RM0137": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "5989-27-5",
+    "cas_all": [
+      "5989-27-5",
+      "60828-78-6"
+    ],
     "name": "ALL CLEAN",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0138": {
     "cas": "1310-58-3",
@@ -1650,8 +1669,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "non-hazardous"
   },
   "RM0140": {
     "cas": "541-02-6",
@@ -1685,8 +1704,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "non-hazardous"
   },
   "RM0143": {
     "cas": "100-37-8",
@@ -2053,15 +2072,17 @@
     "cas_source": "confirmed"
   },
   "RM0173": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1415-93-6",
+    "cas_all": [
+      "1415-93-6"
+    ],
     "name": "SA-1000",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0174": {
     "cas": "104-15-4",
@@ -2077,15 +2098,17 @@
     "cas_source": "confirmed"
   },
   "RM0175": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "91995-81-2",
+    "cas_all": [
+      "91995-81-2"
+    ],
     "name": "Tetranyl AT-7590",
     "synonyms": "Tetranyl AT-7590\n\r\n\n\r\nACCOSOFT 501 DR400",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0176": {
     "cas": "7722-64-7",
@@ -2127,15 +2150,17 @@
     "cas_source": "confirmed"
   },
   "RM0179": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "61789-30-8",
+    "cas_all": [
+      "61789-30-8"
+    ],
     "name": "RM0179",
     "synonyms": "Calcium Hypochlorite",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0180": {
     "cas": "7553-56-2",
@@ -2151,15 +2176,17 @@
     "cas_source": "confirmed"
   },
   "RM0181": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "21489-20-3",
+    "cas_all": [
+      "21489-20-3"
+    ],
     "name": "RM0181",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0182": {
     "cas": "6915-15-7",
@@ -2175,15 +2202,17 @@
     "cas_source": "confirmed"
   },
   "RM0183": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "64742-48-9",
+    "cas_all": [
+      "64742-48-9"
+    ],
     "name": "Odorless Mineral Spirits",
     "synonyms": "OMS",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0184": {
     "cas": "9012-76-4",
@@ -2199,26 +2228,30 @@
     "cas_source": "confirmed"
   },
   "RM0185": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "85507-69-3",
+    "cas_all": [
+      "85507-69-3"
+    ],
     "name": "RM0185",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0186": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "84649-86-5",
+    "cas_all": [
+      "84649-86-5"
+    ],
     "name": "RM0186",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0187": {
     "cas": "97-59-6",
@@ -2273,48 +2306,56 @@
     "cas_source": "confirmed"
   },
   "RM0191": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "181828-06-8",
+    "cas_all": [
+      "181828-06-8"
+    ],
     "name": "Sodium Polyaspartate",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0192": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "68514-28-3",
+    "cas_all": [
+      "68514-28-3"
+    ],
     "name": "NACHURS Humi-flex® MAX",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0193": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "21351-39-3",
+    "cas_all": [
+      "21351-39-3"
+    ],
     "name": "urea-sulfuric acid",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0194": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "479-66-3",
+    "cas_all": [
+      "479-66-3"
+    ],
     "name": "NACHURS Humi-flex® FA",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "proprietary-no-cas"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0195": {
     "cas": "1344-09-8",
@@ -2369,26 +2410,30 @@
     "cas_source": "confirmed"
   },
   "RM0200": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "112926-00-8",
+    "cas_all": [
+      "112926-00-8"
+    ],
     "name": "Silica powders (Precipitated)",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0201": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "1401-55-4",
+    "cas_all": [
+      "1401-55-4"
+    ],
     "name": "Tannin Extract",
     "synonyms": "",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0202": {
     "cas": "584-08-7",
@@ -2417,15 +2462,17 @@
     "cas_source": "confirmed"
   },
   "RM0204": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "68514-28-3",
+    "cas_all": [
+      "68514-28-3"
+    ],
     "name": "Huma-K Humic Acid",
     "synonyms": "Huma-K Humic Acid\n\r\nPotassium Humate",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0205": {
     "cas": "7631-90-5",
@@ -2567,15 +2614,17 @@
     "cas_source": "confirmed"
   },
   "RM0412": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "61790-12-3",
+    "cas_all": [
+      "61790-12-3"
+    ],
     "name": "Tall oil Fatty Acid (Cal Chem Provided)",
     "synonyms": "Tall oil Fatty Acid (Cal Chem Provided)",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0413": {
     "cas": "",
@@ -2628,15 +2677,17 @@
     "cas_source": "confirmed"
   },
   "RM0417": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "64742-48-9",
+    "cas_all": [
+      "64742-48-9"
+    ],
     "name": "Odorless Mineral Spirits (Cal Chem Provided)",
     "synonyms": "Odorless Mineral Spirits (Cal Chem Provided)",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM1000": {
     "cas": "7732-18-5",
@@ -2663,15 +2714,17 @@
     "needs_review": true
   },
   "RM9200": {
-    "cas": "",
-    "cas_all": [],
+    "cas": "25265-71-8",
+    "cas_all": [
+      "25265-71-8"
+    ],
     "name": "Super Odor Killer GLOB3326",
     "synonyms": "Super Odor Killer",
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "unresolved"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM9201": {
     "cas": "68410-69-5",
