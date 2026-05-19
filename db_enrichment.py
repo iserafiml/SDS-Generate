@@ -151,13 +151,26 @@ _SCHEMA_EXAMPLE = {
     },
     "ghs_health_triggers": {
         "carcinogenicity":           {"threshold_pct": 0.1, "category": "1B"},
-        "germ_cell_mutagenicity":    {"threshold_pct": 0.1, "category": "2"},
-        "reproductive_toxicity":     {"threshold_pct": 0.1, "category": "1B"},
+        "germ_cell_mutagenicity":    {"threshold_pct": 0.1, "category": "1B"},
+        "reproductive_toxicity":     {"threshold_pct": 0.3, "category": "1B"},
         "respiratory_sensitization": {"threshold_pct": 0.1, "category": "1"},
-        "skin_sensitization":        {"threshold_pct": 0.1, "category": "1"},
-        "stot_re":                   {"threshold_pct": 1.0, "category": "2"},
+        "skin_sensitization":        {"threshold_pct": 1.0, "category": "1"},
+        "stot_re":                   {"threshold_pct": 10.0, "category": "1"},
         "aspiration":                {"threshold_pct": 10.0, "category": "1"},
     },
+}
+
+# Authoritative GHS/CLP generic concentration limits (wt %) that trigger
+# mixture classification, by (health class, category). Single source of truth
+# for both the enrichment prompt and the corrective migration.
+HEALTH_GCL: dict[str, dict[str, float]] = {
+    "carcinogenicity":           {"1": 0.1, "1A": 0.1, "1B": 0.1, "2": 1.0},
+    "germ_cell_mutagenicity":    {"1": 0.1, "1A": 0.1, "1B": 0.1, "2": 1.0},
+    "reproductive_toxicity":     {"1": 0.3, "1A": 0.3, "1B": 0.3, "2": 3.0},
+    "respiratory_sensitization": {"1": 0.1, "1A": 0.1, "1B": 0.1},
+    "skin_sensitization":        {"1": 1.0, "1A": 0.1, "1B": 1.0},
+    "stot_re":                   {"1": 10.0, "2": 1.0},
+    "aspiration":                {"1": 10.0},
 }
 
 # GHS health-hazard classes the classifier understands (used to merge enrichment
@@ -192,10 +205,12 @@ _SYSTEM_PROMPT = (
     "class give its GHS sub-category (carcinogenicity/mutagenicity/"
     "reproductive_toxicity: \"1A\"/\"1B\"/\"2\"; sensitizers: \"1\"/\"1A\"/"
     "\"1B\"; stot_re: \"1\"/\"2\"; aspiration: \"1\") and threshold_pct = the "
-    "GHS mixture generic concentration limit (carcinogen/mutagen/repro Cat 1 = "
-    "0.1, Cat 2 = 1.0; respiratory & skin sensitizer = 0.1; STOT-RE Cat 1 = "
-    "1.0, Cat 2 = 10.0; aspiration = 10.0). A cobalt(II) salt, for example, "
-    "has carcinogenicity 1B at 0.1. No markdown, no commentary."
+    "GHS/CLP generic concentration limit for THAT category: carcinogenicity & "
+    "germ_cell_mutagenicity Cat 1A/1B = 0.1, Cat 2 = 1.0; reproductive_"
+    "toxicity Cat 1A/1B = 0.3, Cat 2 = 3.0; respiratory_sensitization = 0.1; "
+    "skin_sensitization Cat 1/1B = 1.0 (sub-category 1A = 0.1); stot_re Cat 1 "
+    "= 10.0, Cat 2 = 1.0; aspiration Cat 1 = 10.0. A cobalt(II) salt, for "
+    "example, is carcinogenicity 1B at 0.1. No markdown, no commentary."
 )
 
 
