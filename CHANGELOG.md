@@ -53,8 +53,9 @@ rebuilt the chemical library from the company's authoritative data.
 
 - Single **searchable material field** (type RM#/CAS/name; was three manual
   boxes).
-- **"+ New material to library"** — web button + CLI; hot-reloads so the new
-  material is usable without a restart.
+- **"+ New material to library"** — web button + CLI; optional manual **RM#**
+  (blank = auto, duplicates rejected); hot-reloads so the new material is
+  usable immediately without a restart.
 - **Fuzzy / proprietary formula** option — aggregates known non-hazardous
   components and bands concentrations in Section 3 only (classification
   unaffected).
