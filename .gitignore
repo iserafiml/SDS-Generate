@@ -24,3 +24,6 @@ env/
 
 # Internal raw-material source exports (inventory data — keep local)
 data/sources/
+config/companies.json
+config/emergency_contacts.json
+config/logos/

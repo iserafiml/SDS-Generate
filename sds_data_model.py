@@ -327,6 +327,42 @@ class SDSProduct:
 
 
 # ---------------------------------------------------------------------------
+# Faithful (de)serialization — used to persist a generated SDS so it can be
+# re-issued under a different company without re-running the AI pipeline.
+# ---------------------------------------------------------------------------
+
+import dataclasses as _dc
+import typing as _t
+
+
+def sds_product_to_dict(p: "SDSProduct") -> dict:
+    return _dc.asdict(p)
+
+
+def _rebuild(tp, val):
+    origin = _t.get_origin(tp)
+    if _dc.is_dataclass(tp) and isinstance(val, dict):
+        hints = _t.get_type_hints(tp)
+        kwargs = {f.name: _rebuild(hints[f.name], val[f.name])
+                  for f in _dc.fields(tp) if f.name in val}
+        return tp(**kwargs)
+    if origin in (list, _t.List) and isinstance(val, list):
+        (inner,) = _t.get_args(tp) or (object,)
+        return [_rebuild(inner, v) for v in val]
+    if origin in (tuple,) and isinstance(val, (list, tuple)):
+        args = _t.get_args(tp)
+        if len(args) == 2 and args[1] is Ellipsis:
+            return tuple(_rebuild(args[0], v) for v in val)
+        return tuple(_rebuild(a, v) for a, v in zip(args, val))
+    return val
+
+
+def sds_product_from_dict(d: dict) -> "SDSProduct":
+    """Rebuild a fully-typed SDSProduct (nested dataclasses included)."""
+    return _rebuild(SDSProduct, d)
+
+
+# ---------------------------------------------------------------------------
 # Document wrapper
 # ---------------------------------------------------------------------------
 

@@ -100,6 +100,28 @@
   <!-- ── Section 2: Manufacturer ───────────────────────────────────── -->
   <details>
     <summary><span class="badge bg-secondary me-1">2</span> Manufacturer / Supplier</summary>
+    <div class="section-body">
+      <input type="hidden" id="companyId">
+      <div class="row g-3 mb-2">
+        <div class="col-md-5">
+          <label class="form-label fw-bold">Issuing company (saved profile)</label>
+          <select id="companySel" class="form-select" onchange="onCompanyPick()">
+            <option value="">— manual entry below —</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label fw-bold">24h Emergency contact</label>
+          <select id="emergencySel" class="form-select"></select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end gap-2">
+          <button type="button" class="btn btn-outline-primary btn-sm"
+                  data-bs-toggle="modal" data-bs-target="#companyModal">Manage</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm"
+                  data-bs-toggle="modal" data-bs-target="#reissueModal">Re-issue</button>
+        </div>
+      </div>
+      <div class="text-muted small mb-2">Pick a saved company to fill Section 1 + logo automatically, or leave on "manual entry" and type below.</div>
+    </div>
     <div class="section-body row g-3">
       <div class="col-md-6">
         <label class="form-label">Company Name</label>
@@ -212,6 +234,55 @@
 </div><!-- /container -->
 
 <!-- ── GHS Hazard Modal ───────────────────────────────────────────── -->
+<div class="modal fade" id="companyModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Manage companies & emergency contacts</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <h6>Companies</h6>
+        <div id="coList" class="small mb-2"></div>
+        <div class="row g-2">
+          <input type="hidden" id="coEditId">
+          <div class="col-6"><input id="coName" class="form-control form-control-sm" placeholder="Company name *"></div>
+          <div class="col-6"><input id="coPhone" class="form-control form-control-sm" placeholder="Phone"></div>
+          <div class="col-6"><input id="coAddr" class="form-control form-control-sm" placeholder="Address line"></div>
+          <div class="col-6"><input id="coCity" class="form-control form-control-sm" placeholder="City, State ZIP"></div>
+          <div class="col-4"><input id="coCountry" class="form-control form-control-sm" placeholder="Country"></div>
+          <div class="col-4"><input id="coEmail" class="form-control form-control-sm" placeholder="Email"></div>
+          <div class="col-4"><input id="coWeb" class="form-control form-control-sm" placeholder="Website"></div>
+          <div class="col-8"><input type="file" id="coLogo" class="form-control form-control-sm" accept="image/*"></div>
+          <div class="col-4 d-grid"><button class="btn btn-primary btn-sm" onclick="saveCompany()">Save company</button></div>
+        </div>
+        <div id="coMsg" class="small mt-2"></div>
+        <hr>
+        <h6>Emergency contacts (24h)</h6>
+        <div id="emList" class="small"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reissueModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Re-issue a saved SDS under a different company</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <p class="small text-muted">Re-renders an existing SDS with a different company / emergency contact. No AI, no API cost — Section 1 &amp; logo only.</p>
+        <div class="mb-2"><label class="form-label">Saved SDS</label>
+          <select id="riSds" class="form-select form-select-sm"></select></div>
+        <div class="mb-2"><label class="form-label">New company</label>
+          <select id="riCompany" class="form-select form-select-sm"></select></div>
+        <div class="mb-2"><label class="form-label">Emergency contact</label>
+          <select id="riEmergency" class="form-select form-select-sm"></select></div>
+        <button class="btn btn-primary btn-sm" onclick="doReissue()">Re-issue</button>
+        <div id="riMsg" class="small mt-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="addMaterialModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -305,6 +376,86 @@
 <script>
 // ── Global state ──────────────────────────────────────────────────────
 const HAZARD_MENU = {{ hazard_menu_json | safe }};
+let COMPANIES = {{ companies_json | safe }};
+let EMERGENCY = {{ emergency_json | safe }};
+
+function _opts(arr, val, lbl, placeholder) {
+  return (placeholder ? `<option value="">${placeholder}</option>` : "") +
+    arr.map(o => `<option value="${o[val]}">${o[lbl]}</option>`).join("");
+}
+function refreshCompanyUI() {
+  document.getElementById("companySel").innerHTML =
+    '<option value="">— manual entry below —</option>' + _opts(COMPANIES,"id","name","");
+  for (const id of ["emergencySel","riEmergency"])
+    document.getElementById(id).innerHTML = _opts(EMERGENCY,"id","provider","");
+  document.getElementById("riCompany").innerHTML = _opts(COMPANIES,"id","name","");
+  // company list in manage modal
+  document.getElementById("coList").innerHTML = COMPANIES.length
+    ? COMPANIES.map(c => `<div class="d-flex justify-content-between border-bottom py-1">
+        <span>${c.name} <span class="text-muted">${c.city_state_zip||""}</span>${c.logo_path?' 🖼':''}</span>
+        <span><a href="#" onclick="editCompany('${c.id}');return false">edit</a> ·
+        <a href="#" class="text-danger" onclick="delCompany('${c.id}');return false">del</a></span></div>`).join("")
+    : '<em class="text-muted">No companies yet.</em>';
+  document.getElementById("emList").innerHTML = EMERGENCY.map(e =>
+    `<div class="row g-1 mb-1"><div class="col-4"><input class="form-control form-control-sm" value="${e.provider||''}" id="em_p_${e.id}"></div>
+     <div class="col-4"><input class="form-control form-control-sm" value="${e.phone||''}" id="em_n_${e.id}"></div>
+     <div class="col-3"><input class="form-control form-control-sm" value="${e.account||''}" placeholder="Acct#" id="em_a_${e.id}"></div>
+     <div class="col-1"><button class="btn btn-sm btn-outline-primary" onclick="saveEmergency('${e.id}')">✓</button></div></div>`).join("");
+}
+function onCompanyPick() {
+  document.getElementById("companyId").value = document.getElementById("companySel").value;
+}
+async function _reloadCompanies() {
+  const d = await (await fetch("/api/companies")).json();
+  COMPANIES = d.companies; EMERGENCY = d.emergency; refreshCompanyUI();
+}
+function editCompany(id) {
+  const c = COMPANIES.find(x => x.id === id); if (!c) return;
+  coEditId.value=c.id; coName.value=c.name||""; coPhone.value=c.phone||"";
+  coAddr.value=c.address_line1||""; coCity.value=c.city_state_zip||"";
+  coCountry.value=c.country||""; coEmail.value=c.email||""; coWeb.value=c.website||"";
+}
+async function delCompany(id) {
+  if (!confirm("Delete this company?")) return;
+  await fetch("/api/company/"+id,{method:"DELETE"}); _reloadCompanies();
+}
+async function saveCompany() {
+  const msg=document.getElementById("coMsg");
+  const payload={ id:coEditId.value, name:coName.value.trim(), phone:coPhone.value.trim(),
+    address_line1:coAddr.value.trim(), city_state_zip:coCity.value.trim(),
+    country:coCountry.value.trim(), email:coEmail.value.trim(), website:coWeb.value.trim() };
+  const f=document.getElementById("coLogo").files[0];
+  if (f){ const fd=new FormData(); fd.append("logo",f);
+    const lr=await (await fetch("/api/upload_logo",{method:"POST",body:fd})).json();
+    if(lr.ok) payload.logo_path=lr.logo_path; }
+  const r=await (await fetch("/api/company",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})).json();
+  if(!r.ok){ msg.innerHTML='<span class="text-danger">'+r.error+'</span>'; return; }
+  msg.innerHTML='<span class="text-success">Saved.</span>';
+  ["coEditId","coName","coPhone","coAddr","coCity","coCountry","coEmail","coWeb"].forEach(i=>document.getElementById(i).value="");
+  document.getElementById("coLogo").value=""; _reloadCompanies();
+}
+async function saveEmergency(id){
+  await fetch("/api/emergency",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({id, provider:document.getElementById("em_p_"+id).value,
+      phone:document.getElementById("em_n_"+id).value, account:document.getElementById("em_a_"+id).value})});
+  _reloadCompanies();
+}
+async function openReissue(){
+  const s=await (await fetch("/api/saved_sds")).json();
+  document.getElementById("riSds").innerHTML=s.map(x=>`<option value="${x.file}">${x.product_name||x.pdf}</option>`).join("");
+}
+document.getElementById("reissueModal")?.addEventListener("show.bs.modal", openReissue);
+async function doReissue(){
+  const msg=document.getElementById("riMsg"); msg.textContent="Working…";
+  const r=await (await fetch("/api/reissue",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({sds_file:document.getElementById("riSds").value,
+      company_id:document.getElementById("riCompany").value,
+      emergency_id:document.getElementById("riEmergency").value})})).json();
+  msg.innerHTML = r.ok
+    ? `<span class="text-success">Done.</span> <a href="/download/${r.pdf}" target="_blank">Download PDF</a>`
+    : `<span class="text-danger">${r.error}</span>`;
+}
+document.addEventListener("DOMContentLoaded", refreshCompanyUI);
 
 const rowData = [];       // rowData[i] = {manualHazards: [{key,category,display}]} or null
 let _rowCount  = 0;
@@ -613,6 +764,8 @@ function buildPayload() {
       website:            document.getElementById("mfgWebsite").value.trim(),
     },
     ingredients,
+    company_id: document.getElementById("companyId").value,
+    emergency_id: document.getElementById("emergencySel").value,
     fuzzy_formula: document.getElementById("fuzzyFormula").checked,
     physical: {
       appearance: document.getElementById("appearance").value.trim(),

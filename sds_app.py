@@ -27,6 +27,8 @@ from sds_data_model import (
 from sds_generator import SDSGenerator
 from sds_input import _merge_manual_categories
 from sds_pdf_builder import build_sds_pdf
+from sds_data_model import SDSDocument, sds_product_to_dict, sds_product_from_dict
+import company_admin
 
 # ---------------------------------------------------------------------------
 # App + shared resources
@@ -208,12 +210,29 @@ def _run_generation(job_id: str, data: dict) -> None:
         if manual_cats:
             _merge_manual_categories(sds_doc.product.classification, manual_cats)
 
+        # Resolve the issuing company (falls back to the default brand).
+        company_id = (data.get("company_id") or "").strip()
+        emergency_id = (data.get("emergency_id") or "").strip()
+        use_brand = brand
+        if company_id:
+            try:
+                use_brand, mfr = company_admin.build_profile(company_id, emergency_id)
+                sds_doc.product.manufacturer = mfr
+            except ValueError:
+                pass
+
         safe_name = "".join(
             c if c.isalnum() or c in ("-", "_") else "_"
             for c in product.product_name
         )
         filename = f"{safe_name}_{job_id[:8]}.pdf"
-        build_sds_pdf(sds_doc, OUTPUT_DIR / filename, brand)
+        build_sds_pdf(sds_doc, OUTPUT_DIR / filename, use_brand)
+        # Persist the full SDS so it can be re-issued under a different
+        # company later WITHOUT re-running the AI pipeline.
+        (OUTPUT_DIR / f"{filename}.sds.json").write_text(json.dumps({
+            "product": sds_product_to_dict(sds_doc.product),
+            "company_id": company_id, "emergency_id": emergency_id,
+        }, ensure_ascii=False), encoding="utf-8")
         _finish_job(job_id, filename)
 
     except Exception as exc:
@@ -231,7 +250,97 @@ def index():
         brand=brand,
         hazard_menu=HAZARD_MENU,
         hazard_menu_json=json.dumps(HAZARD_MENU),
+        companies_json=json.dumps(company_admin.list_companies()),
+        emergency_json=json.dumps(company_admin.list_emergency()),
     )
+
+
+@app.route("/api/companies")
+def api_companies():
+    return jsonify({"companies": company_admin.list_companies(),
+                    "emergency": company_admin.list_emergency()})
+
+
+@app.route("/api/company", methods=["POST"])
+def api_company_save():
+    try:
+        return jsonify({"ok": True, "company":
+                        company_admin.save_company(request.get_json(force=True) or {})})
+    except ValueError as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
+
+
+@app.route("/api/company/<cid>", methods=["DELETE"])
+def api_company_delete(cid):
+    return jsonify({"ok": company_admin.delete_company(cid)})
+
+
+@app.route("/api/emergency", methods=["POST"])
+def api_emergency_save():
+    try:
+        return jsonify({"ok": True, "emergency":
+                        company_admin.save_emergency(request.get_json(force=True) or {})})
+    except ValueError as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
+
+
+@app.route("/api/upload_logo", methods=["POST"])
+def api_upload_logo():
+    f = request.files.get("logo")
+    if not f:
+        return jsonify({"ok": False, "error": "No file."}), 400
+    try:
+        return jsonify({"ok": True,
+                        "logo_path": company_admin.save_logo(f.filename, f.read())})
+    except ValueError as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
+
+
+@app.route("/api/saved_sds")
+def api_saved_sds():
+    out = []
+    for j in sorted(OUTPUT_DIR.glob("*.sds.json")):
+        try:
+            d = json.loads(j.read_text(encoding="utf-8"))
+            out.append({
+                "file": j.name,
+                "pdf": j.name[:-9],            # strip ".sds.json"
+                "product_name": d.get("product", {}).get("product_name", ""),
+                "company_id": d.get("company_id", ""),
+            })
+        except Exception:
+            continue
+    return jsonify(out)
+
+
+@app.route("/api/reissue", methods=["POST"])
+def api_reissue():
+    """Re-render a previously generated SDS under a different company.
+    No AI pipeline, no API cost — just swaps Section 1 + brand and
+    rebuilds the PDF from the persisted data."""
+    data = request.get_json(force=True) or {}
+    jpath = OUTPUT_DIR / (data.get("sds_file") or "")
+    if not jpath.exists() or jpath.suffix != ".json":
+        return jsonify({"ok": False, "error": "Saved SDS not found."}), 404
+    try:
+        saved = json.loads(jpath.read_text(encoding="utf-8"))
+        product = sds_product_from_dict(saved["product"])
+        use_brand, mfr = company_admin.build_profile(
+            data.get("company_id", ""), data.get("emergency_id", ""))
+        product.manufacturer = mfr
+        base = jpath.name[:-9].rsplit(".pdf", 1)[0]
+        cname = "".join(ch if ch.isalnum() else "_"
+                        for ch in (use_brand.company_name or "company"))[:24]
+        out = f"{base}__{cname}_{uuid.uuid4().hex[:6]}.pdf"
+        build_sds_pdf(SDSDocument(product=product), OUTPUT_DIR / out, use_brand)
+        (OUTPUT_DIR / f"{out}.sds.json").write_text(json.dumps({
+            "product": sds_product_to_dict(product),
+            "company_id": data.get("company_id", ""),
+            "emergency_id": data.get("emergency_id", ""),
+        }, ensure_ascii=False), encoding="utf-8")
+        return jsonify({"ok": True, "pdf": out})
+    except (ValueError, KeyError) as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
 
 
 @app.route("/lookup_cas")
