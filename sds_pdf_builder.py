@@ -9,8 +9,10 @@ Architecture mirrors tds_pdf_builder.py from the TDS Generator project:
 Key difference from TDS: NO ingredient redaction — CAS numbers and
 concentrations are fully disclosed as required by OSHA HCS 2012.
 
-Layout: 16 sections flow naturally across pages (no forced PageBreaks).
-        KeepTogether() prevents orphaned section headers.
+Layout: 16 sections flow naturally and fill pages. CondPageBreak before
+        each section header prevents orphaned headers without leaving
+        large blank gaps; long tables split with repeatRows=1 so the
+        header row repeats on every page.
 """
 
 from __future__ import annotations
@@ -26,6 +28,7 @@ from reportlab.lib.units import mm
 from reportlab.platypus import (
     BaseDocTemplate,
     Frame,
+    CondPageBreak,
     HRFlowable,
     Image,
     KeepTogether,
@@ -246,6 +249,7 @@ def build_section_1_identification(p: SDSProduct, brand: BrandConfig, styles: di
                      + (f" (Account No.: {mfr.emergency_account})" if mfr.emergency_account else "")])
 
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.28, CONTENT_W * 0.72])
+    elems.append(CondPageBreak(26 * mm))
     elems.append(KeepTogether([_section_bar("SECTION 1: IDENTIFICATION", styles, brand),
                                 Spacer(1, 2*mm), tbl]))
     elems.append(Spacer(1, 3 * mm))
@@ -398,7 +402,7 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
             Paragraph("Proprietary", style_b),
         ])
 
-    tbl = Table(rows, colWidths=col_w)
+    tbl = Table(rows, colWidths=col_w, repeatRows=1)
     tbl.setStyle(TableStyle([
         ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
@@ -426,7 +430,8 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
     block.append(Paragraph(
         "<i>Additional Information: " + _esc(p.additional_ingredient_info) + "</i>",
         styles["body_small"]))
-    elems.append(KeepTogether(block))
+    elems.append(CondPageBreak(34 * mm))
+    elems.extend(block)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -451,17 +456,15 @@ def build_section_4_first_aid(p: SDSProduct, brand: BrandConfig, styles: dict) -
     symptoms_tbl = _two_col_table(symptoms_rows, brand,
                                    col_widths=[CONTENT_W * 0.3, CONTENT_W * 0.7])
 
-    elems.append(KeepTogether([
-        _section_bar("SECTION 4: FIRST AID MEASURES", styles, brand),
-        Spacer(1, 2*mm),
-        Paragraph("Description of First Aid Measures", styles["subhead"]),
-        tbl,
-    ]))
+    elems.append(CondPageBreak(34 * mm))
+    elems.append(_section_bar("SECTION 4: FIRST AID MEASURES", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(Paragraph("Description of First Aid Measures", styles["subhead"]))
+    elems.append(tbl)
     elems.append(Spacer(1, 2 * mm))
-    elems.append(KeepTogether([
-        Paragraph("Most Important Symptoms and Immediate Medical Attention", styles["subhead"]),
-        symptoms_tbl,
-    ]))
+    elems.append(CondPageBreak(22 * mm))
+    elems.append(Paragraph("Most Important Symptoms and Immediate Medical Attention", styles["subhead"]))
+    elems.append(symptoms_tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -476,10 +479,10 @@ def build_section_5_firefighting(p: SDSProduct, brand: BrandConfig, styles: dict
     _r("Special Protective Equipment for Firefighters", p.firefighting_ppe)
     _r("Special Precautions",            p.firefighting_precautions)
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.32, CONTENT_W * 0.68])
-    elems.append(KeepTogether([
-        _section_bar("SECTION 5: FIREFIGHTING MEASURES", styles, brand),
-        Spacer(1, 2*mm), tbl,
-    ]))
+    elems.append(CondPageBreak(30 * mm))
+    elems.append(_section_bar("SECTION 5: FIREFIGHTING MEASURES", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -495,10 +498,10 @@ def build_section_6_release(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
     _r("Reference to Other Sections",
        "For personal protective equipment see Section 8. For disposal see Section 13.")
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.32, CONTENT_W * 0.68])
-    elems.append(KeepTogether([
-        _section_bar("SECTION 6: ACCIDENTAL RELEASE MEASURES", styles, brand),
-        Spacer(1, 2*mm), tbl,
-    ]))
+    elems.append(CondPageBreak(30 * mm))
+    elems.append(_section_bar("SECTION 6: ACCIDENTAL RELEASE MEASURES", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -515,6 +518,7 @@ def build_section_7_handling(p: SDSProduct, brand: BrandConfig, styles: dict) ->
     if p.specific_end_use:
         rows_s.append(["Specific End Use(s)", p.specific_end_use])
 
+    elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 7: HANDLING AND STORAGE", styles, brand))
     elems.append(Spacer(1, 2 * mm))
     if len(rows_h) > 1:
@@ -559,7 +563,7 @@ def build_section_8_exposure(p: SDSProduct, brand: BrandConfig, styles: dict) ->
             ])
             prev_substance = oel.substance_name
 
-        oel_tbl = Table(oel_rows, colWidths=oel_col_w)
+        oel_tbl = Table(oel_rows, colWidths=oel_col_w, repeatRows=1)
         oel_tbl.setStyle(TableStyle([
             ("BACKGROUND",   (0, 0), (-1, 0),  c_sec),
             ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
@@ -638,12 +642,11 @@ def build_section_9_properties(p: SDSProduct, brand: BrandConfig, styles: dict) 
             rows.append([label, _esc(val)])
 
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.38, CONTENT_W * 0.62])
-    elems.append(KeepTogether([
-        _section_bar("SECTION 9: PHYSICAL AND CHEMICAL PROPERTIES", styles, brand),
-        Spacer(1, 2*mm),
-        Paragraph("Information on Basic Physical and Chemical Properties", styles["subhead"]),
-        tbl,
-    ]))
+    elems.append(CondPageBreak(34 * mm))
+    elems.append(_section_bar("SECTION 9: PHYSICAL AND CHEMICAL PROPERTIES", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(Paragraph("Information on Basic Physical and Chemical Properties", styles["subhead"]))
+    elems.append(tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -659,10 +662,10 @@ def build_section_10_stability(p: SDSProduct, brand: BrandConfig, styles: dict) 
     _r("Incompatible Materials",      p.incompatible_materials)
     _r("Hazardous Decomposition Products", p.hazardous_decomposition)
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.32, CONTENT_W * 0.68])
-    elems.append(KeepTogether([
-        _section_bar("SECTION 10: STABILITY AND REACTIVITY", styles, brand),
-        Spacer(1, 2*mm), tbl,
-    ]))
+    elems.append(CondPageBreak(30 * mm))
+    elems.append(_section_bar("SECTION 10: STABILITY AND REACTIVITY", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
@@ -672,6 +675,7 @@ def build_section_11_toxicology(p: SDSProduct, brand: BrandConfig, styles: dict)
     c_sec = _hex(brand.secondary)
     c_lt  = _hex(brand.light_bg)
 
+    elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 11: TOXICOLOGICAL INFORMATION", styles, brand))
     elems.append(Spacer(1, 2 * mm))
 
@@ -692,7 +696,7 @@ def build_section_11_toxicology(p: SDSProduct, brand: BrandConfig, styles: dict)
                 Paragraph(_esc(rec.species), style_b),
                 Paragraph(_esc(rec.result), style_b),
             ])
-        tox_tbl = Table(tox_rows, colWidths=col_w)
+        tox_tbl = Table(tox_rows, colWidths=col_w, repeatRows=1)
         tox_tbl.setStyle(TableStyle([
             ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
             ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
@@ -744,6 +748,7 @@ def build_section_12_ecology(p: SDSProduct, brand: BrandConfig, styles: dict) ->
     c_sec = _hex(brand.secondary)
     c_lt  = _hex(brand.light_bg)
 
+    elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 12: ECOLOGICAL INFORMATION", styles, brand))
     elems.append(Spacer(1, 2 * mm))
 
@@ -766,7 +771,7 @@ def build_section_12_ecology(p: SDSProduct, brand: BrandConfig, styles: dict) ->
                 Paragraph(_esc(r.metric), style_b),
                 Paragraph(_esc(r.value), style_b),
             ])
-        tbl = Table(rows, colWidths=col_w)
+        tbl = Table(rows, colWidths=col_w, repeatRows=1)
         tbl.setStyle(TableStyle([
             ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
             ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
@@ -810,16 +815,17 @@ def build_section_13_disposal(p: SDSProduct, brand: BrandConfig, styles: dict) -
     if p.disposal_container:
         rows.append(["Contaminated Packages", p.disposal_container])
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.28, CONTENT_W * 0.72])
-    elems.append(KeepTogether([
-        _section_bar("SECTION 13: DISPOSAL CONSIDERATIONS", styles, brand),
-        Spacer(1, 2*mm), tbl,
-    ]))
+    elems.append(CondPageBreak(28 * mm))
+    elems.append(_section_bar("SECTION 13: DISPOSAL CONSIDERATIONS", styles, brand))
+    elems.append(Spacer(1, 2*mm))
+    elems.append(tbl)
     elems.append(Spacer(1, 3 * mm))
     return elems
 
 
 def build_section_14_transport(p: SDSProduct, brand: BrandConfig, styles: dict) -> list:
     elems: list = []
+    elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 14: TRANSPORT INFORMATION", styles, brand))
     elems.append(Spacer(1, 2 * mm))
 
@@ -848,6 +854,7 @@ def build_section_15_regulatory(p: SDSProduct, brand: BrandConfig, styles: dict)
     c_sec = _hex(brand.secondary)
     c_lt  = _hex(brand.light_bg)
 
+    elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 15: REGULATORY INFORMATION", styles, brand))
     elems.append(Spacer(1, 2 * mm))
     elems.append(Paragraph("United States Regulations", styles["subhead"]))
@@ -885,7 +892,7 @@ def build_section_15_regulatory(p: SDSProduct, brand: BrandConfig, styles: dict)
                 Paragraph("Yes" if rl.caa_112r else "No", style_b),
                 Paragraph(_esc(rl.prop_65_warning or ("Yes" if rl.prop_65 else "No")), style_b),
             ])
-        reg_tbl = Table(reg_rows, colWidths=col_w)
+        reg_tbl = Table(reg_rows, colWidths=col_w, repeatRows=1)
         reg_tbl.setStyle(TableStyle([
             ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
             ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
@@ -942,6 +949,7 @@ def build_section_16_other(p: SDSProduct, brand: BrandConfig, styles: dict) -> l
     _r("Abbreviations",            p.abbreviations)
     tbl = _two_col_table(rows, brand, col_widths=[CONTENT_W * 0.28, CONTENT_W * 0.72])
 
+    elems.append(CondPageBreak(28 * mm))
     elems.append(KeepTogether([
         _section_bar("SECTION 16: OTHER INFORMATION", styles, brand),
         Spacer(1, 2*mm), tbl,
@@ -1133,7 +1141,7 @@ def _two_col_table(rows: list, brand: BrandConfig,
             for cell in row
         ])
 
-    tbl = Table(formatted, colWidths=col_widths)
+    tbl = Table(formatted, colWidths=col_widths, repeatRows=1)
     tbl.setStyle(TableStyle([
         ("BACKGROUND",   (0, 0), (-1, 0),  c_sec),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
