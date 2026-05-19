@@ -276,9 +276,11 @@ def build_section_2_hazards(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
     )
     sw_tbl.setStyle(TableStyle([
         ("BACKGROUND",   (0, 0), (-1, -1), sw_color),
+        ("VALIGN",       (0, 0), (-1, -1), "MIDDLE"),
         ("TOPPADDING",   (0, 0), (-1, -1), 2),
         ("BOTTOMPADDING",(0, 0), (-1, -1), 2),
     ]))
+    sw_tbl.hAlign = "CENTER"
 
     # --- Pictogram row ---
     pic_row = _draw_pictogram_row(clf.pictograms_needed, brand)
@@ -287,14 +289,17 @@ def build_section_2_hazards(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
                                 Paragraph("GHS Classification:", styles["subhead"]),
                                 clf_tbl, Spacer(1, 3*mm)]))
 
-    elems.append(Paragraph("Label Elements", styles["subhead"]))
-    elems.append(Spacer(1, 1 * mm))
-    elems.append(Paragraph("<b>Hazard Pictograms:</b>", styles["body"]))
-    elems.append(Spacer(1, 1 * mm))
-    elems += pic_row
-    elems.append(Spacer(1, 2 * mm))
-    elems.append(sw_tbl)
-    elems.append(Spacer(1, 3 * mm))
+    label_block = [
+        Paragraph("Label Elements", styles["subhead"]),
+        Spacer(1, 1 * mm),
+        Paragraph("<b>Hazard Pictograms:</b>", styles["body"]),
+        Spacer(1, 2 * mm),
+        *pic_row,
+        Spacer(1, 5 * mm),
+        sw_tbl,
+        Spacer(1, 3 * mm),
+    ]
+    elems.append(KeepTogether(label_block))
 
     # --- H-statements ---
     elems.append(Paragraph("<b>Hazard statements:</b>", styles["body"]))
@@ -328,16 +333,26 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
     style_b = ParagraphStyle("td3", fontName=FONT_BODY, fontSize=8,
                               textColor=colors.HexColor("#1C1C1C"), leading=10)
 
+    def _num(v: float) -> str:
+        return f"{v:g}"
+
+    def _pct(ing) -> tuple[str, str]:
+        lo, hi = ing.wt_percent_low, ing.wt_percent_high
+        if lo == 0 and hi == 0:
+            return "—", "< 0.1"          # trace component (still disclosed)
+        return _num(lo), _num(hi)
+
     header = [Paragraph(h, style_h) for h in
                ["Chemical Name", "CAS Number", "Wt% Low", "Wt% High", "Function"]]
     rows = [header]
     for ing in p.ingredients:
+        lo, hi = _pct(ing)
         rows.append([
             Paragraph(_esc(ing.name), style_b),
             Paragraph(_esc(ing.cas_number), style_b),
-            Paragraph(f"{ing.wt_percent_low:.0f}", style_b),
-            Paragraph(f"{ing.wt_percent_high:.0f}", style_b),
-            Paragraph(_esc(ing.function), style_b),
+            Paragraph(lo, style_b),
+            Paragraph(hi, style_b),
+            Paragraph(_esc(ing.function) or "Not specified", style_b),
         ])
 
     tbl = Table(rows, colWidths=col_w)

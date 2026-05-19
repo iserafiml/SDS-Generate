@@ -49,6 +49,27 @@ if _RM_INDEX_PATH.exists():
     with open(_RM_INDEX_PATH, encoding="utf-8") as _f:
         _rm_index = json.load(_f)
 
+# Unified searchable pool: every RM# entry plus any DB chemical without an RM.
+_search_pool: list[dict] = []
+_seen_cas: set[str] = set()
+for _rm, _rec in _rm_index.items():
+    _cas = _rec.get("cas", "")
+    _search_pool.append({
+        "rm": _rm,
+        "cas": _cas,
+        "name": _rec.get("name", ""),
+        "in_db": _cas in _db,
+    })
+    _seen_cas.add(_cas)
+for _cas, _rec in _db.items():
+    if _cas not in _seen_cas:
+        _search_pool.append({
+            "rm": "",
+            "cas": _cas,
+            "name": _rec.get("name", ""),
+            "in_db": True,
+        })
+
 # ---------------------------------------------------------------------------
 # In-memory job store
 # ---------------------------------------------------------------------------
@@ -211,6 +232,26 @@ def lookup_rm():
         in_db = cas in _db
         return jsonify({"found": True, "cas": cas, "name": name, "in_db": in_db})
     return jsonify({"found": False})
+
+
+@app.route("/api/search_materials")
+def search_materials():
+    """Autocomplete: match RM#, CAS or name by substring. Returns ≤20 hits."""
+    q = request.args.get("q", "").strip().lower()
+    if len(q) < 2:
+        return jsonify([])
+    starts, contains = [], []
+    for item in _search_pool:
+        rm = item["rm"].lower()
+        cas = item["cas"].lower()
+        name = item["name"].lower()
+        if rm.startswith(q) or cas.startswith(q) or name.startswith(q):
+            starts.append(item)
+        elif q in rm or q in cas or q in name:
+            contains.append(item)
+        if len(starts) >= 20:
+            break
+    return jsonify((starts + contains)[:20])
 
 
 @app.route("/generate", methods=["POST"])

@@ -22,6 +22,7 @@ from pathlib import Path
 import anthropic
 
 from brand_config import load_brand
+from db_enrichment import enrich_chemical, needs_enrichment, persist_db
 from ghs_classifier import GHSClassifier
 from sds_data_model import (
     AquaticToxRecord,
@@ -57,6 +58,7 @@ class SDSGenerator:
 
     def __init__(self, db_path: str | Path, api_config_path: str | Path):
         # Load chemical database, indexed by CAS number
+        self._db_path = Path(db_path)
         with open(db_path, encoding="utf-8") as f:
             records = json.load(f)
         self._db: dict[str, dict] = {r["cas"]: r for r in records}
@@ -79,26 +81,40 @@ class SDSGenerator:
             if progress_cb is not None:
                 progress_cb(pct, msg)
 
-        # 1. GHS classification
-        _cb(10, "Running GHS classification...")
+        # 1. AI-enrich any DB records that lack toxicology/OEL/regulatory data
+        #    (incl. carcinogenicity/sensitization GHS triggers), then write the
+        #    filled records back so the cost is paid only once. Must run BEFORE
+        #    classification so enriched health-hazard triggers reach Section 2.
+        _cb(15, "AI-enriching chemical data (first time per chemical)...")
+        self._ai_enrich_db(product)
+
+        # 2. GHS classification (sees enriched ghs_triggers)
+        _cb(30, "Running GHS classification...")
         product.classification = self._classifier.classify(product.ingredients)
 
-        # 2. Enrich from chemical database
-        _cb(30, "Enriching from chemical database...")
+        # 3. Enrich product from chemical database
+        _cb(40, "Enriching from chemical database...")
         self._enrich_from_db(product)
 
-        # 3. Claude API — first aid and firefighting narrative
+        # 4. Claude API — narrative sections
         _cb(50, "Generating first aid text (Claude API)...")
         self._generate_first_aid(product)
-        _cb(75, "Generating firefighting text (Claude API)...")
+        _cb(60, "Generating firefighting text (Claude API)...")
         self._generate_firefighting(product)
+        _cb(70, "Generating handling/storage/PPE text (Claude API)...")
+        self._generate_handling_storage_ppe(product)
+        _cb(80, "Estimating physical properties (Claude API)...")
+        self._generate_physical_properties(product)
 
-        # 4. Transport classification (rule-based)
+        # 5. Transport classification (rule-based)
         _cb(88, "Building transport classification...")
         if not product.transport:
             product.transport = self._build_transport(product)
 
-        # 5. Meta fields
+        # 6. Consistency cross-check (log contradictions)
+        self._consistency_pass(product)
+
+        # 7. Meta fields
         _cb(95, "Finalizing document...")
         product.generated_date = date.today().isoformat()
         if not product.preparation_date:
@@ -112,6 +128,23 @@ class SDSGenerator:
 
     def _lookup_db(self, cas: str) -> dict | None:
         return self._db.get(cas.strip())
+
+    def _ai_enrich_db(self, product: SDSProduct) -> None:
+        """For each ingredient in the DB, fill missing toxicology/OEL/aquatic/
+        regulatory data via Claude (once) and persist it back to the JSON file.
+        """
+        dirty = False
+        for ing in product.ingredients:
+            rec = self._lookup_db(ing.cas_number)
+            if not rec or not needs_enrichment(rec):
+                continue
+            _, changed = enrich_chemical(self._client, rec)
+            dirty = dirty or changed
+        if dirty:
+            try:
+                persist_db(self._db, self._db_path)
+            except Exception as e:  # noqa: BLE001 — never fail generation on a write
+                print(f"[WARNING] Could not persist enriched DB: {e}")
 
     def _enrich_from_db(self, product: SDSProduct) -> None:
         """Populate OELs, toxicology, aquatic, regulatory, and carcinogenicity fields."""
@@ -242,11 +275,12 @@ class SDSGenerator:
         # Prop 65 aggregate warning
         prop65_ings = [rl for rl in product.regulatory_listings if rl.prop_65]
         if prop65_ings:
-            warnings = "; ".join(f"{rl.substance_name} ({rl.prop_65_warning})" for rl in prop65_ings)
+            names = ", ".join(rl.substance_name for rl in prop65_ings)
             product.prop_65_warning_text = (
-                f"WARNING: This product can expose you to {warnings}, "
-                "which is/are known to the State of California to cause cancer. "
-                "For more information go to www.P65Warnings.ca.gov"
+                f"WARNING: This product can expose you to {names}, which is/are "
+                "known to the State of California to cause cancer and/or "
+                "reproductive harm. For more information go to "
+                "www.P65Warnings.ca.gov"
             )
 
         # Default values for non-DB fields
@@ -364,10 +398,12 @@ class SDSGenerator:
         )
         user_msg = (
             f"Product: {product.product_name}\n"
-            f"Hazard classes: {', '.join(hazard_classes)}\n"
+            f"Hazard classes: {', '.join(hazard_classes) or 'None classified'}\n"
             f"Ingredients: {', '.join(ing_names)}\n\n"
-            "This is an oxidizing acid mixture. Include oxidizer-specific precautions. "
-            "Return JSON only."
+            "Base firefighting guidance strictly on the hazard classes and "
+            "ingredient chemistry above. Do NOT assume the product is oxidizing, "
+            "flammable, or otherwise hazardous unless that is implied by the "
+            "listed hazard classes or ingredients. Return JSON only."
         )
 
         try:
@@ -392,14 +428,13 @@ class SDSGenerator:
         except Exception as e:
             print(f"[WARNING] Firefighting generation failed: {e}. Using defaults.")
             product.extinguishing_media = (
-                "Water mist/fog, carbon dioxide, dry chemical or alcohol resistant foam. "
-                "Most suitable extinguishing media is water."
+                "Use extinguishing media appropriate for the surrounding fire. Water "
+                "mist/fog, carbon dioxide, dry chemical or alcohol-resistant foam."
             )
-            product.unsuitable_extinguishing_media = "Do not use water jet."
+            product.unsuitable_extinguishing_media = "Do not use a direct high-pressure water jet on the product."
             product.firefighting_hazards = (
-                "May intensify fire; oxidizer. Contact with metals may evolve flammable "
-                "hydrogen gas. Thermal decomposition may produce irritating/toxic fumes/gases. "
-                "Containers may explode when heated."
+                "Thermal decomposition may produce irritating/toxic fumes/gases. "
+                "Containers may build pressure and rupture when exposed to heat."
             )
             product.firefighting_ppe = (
                 "Fire-fighters should wear appropriate protective equipment and self-contained "
@@ -412,6 +447,254 @@ class SDSGenerator:
             )
 
     # ------------------------------------------------------------------
+    # Claude API — handling / storage / PPE / spill / stability (Sec 6,7,8,10)
+    # ------------------------------------------------------------------
+
+    _HSP_DEFAULTS = {
+        "spill_personal_precautions": (
+            "Evacuate unnecessary personnel. Ventilate the area. Wear recommended "
+            "personal protective equipment (see Section 8). Avoid contact with skin, "
+            "eyes and clothing. Avoid breathing mist, vapor, dust, fume and spray. "
+            "Do not walk through spilled material."),
+        "spill_environmental_precautions": (
+            "Prevent further leakage or spillage if safe to do so. Prevent from "
+            "reaching drains, sewers and waterways. Discharge into the environment "
+            "must be avoided."),
+        "spill_containment_cleanup": (
+            "Do not touch damaged containers or spilled material unless wearing "
+            "appropriate personal protective clothing. Stop the leak if it can be "
+            "done without risk. Contain and collect spillage with non-combustible "
+            "absorbent material and place in a suitable container for disposal in "
+            "accordance with all applicable regulations (see Section 13)."),
+        "handling_precautions": (
+            "Use appropriate personal protective equipment (see Section 8). Use only "
+            "with adequate ventilation. Avoid contact with skin, eyes and clothing. "
+            "Avoid breathing mist/vapor/spray/dust. Do not eat, drink or smoke when "
+            "handling. Wash thoroughly after handling. Keep containers tightly "
+            "closed when not in use. Keep away from incompatible materials "
+            "(see Section 10)."),
+        "storage_conditions": (
+            "Store in a cool, dry, well-ventilated location out of direct sunlight. "
+            "Keep container tightly closed. Keep away from food and beverages. "
+            "Protect from freezing and physical damage. Store away from incompatible "
+            "materials (see Section 10)."),
+        "engineering_controls": (
+            "Provide adequate ventilation to maintain airborne concentrations below "
+            "the applicable workplace exposure limits. Emergency eye wash stations "
+            "and safety showers should be available in the immediate vicinity of use "
+            "or handling."),
+        "ppe_respiratory": (
+            "If engineering controls do not maintain airborne concentrations below "
+            "the applicable exposure limits, a respirator approved by recognized "
+            "national standards (or equivalent) must be worn."),
+        "ppe_hand": (
+            "Chemical-resistant, impervious gloves approved by the appropriate "
+            "standards. Gloves must be inspected prior to use."),
+        "ppe_eye": (
+            "Safety glasses with side shields or chemical splash goggles. Consider a "
+            "face shield where splashing is possible."),
+        "ppe_skin": (
+            "Wear suitable chemical-resistant protective clothing and footwear "
+            "appropriate to the task and risk."),
+        "hygienic_measures": (
+            "When handling chemical products, do not eat, drink or smoke. Wash hands "
+            "after handling, before breaks and at the end of the workday. Wash "
+            "contaminated clothing before reuse."),
+        "reactivity": "Not reactive under recommended handling and storage conditions.",
+        "chemical_stability": "Stable under recommended handling and storage conditions.",
+        "hazardous_reactions": (
+            "Hazardous reactions are not anticipated under recommended conditions of "
+            "handling and storage."),
+        "conditions_to_avoid": (
+            "Extreme heat, incompatible materials, and conditions inconsistent with "
+            "recommended storage."),
+        "incompatible_materials": "Strong acids and strong oxidizing agents.",
+        "hazardous_decomposition": (
+            "Thermal decomposition may produce irritating and/or toxic fumes and "
+            "gases."),
+        "disposal_methods": (
+            "Dispose of contents and container in accordance with all applicable "
+            "local, regional, national and international regulations. Do not mix "
+            "with other waste. Handle uncleaned containers like the product "
+            "itself. Do not discharge to drains, sewers or waterways."),
+        "disposal_container": (
+            "Empty containers may retain product residue and must be handled as "
+            "hazardous until cleaned. Triple-rinse and dispose of in accordance "
+            "with applicable regulations."),
+    }
+
+    def _generate_handling_storage_ppe(self, product: SDSProduct) -> None:
+        """Generate Section 6/7/8/10 narrative when not already populated.
+
+        These fields are only hardcoded by the OxyStrike factory; products
+        entered through the web wizard arrive with them blank.
+        """
+        keys = {
+            "spill_personal_precautions": product.spill_personal_precautions,
+            "spill_environmental_precautions": product.spill_environmental_precautions,
+            "spill_containment_cleanup": product.spill_containment_cleanup,
+            "handling_precautions": product.handling_precautions,
+            "storage_conditions": product.storage_conditions,
+            "engineering_controls": product.engineering_controls,
+            "ppe_respiratory": product.ppe_respiratory,
+            "ppe_hand": product.ppe_hand,
+            "ppe_eye": product.ppe_eye,
+            "ppe_skin": product.ppe_skin,
+            "hygienic_measures": product.hygienic_measures,
+            "reactivity": product.reactivity,
+            "chemical_stability": product.chemical_stability,
+            "hazardous_reactions": product.hazardous_reactions,
+            "conditions_to_avoid": product.conditions_to_avoid,
+            "incompatible_materials": product.incompatible_materials,
+            "hazardous_decomposition": product.hazardous_decomposition,
+            "disposal_methods": product.disposal_methods,
+            "disposal_container": product.disposal_container,
+        }
+        missing = [k for k, v in keys.items() if not (v or "").strip()]
+        if not missing:
+            return
+
+        ing_names = [ing.name for ing in product.ingredients]
+        hazard_classes = [c.class_name for c in product.classification.categories]
+
+        system_prompt = (
+            "You are a senior GHS-compliant SDS technical writer (OSHA HCS 2012). "
+            "Write accurate Section 6 (accidental release), Section 7 (handling & "
+            "storage), Section 8 (engineering controls & PPE), Section 10 "
+            "(stability & reactivity) and Section 13 (disposal) text for a "
+            "chemical product. Return ONLY a "
+            "valid JSON object whose keys are exactly the requested field names; "
+            "each value is a plain-text string (no markdown). Base every statement "
+            "on the product's actual hazard classes and chemistry — do NOT assume "
+            "properties (e.g. oxidizing, flammable) that are not listed in the "
+            "hazard classes."
+        )
+        user_msg = (
+            f"Product: {product.product_name}\n"
+            f"Hazard classes: {', '.join(hazard_classes) or 'None classified'}\n"
+            f"Ingredients: {', '.join(ing_names)}\n\n"
+            f"Generate these fields only: {', '.join(missing)}\n"
+            "Return JSON only."
+        )
+        try:
+            resp = self._client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=3500,
+                system=[{"type": "text", "text": system_prompt,
+                         "cache_control": {"type": "ephemeral"}}],
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            data = json.loads(_extract_json(resp.content[0].text.strip()))
+            for k in missing:
+                val = data.get(k)
+                if isinstance(val, str) and val.strip():
+                    setattr(product, k, val.strip())
+        except Exception as e:  # noqa: BLE001
+            print(f"[WARNING] Handling/storage/PPE generation failed: {e}.")
+
+        # Guarantee these sections are never blank, even if the API failed or
+        # omitted a key.
+        for k in missing:
+            if not (getattr(product, k) or "").strip():
+                setattr(product, k, self._HSP_DEFAULTS[k])
+
+    # ------------------------------------------------------------------
+    # Claude API — Section 9 physical & chemical properties estimation
+    # ------------------------------------------------------------------
+
+    _ND = "Not determined or not available."
+
+    def _generate_physical_properties(self, product: SDSProduct) -> None:
+        """Estimate Section 9 properties from the formulation when blank.
+
+        Values that can be reasonably inferred from the ingredients and their
+        concentrations are returned with an "(estimated)" suffix; everything
+        else is explicitly "Not determined or not available."
+        """
+        pp = product.physical_properties
+        fields = list(SDSPhysicalProperties.__dataclass_fields__)
+
+        def _blank(v: str) -> bool:
+            v = (v or "").strip().lower()
+            return v == "" or v.startswith("not determined") or v.startswith("not available")
+
+        missing = [f for f in fields if _blank(getattr(pp, f))]
+        if not missing:
+            return
+
+        ings = [f"{i.name} ({i.cas_number}) {i.wt_percent_low}-{i.wt_percent_high}%"
+                for i in product.ingredients]
+
+        system_prompt = (
+            "You are a physical chemist estimating Section 9 properties of an "
+            "aqueous chemical mixture for an OSHA HCS 2012 SDS. Return ONLY a "
+            "valid JSON object whose keys are exactly the requested field names; "
+            "values are plain strings. Estimate ONLY properties that can be "
+            "reasonably inferred from the listed ingredients and their "
+            "concentrations (e.g. appearance, odour, pH for known acids/bases, "
+            "approximate density, boiling/freezing behaviour for dilute aqueous "
+            "solutions). Append ' (estimated)' to every value you infer. For any "
+            "property that requires laboratory measurement and cannot be "
+            f"reliably inferred, return exactly \"{self._ND}\". Never fabricate "
+            "precise instrument values."
+        )
+        user_msg = (
+            f"Product: {product.product_name}\n"
+            f"Ingredients: {'; '.join(ings)}\n\n"
+            f"Estimate these fields only: {', '.join(missing)}\n"
+            "Return JSON only."
+        )
+        try:
+            resp = self._client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=1500,
+                system=[{"type": "text", "text": system_prompt,
+                         "cache_control": {"type": "ephemeral"}}],
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            data = json.loads(_extract_json(resp.content[0].text.strip()))
+            for f in missing:
+                val = data.get(f)
+                setattr(pp, f, val.strip() if isinstance(val, str) and val.strip()
+                        else self._ND)
+        except Exception as e:  # noqa: BLE001
+            print(f"[WARNING] Physical property estimation failed: {e}.")
+            for f in missing:
+                if _blank(getattr(pp, f)):
+                    setattr(pp, f, self._ND)
+
+    # ------------------------------------------------------------------
+    # Consistency cross-check
+    # ------------------------------------------------------------------
+
+    def _consistency_pass(self, product: SDSProduct) -> None:
+        """Log contradictions between AI-generated prose and the classification.
+
+        Does not rewrite text (that risks introducing new errors) — surfaces
+        issues so they can be caught in review and so prompt regressions are
+        visible in the server log.
+        """
+        classes = " ".join(c.class_name.lower()
+                            for c in product.classification.categories)
+        has_oxidizer = "oxidiz" in classes
+        has_flammable = "flammable" in classes
+        ff = (product.firefighting_hazards or "").lower()
+        pp = product.physical_properties
+
+        if not has_oxidizer and "oxidiz" in ff and "not " not in ff[:ff.find("oxidiz")][-12:]:
+            print("[CONSISTENCY] Section 5 mentions 'oxidizing' but no "
+                  "oxidizing hazard class is classified — verify wording.")
+        flash = (pp.flash_point or "").lower()
+        if has_flammable and flash.startswith("not "):
+            print("[CONSISTENCY] Product classified flammable but Section 9 "
+                  "flash point is 'Not determined' — verify.")
+        if not has_flammable and any(
+                w in flash for w in ("flammable", "flash point:")) \
+                and "not applicable" not in flash and "no flash" not in flash:
+            print("[CONSISTENCY] Section 9 implies a flash point but product "
+                  "is not classified flammable — verify.")
+
+    # ------------------------------------------------------------------
     # Rule-based transport classification
     # ------------------------------------------------------------------
 
@@ -421,28 +704,39 @@ class SDSGenerator:
         is_oxidizer = any("oxidizing" in c.lower() for c in classified_classes)
         is_corrosive = any("corrosion" in c.lower() or "corrosive to metals" in c.lower()
                            for c in classified_classes)
+        is_env = any("aquatic" in c.lower() or "environment" in c.lower()
+                     for c in classified_classes)
+
+        # Transport packing group from the skin-corrosion sub-category
+        # (49 CFR / UN: 1A → PG I, 1B → PG II, 1C → PG III; default II).
+        corr_cat = next((c.category for c in product.classification.categories
+                         if "corrosion" in c.class_name.lower()), "")
+        corr_pg = {"1A": "I", "1B": "II", "1C": "III"}.get(corr_cat, "II")
+
+        # Dominant ingredient (highest upper-bound concentration) names the n.o.s.
+        dominant = max(product.ingredients, key=lambda i: i.wt_percent_high,
+                       default=None)
+        dom = dominant.name if dominant else ""
+        env_note = "Marine Pollutant" + (f" ({dom})" if dom else "") if is_env else "None"
 
         if is_oxidizer and is_corrosive:
             un = "UN3139"
-            psn = "Oxidizing liquid (Hydrogen peroxide, Nitric acid)"
+            psn = f"Oxidizing liquid, corrosive, n.o.s.{f' ({dom})' if dom else ''}"
             haz_class = "5.1 (8)"
-            pg = "II"
+            pg = corr_pg
             labels = "5.1, 8"
-            env_note = "Marine Pollutant\nPeroxyacetic acid"
         elif is_oxidizer:
-            un = "UN2015"
-            psn = "Hydrogen peroxide, aqueous solution"
+            un = "UN3139"
+            psn = f"Oxidizing liquid, n.o.s.{f' ({dom})' if dom else ''}"
             haz_class = "5.1"
             pg = "II"
             labels = "5.1"
-            env_note = "None"
         elif is_corrosive:
             un = "UN1760"
-            psn = "Corrosive liquid, n.o.s."
+            psn = f"Corrosive liquid, n.o.s.{f' ({dom})' if dom else ''}"
             haz_class = "8"
-            pg = "II"
+            pg = corr_pg
             labels = "8"
-            env_note = "None"
         else:
             un = "Not regulated"
             psn = "Not regulated"

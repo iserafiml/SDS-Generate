@@ -46,6 +46,21 @@
     .cas-cell { min-width: 140px; }
     .pct-cell  { width: 80px; }
     .action-cell { white-space: nowrap; }
+    .material-results {
+      position: absolute; z-index: 1000; left: 0; right: 0; top: 100%;
+      background: #fff; border: 1px solid #ced4da; border-radius: .25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12); max-height: 260px;
+      overflow-y: auto; margin-top: 2px;
+    }
+    .material-hit {
+      padding: 5px 10px; cursor: pointer; border-bottom: 1px solid #f0f0f0;
+      display: flex; flex-direction: column; line-height: 1.25;
+    }
+    .material-hit:last-child { border-bottom: none; }
+    .material-hit:hover { background: #eef4ff; }
+    .mh-name { font-size: .85rem; font-weight: 600; }
+    .mh-meta { font-size: .72rem; color: #6c757d; }
+    .mh-meta .badge { font-size: .62rem; }
   </style>
 </head>
 <body>
@@ -115,9 +130,8 @@
         <table class="table table-bordered align-middle mb-2" id="ingredientTable">
           <thead class="table-light">
             <tr>
-              <th style="min-width:95px">RM #</th>
+              <th style="min-width:240px">Material <small class="fw-normal text-muted">(type RM#, CAS or name)</small></th>
               <th class="cas-cell">CAS Number</th>
-              <th>Ingredient Name</th>
               <th class="pct-cell text-center">Low %</th>
               <th class="pct-cell text-center">High %</th>
               <th>Function</th>
@@ -250,20 +264,20 @@ function addIngredientRow() {
   const tr = document.createElement("tr");
   tr.id = `row_${idx}`;
   tr.innerHTML = `
-    <td>
-      <input type="text" class="form-control form-control-sm" id="rm_${idx}"
-             placeholder="RM0001" onblur="lookupRm(${idx})"
-             style="text-transform:uppercase">
+    <td style="position:relative">
+      <input type="hidden" id="rm_${idx}">
+      <input type="hidden" id="name_${idx}">
+      <input type="text" class="form-control form-control-sm" id="search_${idx}"
+             autocomplete="off" placeholder="Search RM#, CAS or name…"
+             oninput="searchMaterials(${idx})"
+             onkeydown="searchKeydown(event, ${idx})">
+      <div id="results_${idx}" class="material-results" style="display:none"></div>
       <span id="rmStatus_${idx}" class="badge mt-1" style="display:none"></span>
     </td>
     <td class="cas-cell">
       <input type="text" class="form-control form-control-sm" id="cas_${idx}"
-             placeholder="7722-84-1" onblur="lookupCas(${idx})">
+             placeholder="auto / manual" onblur="lookupCas(${idx})">
       <span id="casStatus_${idx}" class="badge mt-1" style="display:none"></span>
-    </td>
-    <td>
-      <input type="text" class="form-control form-control-sm" id="name_${idx}"
-             placeholder="Ingredient name">
     </td>
     <td class="pct-cell">
       <input type="number" class="form-control form-control-sm text-end" id="low_${idx}"
@@ -299,32 +313,59 @@ function deleteRow(idx) {
   rowData[idx] = null;
 }
 
-// ── RM lookup ─────────────────────────────────────────────────────────
-async function lookupRm(idx) {
-  const rmInput = document.getElementById(`rm_${idx}`);
-  const rm = rmInput.value.trim().toUpperCase();
-  rmInput.value = rm;
-  const badge = document.getElementById(`rmStatus_${idx}`);
-  if (!rm) { badge.style.display = "none"; return; }
+// ── Material autocomplete search ──────────────────────────────────────
+const _searchTimers = {};
+const _searchHits   = {};   // idx -> current result array
 
-  try {
-    const res  = await fetch(`/lookup_rm?rm=${encodeURIComponent(rm)}`);
-    const data = await res.json();
-    badge.style.display = "inline";
+function searchMaterials(idx) {
+  // Free typing also acts as the ingredient name (manual fallback).
+  const q = document.getElementById(`search_${idx}`).value.trim();
+  document.getElementById(`name_${idx}`).value = q;
 
-    if (data.found) {
-      // Auto-fill CAS and name, then trigger CAS lookup for DB status
-      document.getElementById(`cas_${idx}`).value  = data.cas;
-      document.getElementById(`name_${idx}`).value = data.name;
-      badge.className  = "badge bg-info mt-1";
-      badge.textContent = "✓ RM found";
-      await lookupCas(idx);   // update DB badge and hazard button
-    } else {
-      badge.className  = "badge bg-secondary mt-1";
-      badge.textContent = "RM not found";
-    }
-  } catch { /* network error — silently ignore */ }
+  clearTimeout(_searchTimers[idx]);
+  const box = document.getElementById(`results_${idx}`);
+  if (q.length < 2) { box.style.display = "none"; return; }
+
+  _searchTimers[idx] = setTimeout(async () => {
+    try {
+      const res  = await fetch(`/api/search_materials?q=${encodeURIComponent(q)}`);
+      const hits = await res.json();
+      _searchHits[idx] = hits;
+      if (!hits.length) { box.style.display = "none"; return; }
+      box.innerHTML = hits.map((h, j) => `
+        <div class="material-hit" data-j="${j}" onmousedown="selectMaterial(${idx}, ${j})">
+          <span class="mh-name">${h.name || "(unnamed)"}</span>
+          <span class="mh-meta">CAS ${h.cas || "—"}${h.rm ? " · " + h.rm : ""}
+            <span class="badge ${h.in_db ? "badge-in-db" : "badge-not-db"}">
+              ${h.in_db ? "In DB" : "Not in DB"}</span>
+          </span>
+        </div>`).join("");
+      box.style.display = "block";
+    } catch { box.style.display = "none"; }
+  }, 200);
 }
+
+function selectMaterial(idx, j) {
+  const h = (_searchHits[idx] || [])[j];
+  if (!h) return;
+  document.getElementById(`search_${idx}`).value = h.name;
+  document.getElementById(`name_${idx}`).value   = h.name;
+  document.getElementById(`rm_${idx}`).value     = h.rm || "";
+  document.getElementById(`cas_${idx}`).value    = h.cas || "";
+  document.getElementById(`results_${idx}`).style.display = "none";
+  lookupCas(idx);   // sets In-DB badge + reveals hazard button if needed
+}
+
+function searchKeydown(e, idx) {
+  if (e.key === "Escape")
+    document.getElementById(`results_${idx}`).style.display = "none";
+}
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest("td")) return;
+  document.querySelectorAll(".material-results")
+          .forEach(el => el.style.display = "none");
+});
 
 // ── CAS lookup ────────────────────────────────────────────────────────
 async function lookupCas(idx) {

@@ -391,14 +391,50 @@
       }
     },
     "oels": [],
-    "toxicology": {},
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 1261 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: >2000 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": ""
+      },
+      "skin_result": "Causes skin irritation.",
+      "eye_result": "Causes serious eye irritation.",
+      "stot_result": ""
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Leuciscus idus",
+          "metric": "LC50",
+          "value": ">100 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": ">100 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "1-Hydroxyethylidene-1,1-diphosphonic acid (HEDP) is not readily biodegradable under standard OECD test conditions. It is considered persistent in the aquatic environment.",
+    "bioaccumulation": "HEDP is not expected to bioaccumulate due to its high water solubility and low log Kow (estimated log Kow < -2). BCF is considered low.",
+    "mobility": "HEDP is highly water soluble and is expected to be mobile in the aquatic environment. It may adsorb to soils and sediments containing calcium, iron, or aluminum ions, reducing mobility in those media.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -412,7 +448,15 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "NJ",
+        "PA"
+      ]
+    },
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 2
     }
   },
   {
@@ -741,15 +785,87 @@
         "category": "1"
       }
     },
-    "oels": [],
-    "toxicology": {},
-    "aquatic_toxicology": {
-      "acute": [],
-      "chronic": []
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "Ceiling",
+        "value": "2",
+        "unit": "mg/m³"
+      },
+      {
+        "authority": "OSHA",
+        "type": "PEL-TWA",
+        "value": "2",
+        "unit": "mg/m³"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "Ceiling",
+        "value": "2",
+        "unit": "mg/m³"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 325 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: 1350 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: >2.0 mg/L (4 hr)"
+      },
+      "skin_result": "Causes severe skin burns and tissue destruction on contact.",
+      "eye_result": "Causes serious irreversible eye damage; risk of blindness on contact.",
+      "stot_result": "May cause irritation and damage to the respiratory tract upon inhalation of mists or dusts."
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "aquatic_toxicology": {
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Gambusia affinis",
+          "metric": "LC50",
+          "value": "125 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "40.4 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        },
+        {
+          "type": "Algae",
+          "organism": "Desmodesmus subspicatus",
+          "metric": "EC50",
+          "value": "72 mg/L",
+          "duration_hr": 72,
+          "endpoint": "Growth inhibition"
+        }
+      ],
+      "chronic": [
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "NOEC",
+          "value": "40 mg/L",
+          "duration_days": 21,
+          "endpoint": ""
+        }
+      ]
+    },
+    "persistence": "Sodium hydroxide is an inorganic substance and is not subject to biodegradation. It neutralizes in water to form water and sodium salts; persistence as a distinct entity is not applicable. The substance adjusts pH and is rapidly consumed by neutralization reactions in aquatic environments.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate. Sodium hydroxide dissociates completely in water into sodium and hydroxide ions; bioaccumulation potential is negligible (BCF not applicable for inorganic ions).",
+    "mobility": "Sodium hydroxide is highly soluble in water and dissociates completely into ions. In soil, sodium ions are mobile and hydroxide ions are rapidly neutralized. Sorption to soil is not significant (Koc not applicable).",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -763,7 +879,16 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "PA"
+      ]
+    },
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 2
     }
   },
   {
@@ -2774,17 +2899,86 @@
       "environmental": {
         "threshold_pct": 10.0,
         "category": "3"
+      },
+      "respiratory_sensitization": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_sensitization": {
+        "threshold_pct": 0.1,
+        "category": "1"
       }
     },
-    "oels": [],
-    "toxicology": {},
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "TWA",
+        "value": "0.1",
+        "unit": "ppm"
+      },
+      {
+        "authority": "ACGIH",
+        "type": "STEL",
+        "value": "0.3",
+        "unit": "ppm"
+      },
+      {
+        "authority": "OSHA",
+        "type": "PEL-TWA",
+        "value": "5",
+        "unit": "mg/m3"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "REL-TWA",
+        "value": "5",
+        "unit": "mg/m3"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 2832 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": ""
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": ""
+      },
+      "skin_result": "Causes skin irritation. May cause burns on prolonged contact due to SO2 release.",
+      "eye_result": "Causes serious eye irritation.",
+      "stot_result": "May cause respiratory irritation via SO2 liberation. Sensitizer in asthmatics."
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Leuciscus idus",
+          "metric": "LC50",
+          "value": "119 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "53.7 mg/L",
+          "duration_hr": 48,
+          "endpoint": "Immobilisation"
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "Sodium metabisulfite is readily oxidized in water to sulfate, which is a naturally occurring anion. It is not considered persistent in the aquatic environment.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate due to its ionic nature and rapid conversion to inorganic sulfate.",
+    "mobility": "The substance dissociates in water to sodium and metabisulfite/sulfite ions and is highly mobile in aquatic environments.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -2798,7 +2992,16 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "PA"
+      ]
+    },
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 2
     }
   },
   {
@@ -3767,17 +3970,88 @@
       "stot_se": {
         "threshold_pct": 1.0,
         "category": "1"
+      },
+      "skin_sensitization": {
+        "threshold_pct": 0.1,
+        "category": "1"
       }
     },
-    "oels": [],
-    "toxicology": {},
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "TWA",
+        "value": "2",
+        "unit": "ppm"
+      },
+      {
+        "authority": "OSHA",
+        "type": "TWA",
+        "value": "10",
+        "unit": "ppm"
+      },
+      {
+        "authority": "OSHA",
+        "type": "TWA",
+        "value": "50",
+        "unit": "mg/m3"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "TWA",
+        "value": "10",
+        "unit": "ppm"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "TWA",
+        "value": "50",
+        "unit": "mg/m3"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 1300 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: 1260 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: 3.9 mg/L (4 hr)"
+      },
+      "skin_result": "Causes skin burns and corrosion.",
+      "eye_result": "Causes serious eye damage.",
+      "stot_result": ""
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Leuciscus idus",
+          "metric": "LC50",
+          "value": "430 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "130 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "The substance is readily biodegradable based on OECD 301 test data. Biodegradation in water is expected to be rapid under aerobic conditions.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate based on its low log Kow (log Kow: -0.58). BCF is estimated to be low.",
+    "mobility": "The substance is highly mobile in soil due to its high water solubility and low estimated Koc value.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -3791,7 +4065,16 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "PA"
+      ]
+    },
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 2
     }
   },
   {
@@ -3861,31 +4144,150 @@
       "environmental": {
         "threshold_pct": 0.1,
         "category": "1"
+      },
+      "carcinogenicity": {
+        "threshold_pct": 0.1,
+        "category": "1B"
+      },
+      "germ_cell_mutagenicity": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      },
+      "reproductive_toxicity": {
+        "threshold_pct": 0.1,
+        "category": "1B"
+      },
+      "respiratory_sensitization": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "skin_sensitization": {
+        "threshold_pct": 0.1,
+        "category": "1"
+      },
+      "stot_re": {
+        "threshold_pct": 1.0,
+        "category": "1"
       }
     },
-    "oels": [],
-    "toxicology": {},
-    "aquatic_toxicology": {
-      "acute": [],
-      "chronic": []
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "TWA",
+        "value": "0.02",
+        "unit": "mg/m3 (as Co)"
+      },
+      {
+        "authority": "OSHA",
+        "type": "PEL-TWA",
+        "value": "0.1",
+        "unit": "mg/m3 (as Co)"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "REL-TWA",
+        "value": "0.05",
+        "unit": "mg/m3 (as Co)"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "IDLH",
+        "value": "20",
+        "unit": "mg/m3 (as Co)"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 768 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "",
+        "result": ""
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: 0.725 mg/L (4 hr)"
+      },
+      "skin_result": "Causes skin irritation. May cause sensitization by skin contact.",
+      "eye_result": "Causes serious eye irritation.",
+      "stot_result": "May cause damage to organs (lungs, heart) through prolonged or repeated exposure. Suspected of causing genetic defects. May cause cancer via inhalation."
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
-    "iarc_classification": "Not Applicable",
-    "ntp_classification": "Not Applicable",
+    "aquatic_toxicology": {
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LC50",
+          "value": "4.6 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "0.53 mg/L",
+          "duration_hr": 48,
+          "endpoint": "Immobilization"
+        },
+        {
+          "type": "Algae",
+          "organism": "Desmodesmus subspicatus",
+          "metric": "EC50",
+          "value": "0.045 mg/L",
+          "duration_hr": 72,
+          "endpoint": "Growth inhibition"
+        }
+      ],
+      "chronic": [
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "NOEC",
+          "value": "0.0042 mg/L",
+          "duration_days": 21,
+          "endpoint": "Reproduction"
+        },
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "NOEC",
+          "value": "0.028 mg/L",
+          "duration_days": 28,
+          "endpoint": "Growth"
+        }
+      ]
+    },
+    "persistence": "Cobalt sulfate heptahydrate is an inorganic substance and is not subject to biodegradation. Cobalt ions persist in the aquatic environment and do not degrade. The substance is considered persistent in the environment.",
+    "bioaccumulation": "The substance has low potential for bioaccumulation. Cobalt is an essential trace element but at elevated concentrations may accumulate in aquatic organisms to a limited extent (BCF: approximately 40 L/kg for aquatic organisms).",
+    "mobility": "Cobalt sulfate is highly soluble in water (approximately 603 g/L at 20°C). Cobalt ions are highly mobile in aquatic environments. In soil, cobalt may bind to organic matter and clay minerals, reducing mobility (Koc variable, typically 100–1000 L/kg depending on soil type and pH).",
+    "iarc_classification": "Group 2B — Cobalt sulfate is possibly carcinogenic to humans (IARC Monograph Vol. 86, 2006).",
+    "ntp_classification": "Reasonably anticipated to be a human carcinogen (NTP 15th Report on Carcinogens: Cobalt and cobalt compounds that release cobalt ions in vivo).",
     "regulatory": {
       "tsca_listed": true,
       "sara_302": false,
       "sara_302_tpq_lbs": "",
-      "sara_313": false,
+      "sara_313": true,
       "cercla_listed": false,
       "cercla_rq_lbs": "",
       "rcra_code": "",
       "caa_112r": false,
-      "prop_65": false,
-      "prop_65_warning": "",
-      "rtk_states": []
+      "prop_65": true,
+      "prop_65_warning": "WARNING: Cobaltous sulfate heptahydrate (cobalt and cobalt compounds) is known to the State of California to cause cancer.",
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "PA"
+      ]
+    },
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 2
     }
   },
   {

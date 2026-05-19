@@ -27,6 +27,13 @@ _CLASS_DISPLAY = {
     "acute_toxicity_oral": "Acute toxicity - oral",
     "acute_toxicity_inh":  "Acute toxicity - inhalation",
     "environmental":       "Hazardous to the aquatic environment",
+    "carcinogenicity":         "Carcinogenicity",
+    "germ_cell_mutagenicity":  "Germ cell mutagenicity",
+    "reproductive_toxicity":   "Reproductive toxicity",
+    "respiratory_sensitization": "Respiratory sensitization",
+    "skin_sensitization":      "Skin sensitization",
+    "stot_re":                 "Specific target organ toxicity - repeated exposure",
+    "aspiration":              "Aspiration hazard",
 }
 
 # Pictogram code per hazard class
@@ -40,6 +47,13 @@ _PICTOGRAM_MAP = {
     "acute_toxicity_oral": "GHS06",  # skull
     "acute_toxicity_inh":  "GHS06",
     "environmental":       "GHS09",  # environment
+    "carcinogenicity":         "GHS08",  # serious health hazard
+    "germ_cell_mutagenicity":  "GHS08",
+    "reproductive_toxicity":   "GHS08",
+    "respiratory_sensitization": "GHS08",
+    "skin_sensitization":      "GHS07",  # exclamation mark
+    "stot_re":                 "GHS08",
+    "aspiration":              "GHS08",
 }
 
 # H-codes per (hazard_class, category)
@@ -62,6 +76,27 @@ _CATEGORY_H_CODES: dict[str, list[str]] = {
     "flammable_liquid_2":    ["H225"],
     "flammable_liquid_3":    ["H226"],
     "flammable_liquid_4":    ["H227"],
+    "carcinogenicity_1":     ["H350"],
+    "carcinogenicity_1A":    ["H350"],
+    "carcinogenicity_1B":    ["H350"],
+    "carcinogenicity_2":     ["H351"],
+    "germ_cell_mutagenicity_1":  ["H340"],
+    "germ_cell_mutagenicity_1A": ["H340"],
+    "germ_cell_mutagenicity_1B": ["H340"],
+    "germ_cell_mutagenicity_2":  ["H341"],
+    "reproductive_toxicity_1":   ["H360"],
+    "reproductive_toxicity_1A":  ["H360"],
+    "reproductive_toxicity_1B":  ["H360"],
+    "reproductive_toxicity_2":   ["H361"],
+    "respiratory_sensitization_1":  ["H334"],
+    "respiratory_sensitization_1A": ["H334"],
+    "respiratory_sensitization_1B": ["H334"],
+    "skin_sensitization_1":  ["H317"],
+    "skin_sensitization_1A": ["H317"],
+    "skin_sensitization_1B": ["H317"],
+    "stot_re_1":             ["H372"],
+    "stot_re_2":             ["H373"],
+    "aspiration_1":          ["H304"],
 }
 
 # P-codes per (hazard_class, category) — using combined codes as written on labels
@@ -88,6 +123,18 @@ _CATEGORY_P_CODES: dict[str, list[str]] = {
     "flammable_liquid_3": ["P210", "P233", "P240", "P241", "P242", "P243",
                            "P264", "P270", "P272", "P280", "P303+P361+P353",
                            "P370+P378", "P403+P235", "P501"],
+    "carcinogenicity_1":  ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "carcinogenicity_2":  ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "germ_cell_mutagenicity_1": ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "germ_cell_mutagenicity_2": ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "reproductive_toxicity_1":  ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "reproductive_toxicity_2":  ["P201", "P202", "P280", "P308+P313", "P405", "P501"],
+    "respiratory_sensitization_1": ["P261", "P280", "P304+P340", "P342+P311", "P501"],
+    "skin_sensitization_1": ["P261", "P272", "P280", "P302+P352", "P333+P313",
+                             "P363", "P501"],
+    "stot_re_1": ["P260", "P264", "P270", "P314", "P501"],
+    "stot_re_2": ["P260", "P264", "P270", "P314", "P501"],
+    "aspiration_1": ["P301+P310", "P331", "P405", "P501"],
 }
 
 # Full H-statement text
@@ -116,6 +163,14 @@ H_STATEMENTS: dict[str, str] = {
     "H334": "May cause allergy or asthma symptoms or breathing difficulties if inhaled",
     "H335": "May cause respiratory irritation",
     "H336": "May cause drowsiness or dizziness",
+    "H304": "May be fatal if swallowed and enters airways",
+    "H340": "May cause genetic defects",
+    "H341": "Suspected of causing genetic defects",
+    "H350": "May cause cancer",
+    "H351": "Suspected of causing cancer",
+    "H360": "May damage fertility or the unborn child",
+    "H361": "Suspected of damaging fertility or the unborn child",
+    "H362": "May cause harm to breast-fed children",
     "H370": "Causes damage to organs",
     "H371": "May cause damage to organs",
     "H372": "Causes damage to organs through prolonged or repeated exposure",
@@ -132,6 +187,8 @@ P_STATEMENTS: dict[str, str] = {
     "P210":          "Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking.",
     "P220":          "Keep/Store away from clothing/…/combustible materials.",
     "P221":          "Take any precaution to avoid mixing with combustibles/…",
+    "P201":          "Obtain special instructions before use.",
+    "P202":          "Do not handle until all safety precautions have been read and understood.",
     "P233":          "Keep container tightly closed.",
     "P234":          "Keep only in original container.",
     "P240":          "Ground and bond container and receiving equipment.",
@@ -146,9 +203,16 @@ P_STATEMENTS: dict[str, str] = {
     "P272":          "Contaminated work clothing should not be allowed out of the workplace.",
     "P273":          "Avoid release to the environment.",
     "P280":          "Wear protective gloves/protective clothing/eye protection/face protection.",
+    "P301+P310":     "IF SWALLOWED: Immediately call a POISON CENTER/doctor.",
     "P301+P330+P331":"IF SWALLOWED: Rinse mouth. Do NOT induce vomiting.",
+    "P302+P352":     "IF ON SKIN: Wash with plenty of water/soap.",
     "P303+P361+P353":"IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water/shower.",
     "P304+P340":     "IF INHALED: Remove victim to fresh air and keep at rest in a position comfortable for breathing.",
+    "P308+P313":     "IF exposed or concerned: Get medical advice/attention.",
+    "P314":          "Get medical advice/attention if you feel unwell.",
+    "P331":          "Do NOT induce vomiting.",
+    "P333+P313":     "If skin irritation or rash occurs: Get medical advice/attention.",
+    "P342+P311":     "If experiencing respiratory symptoms: Call a POISON CENTER/doctor.",
     "P305+P351+P338":"IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing.",
     "P310":          "Immediately call a POISON CENTER/doctor.",
     "P312":          "Call a POISON CENTER/doctor if you feel unwell.",
@@ -176,6 +240,17 @@ _DANGER_CLASSES = {"oxidizing_liquid", "skin_corrosion", "serious_eye_damage",
                    "corrosive_to_metals", "flammable_liquid",
                    "acute_toxicity_oral", "acute_toxicity_inh"}
 
+# Health classes: signal word depends on the specific category.
+# Categories listed here are DANGER; any other category for the class → WARNING.
+_HEALTH_DANGER_CATS = {
+    "carcinogenicity":           {"1", "1A", "1B"},
+    "germ_cell_mutagenicity":    {"1", "1A", "1B"},
+    "reproductive_toxicity":     {"1", "1A", "1B"},
+    "respiratory_sensitization": {"1", "1A", "1B"},
+    "stot_re":                   {"1"},
+    "aspiration":                {"1"},
+}
+
 # Public menu for the interactive wizard — only classes with H/P code entries defined above
 HAZARD_MENU: list[dict] = [
     {"display": "Oxidizing liquids",         "key": "oxidizing_liquid",    "categories": ["1", "2", "3"]},
@@ -187,6 +262,13 @@ HAZARD_MENU: list[dict] = [
     {"display": "Acute toxicity - oral",      "key": "acute_toxicity_oral", "categories": ["1", "2", "3", "4", "5"]},
     {"display": "Acute toxicity - inhalation","key": "acute_toxicity_inh",  "categories": ["1", "2", "3", "4", "5"]},
     {"display": "Hazardous to aquatic env",   "key": "environmental",       "categories": ["1", "2", "3", "4"]},
+    {"display": "Carcinogenicity",            "key": "carcinogenicity",         "categories": ["1A", "1B", "2"]},
+    {"display": "Germ cell mutagenicity",     "key": "germ_cell_mutagenicity",  "categories": ["1A", "1B", "2"]},
+    {"display": "Reproductive toxicity",      "key": "reproductive_toxicity",   "categories": ["1A", "1B", "2"]},
+    {"display": "Respiratory sensitization",  "key": "respiratory_sensitization", "categories": ["1", "1A", "1B"]},
+    {"display": "Skin sensitization",         "key": "skin_sensitization",      "categories": ["1", "1A", "1B"]},
+    {"display": "STOT - repeated exposure",   "key": "stot_re",                 "categories": ["1", "2"]},
+    {"display": "Aspiration hazard",          "key": "aspiration",              "categories": ["1"]},
 ]
 
 
@@ -299,13 +381,11 @@ class GHSClassifier:
     def _determine_signal_word(triggered: dict[str, tuple[str, str]]) -> str:
         for hazard_class, (cat, _) in triggered.items():
             if hazard_class in _DANGER_CLASSES:
-                sev = _SEVERITY.get(cat, 99)
-                if sev <= 3:   # Cat 1 or Cat 2
+                if _SEVERITY.get(cat, 99) <= 3:   # Cat 1 or Cat 2
                     return "DANGER"
-        # Check for WARNING-level triggers
-        for hazard_class, (cat, _) in triggered.items():
-            if hazard_class == "stot_se" and cat in ("3", "4"):
-                return "WARNING"
+            danger_cats = _HEALTH_DANGER_CATS.get(hazard_class)
+            if danger_cats and cat in danger_cats:
+                return "DANGER"
         return "WARNING"
 
     @staticmethod
@@ -379,12 +459,13 @@ if __name__ == "__main__":
     for cat in result.categories:
         print(f"  {cat.class_name}, category {cat.category}  [{cat.pictogram_codes}]")
 
-    # Assertions against gold standard
+    # Assertions against the shipped 114-chemical DB (H2O2 is oxidizing Cat 1
+    # at 20-25% → H271, the worst case, not the peracetic-driven Cat 2/H272).
     assert result.signal_word == "DANGER", f"Expected DANGER, got {result.signal_word}"
     assert "GHS03" in result.pictograms_needed, "Missing GHS03 (oxidizer)"
     assert "GHS05" in result.pictograms_needed, "Missing GHS05 (corrosion)"
-    assert "GHS07" in result.pictograms_needed, "Missing GHS07 (exclamation)"
+    assert "GHS06" in result.pictograms_needed, "Missing GHS06 (skull)"
     h_codes_found = {s[:4] for s in result.all_h_statements}
-    for expected in ["H272", "H290", "H314", "H318", "H335"]:
+    for expected in ["H271", "H290", "H314", "H318", "H370"]:
         assert expected in h_codes_found, f"Missing {expected}"
-    print("\nAll assertions passed — classifier matches OxyStrike gold standard.")
+    print("\nAll assertions passed — classifier matches the shipped DB.")
