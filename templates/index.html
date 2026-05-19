@@ -77,6 +77,18 @@
     </div>
   </div>
 
+  <!-- ── Help / important notes ────────────────────────────────────── -->
+  <details class="mb-3" style="border:1px solid #ffc107;border-radius:.4rem;background:#fff9e6;padding:.5rem .9rem">
+    <summary style="cursor:pointer;font-weight:700;color:#8a6d00">📖 使用说明 &amp; 注意事项（点击展开）</summary>
+    <div class="mt-2 small" style="line-height:1.55">
+      <p class="mb-1"><strong>流程</strong>：选公司 → 填产品 → 搜索加材料（输 RM#/CAS/名称片段，点选回填；缺库可"+ New material to library"）→ 填浓度（<strong>按到货规格 %</strong>，非纯活性）→ 生成 → 下载 PDF。</p>
+      <p class="mb-1"><strong>换公司零成本</strong>：用 <em>Re-issue</em> 选已生成的 SDS + 另一家公司即可重出，<strong>不调 AI、不花钱、秒出</strong>。</p>
+      <p class="mb-1"><strong>花 API（你的 Anthropic key）</strong>：生成全新 SDS 的叙述章节、某化学品首次富集（之后永久缓存）。<strong>不花 API</strong>：分类/查阅/换公司重出/NFPA-HMIS/搜索/PubChem 查 CAS。</p>
+      <p class="mb-1 text-danger"><strong>⚠ 必须复核</strong>：Section 9 物化性质为<strong>估算</strong>；富集的毒理/法规/危害分类与 NFPA/HMIS 为 AI/经验法 best-effort——<strong>正式签发前由有资质人员核对</strong>。</p>
+      <p class="mb-0"><strong>规则</strong>：低于 GHS 切点的危害不进 Section 2（属正确，Prop 65 仍在 S15 标示）；模糊配方只改 S3 显示、有害组分不会被隐藏；改代码/模板需重启服务。详见仓库 <code>USAGE.md</code>。</p>
+    </div>
+  </details>
+
   <!-- ── Section 1: Product Info ───────────────────────────────────── -->
   <details open>
     <summary><span class="badge bg-secondary me-1">1</span> Product Information</summary>
