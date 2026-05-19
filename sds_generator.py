@@ -90,7 +90,8 @@ class SDSGenerator:
 
         # 2. GHS classification (sees enriched ghs_triggers)
         _cb(30, "Running GHS classification...")
-        product.classification = self._classifier.classify(product.ingredients)
+        product.classification = self._classifier.classify(
+            product.ingredients, product.physical_properties)
 
         # 3. Enrich product from chemical database
         _cb(40, "Enriching from chemical database...")
@@ -701,6 +702,29 @@ class SDSGenerator:
             print("[CONSISTENCY] Section 9 implies a flash point but product "
                   "is not classified flammable — verify.")
 
+        # Organic-peroxide sanity: a peroxy acid / peroxide present but not
+        # classified as an organic peroxide is almost certainly an omission.
+        names = " ".join(i.name.lower() for i in product.ingredients)
+        cas_set = {i.cas_number.strip() for i in product.ingredients}
+        peroxidey = ("79-21-0" in cas_set or "peroxyacetic" in names
+                     or "peracetic" in names or "peroxide" in names)
+        if peroxidey and "organic peroxide" not in classes \
+                and "hydrogen peroxide" not in names:
+            print("[CONSISTENCY] A peroxy-acid/peroxide ingredient is present "
+                  "but no Organic peroxide class is classified — verify.")
+
+        # Carcinogenicity from a mist-only IARC entry (sulfuric-acid type).
+        for cat in product.classification.categories:
+            if "carcinogen" not in cat.class_name.lower():
+                continue
+            for ing in product.ingredients:
+                rec = self._db.get(ing.cas_number.strip()) or {}
+                ia = (rec.get("iarc_classification") or "").lower()
+                if "mist" in ia and "per se" in ia:
+                    print("[CONSISTENCY] Carcinogenicity may stem from a "
+                          f"mist-only IARC entry ({ing.name}) — verify it "
+                          "should classify the liquid mixture.")
+
     # ------------------------------------------------------------------
     # Rule-based transport classification
     # ------------------------------------------------------------------
@@ -726,7 +750,28 @@ class SDSGenerator:
         dom = dominant.name if dominant else ""
         env_note = "Marine Pollutant" + (f" ({dom})" if dom else "") if is_env else "None"
 
-        if is_oxidizer and is_corrosive:
+        cas_set = {i.cas_number.strip() for i in product.ingredients}
+        is_org_perox = any("organic peroxide" in c.lower()
+                           for c in classified_classes)
+        has_paa = "79-21-0" in cas_set        # peroxyacetic / peracetic acid
+        has_h2o2 = "7722-84-1" in cas_set     # hydrogen peroxide
+
+        if has_paa and has_h2o2:
+            # Well-known stabilized H2O2 + peroxyacetic acid mixture.
+            un = "UN3149"
+            psn = "Hydrogen peroxide and peroxyacetic acid mixture, with " \
+                  "acid(s), water and not more than 5% peroxyacetic acid, " \
+                  "stabilized"
+            haz_class = "5.1 (8)"
+            pg = "II"
+            labels = "5.1, 8"
+        elif is_org_perox:
+            un = "UN3109"
+            psn = f"Organic peroxide type F, liquid{f' ({dom})' if dom else ''}"
+            haz_class = "5.2"
+            pg = "None"          # organic peroxides are not assigned a PG
+            labels = "5.2"
+        elif is_oxidizer and is_corrosive:
             un = "UN3139"
             psn = f"Oxidizing liquid, corrosive, n.o.s.{f' ({dom})' if dom else ''}"
             haz_class = "5.1 (8)"

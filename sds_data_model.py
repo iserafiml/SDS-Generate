@@ -213,6 +213,8 @@ class SDSProduct:
     # ---- Section 2: Hazard Identification ----
     classification: GHSClassification = field(default_factory=GHSClassification)
     label_notes: str = ""                        # supplemental label text
+    is_pesticide: bool = False                   # EPA FIFRA-registered product
+    epa_reg_no: str = ""                         # EPA Registration No.
 
     # ---- Section 3: Composition/Information on Ingredients ----
     ingredients: list[SDSIngredient] = field(default_factory=list)

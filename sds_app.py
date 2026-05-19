@@ -154,6 +154,8 @@ def _parse_product(data: dict) -> SDSProduct:
         product_name=data.get("product_name", ""),
         product_code=data.get("product_code", ""),
         product_type=data.get("product_type", ""),
+        is_pesticide=bool(data.get("is_pesticide")),
+        epa_reg_no=(data.get("epa_reg_no") or "").strip(),
         manufacturer=ManufacturerInfo(
             company_name=m.get("company_name", ""),
             phone=m.get("phone", ""),

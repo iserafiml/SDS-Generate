@@ -19,6 +19,7 @@ from sds_data_model import GHSClassification, GHSHazardCategory, SDSIngredient
 
 _CLASS_DISPLAY = {
     "oxidizing_liquid":    "Oxidizing liquids",
+    "organic_peroxides":   "Organic peroxides",
     "corrosive_to_metals": "Corrosive to metals",
     "skin_corrosion":      "Skin corrosion",
     "serious_eye_damage":  "Serious eye damage",
@@ -39,6 +40,7 @@ _CLASS_DISPLAY = {
 # Pictogram code per hazard class
 _PICTOGRAM_MAP = {
     "oxidizing_liquid":    "GHS03",  # flame over circle
+    "organic_peroxides":   "GHS02",  # flame (Type A/B also add GHS01 below)
     "corrosive_to_metals": "GHS05",  # corrosion
     "skin_corrosion":      "GHS05",
     "serious_eye_damage":  "GHS05",
@@ -58,6 +60,13 @@ _PICTOGRAM_MAP = {
 
 # H-codes per (hazard_class, category)
 _CATEGORY_H_CODES: dict[str, list[str]] = {
+    "organic_peroxides_A":   ["H240"],
+    "organic_peroxides_B":   ["H241"],
+    "organic_peroxides_C":   ["H242"],
+    "organic_peroxides_D":   ["H242"],
+    "organic_peroxides_E":   ["H242"],
+    "organic_peroxides_F":   ["H242"],
+    "organic_peroxides_G":   [],
     "oxidizing_liquid_1":    ["H271"],
     "oxidizing_liquid_2":    ["H272"],
     "oxidizing_liquid_3":    ["H272"],
@@ -101,6 +110,8 @@ _CATEGORY_H_CODES: dict[str, list[str]] = {
 
 # P-codes per (hazard_class, category) — using combined codes as written on labels
 _CATEGORY_P_CODES: dict[str, list[str]] = {
+    "organic_peroxides_F": ["P210", "P220", "P234", "P280", "P370+P378",
+                            "P403+P235", "P411", "P420", "P501"],
     "oxidizing_liquid_2": [
         "P210", "P220", "P221", "P260", "P264", "P270", "P271", "P280",
         "P301+P330+P331", "P303+P361+P353", "P304+P340",
@@ -143,6 +154,9 @@ H_STATEMENTS: dict[str, str] = {
     "H225": "Highly flammable liquid and vapour",
     "H226": "Flammable liquid and vapour",
     "H227": "Combustible liquid",
+    "H240": "Heating may cause an explosion",
+    "H241": "Heating may cause a fire or explosion",
+    "H242": "Heating may cause a fire",
     "H271": "May cause fire or explosion; strong oxidizer",
     "H272": "May intensify fire; oxidizer",
     "H290": "May be corrosive to metals",
@@ -223,6 +237,8 @@ P_STATEMENTS: dict[str, str] = {
     "P390":          "Absorb spillage to prevent material damage.",
     "P391":          "Collect spillage.",
     "P403+P235":     "Store in a well-ventilated place. Keep cool.",
+    "P411":          "Store at temperatures not exceeding the recommended maximum.",
+    "P420":          "Store separately.",
     "P404":          "Store in a closed container.",
     "P405":          "Store locked up.",
     "P406":          "Store in a corrosive resistant/… container with a resistant inner liner.",
@@ -233,7 +249,12 @@ P_STATEMENTS: dict[str, str] = {
 _SEVERITY: dict[str, int] = {
     "1":  0, "1A": 0, "1B": 1, "1C": 2,
     "2":  3, "3":  6, "4":  9,
+    # organic-peroxide types A (most severe) → G (least)
+    "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6,
 }
+
+# Organic-peroxide types whose signal word is DANGER (E/F → WARNING, G → none)
+_ORG_PEROX_DANGER = {"A", "B", "C", "D"}
 
 # Hazard classes where Cat 1 or Cat 2 → DANGER; Cat 3+ → WARNING
 _DANGER_CLASSES = {"oxidizing_liquid", "skin_corrosion", "serious_eye_damage",
@@ -254,6 +275,7 @@ _HEALTH_DANGER_CATS = {
 # Public menu for the interactive wizard — only classes with H/P code entries defined above
 HAZARD_MENU: list[dict] = [
     {"display": "Oxidizing liquids",         "key": "oxidizing_liquid",    "categories": ["1", "2", "3"]},
+    {"display": "Organic peroxides",          "key": "organic_peroxides",   "categories": ["A", "B", "C", "D", "E", "F", "G"]},
     {"display": "Flammable liquids",          "key": "flammable_liquid",    "categories": ["1", "2", "3", "4"]},
     {"display": "Skin corrosion/irritation",  "key": "skin_corrosion",      "categories": ["1A", "1B", "1C", "2"]},
     {"display": "Serious eye damage",         "key": "serious_eye_damage",  "categories": ["1", "2"]},
@@ -306,8 +328,15 @@ class GHSClassifier:
     # Public API
     # ------------------------------------------------------------------
 
-    def classify(self, ingredients: list[SDSIngredient]) -> GHSClassification:
-        """Return a fully populated GHSClassification for the ingredient mixture."""
+    def classify(self, ingredients: list[SDSIngredient],
+                 physical_properties=None) -> GHSClassification:
+        """Return a fully populated GHSClassification for the ingredient mixture.
+
+        `physical_properties` (optional) lets the mixture-property rule use the
+        product flash point; flammability is a property of the *mixture*, not
+        an additive cut-off, so it is suppressed for aqueous / oxidiser /
+        organic-peroxide systems with no low-flash evidence.
+        """
         # Step 1: determine worst-case triggered hazard class → (category, trigger name)
         triggered: dict[str, tuple[str, str]] = {}
         evaluated: list[str] = []     # ingredients with a DB record (known)
@@ -337,6 +366,84 @@ class GHSClassifier:
                     existing_cat = triggered.get(hazard_class, (None, ""))[0]
                     if existing_cat is None or self._is_more_severe(cat, existing_cat):
                         triggered[hazard_class] = (cat, ing.name)
+
+        # Step 1b: mixture-property rule — flammability is not additive.
+        # Suppress flammable_liquid for aqueous / oxidiser / organic-peroxide
+        # systems unless there is genuine low-flash evidence for the mixture.
+        if "flammable_liquid" in triggered:
+            fp = ""
+            if physical_properties is not None:
+                fp = (getattr(physical_properties, "flash_point", "") or "")
+            fp_l = fp.lower()
+            import re as _re
+            m = _re.search(r"(-?\d+(?:\.\d+)?)\s*°?\s*c", fp_l)
+            low_flash = bool(m and float(m.group(1)) < 60)
+            non_flam_text = any(t in fp_l for t in (
+                "not applicable", "non-flammable", "non flammable",
+                "not flammable", "no flash"))
+            water = sum(i.wt_percent_high for i in ingredients
+                        if i.cas_number.strip() == "7732-18-5")
+            oxidiser = ("oxidizing_liquid" in triggered
+                        or "organic_peroxides" in triggered)
+            if not low_flash and (non_flam_text or oxidiser or water >= 25):
+                why = ("flash point indicates non-flammable" if non_flam_text
+                       else "oxidiser/organic-peroxide matrix"
+                       if oxidiser else f"{water:g}% water")
+                print(f"[CONSISTENCY] flammable_liquid suppressed "
+                      f"(mixture rule: {why}; no low-flash evidence).")
+                triggered.pop("flammable_liquid", None)
+
+        # Step 1c: acute toxicity by the GHS ATE additivity formula
+        # (100/ATEmix = Σ Ci/ATEi) instead of "worst single component".
+        # Applied to oral & dermal (well-defined point estimates); inhalation
+        # is left on the conservative worst-component rule.
+        import re as _re2
+        _ATE_PT = {  # GHS category → ATE point estimate
+            "oral":   {"1": 0.5, "2": 5.0, "3": 100.0, "4": 500.0, "5": 2500.0},
+            "dermal": {"1": 5.0, "2": 50.0, "3": 300.0, "4": 1100.0},
+        }
+        _ATE_BANDS = {  # ATEmix ≤ value → category
+            "oral":   [(5, "1"), (50, "2"), (300, "3"), (2000, "4"), (5000, "5")],
+            "dermal": [(50, "1"), (200, "2"), (1000, "3"), (2000, "4")],
+        }
+        _ROUTE_KEY = {"acute_toxicity_oral": ("oral", "oral_ld50"),
+                      "acute_toxicity_dermal": ("dermal", "dermal_ld50")}
+        for hclass, (route, tox_key) in _ROUTE_KEY.items():
+            if hclass not in triggered:
+                continue
+            inv = 0.0
+            for ing in ingredients:
+                rec = self._db.get(ing.cas_number.strip())
+                if not rec:
+                    continue
+                trig = (rec.get("ghs_triggers") or {}).get(hclass)
+                if not trig:
+                    continue
+                ci = ing.wt_percent_high
+                if ci <= 0:
+                    continue
+                ate = None
+                res = ((rec.get("toxicology") or {}).get(tox_key) or {}).get("result", "")
+                m = _re2.search(r"(\d+(?:\.\d+)?)\s*mg/kg", str(res))
+                if m:
+                    ate = float(m.group(1))
+                if ate is None:
+                    ate = _ATE_PT[route].get(str(trig.get("category")))
+                if ate and ate > 0:
+                    inv += ci / ate
+            if inv > 0:
+                atemix = 100.0 / inv
+                newcat = next((c for lim, c in _ATE_BANDS[route]
+                               if atemix <= lim), None)
+                if newcat:
+                    old = triggered[hclass][0]
+                    if newcat != old:
+                        print(f"[CONSISTENCY] {hclass}: ATE-additivity → "
+                              f"Cat {newcat} (ATEmix≈{atemix:.0f}; "
+                              f"was worst-component Cat {old}).")
+                    triggered[hclass] = (newcat, "mixture (ATE)")
+                else:
+                    triggered.pop(hclass, None)  # ATEmix above Cat 5 → not classified
 
         # Step 2: build GHSHazardCategory objects
         categories = self._build_categories(triggered)
@@ -385,12 +492,22 @@ class GHSClassifier:
                 base_key = f"{hazard_class}_1"
                 p_codes = _CATEGORY_P_CODES.get(base_key, [])
             pic = _PICTOGRAM_MAP.get(hazard_class, "")
+            pics = [pic] if pic else []
+            if hazard_class == "organic_peroxides":
+                if cat == "A":
+                    pics = ["GHS01"]
+                elif cat == "B":
+                    pics = ["GHS01", "GHS02"]
+                elif cat == "G":
+                    pics = []
+                else:                       # C–F → flame only
+                    pics = ["GHS02"]
             categories.append(GHSHazardCategory(
                 class_name=_CLASS_DISPLAY.get(hazard_class, hazard_class),
                 category=cat,
                 h_codes=h_codes,
                 p_codes=p_codes,
-                pictogram_codes=[pic] if pic else [],
+                pictogram_codes=pics,
             ))
         return categories
 
@@ -402,6 +519,8 @@ class GHSClassifier:
                     return "DANGER"
             danger_cats = _HEALTH_DANGER_CATS.get(hazard_class)
             if danger_cats and cat in danger_cats:
+                return "DANGER"
+            if hazard_class == "organic_peroxides" and cat in _ORG_PEROX_DANGER:
                 return "DANGER"
         return "WARNING"
 

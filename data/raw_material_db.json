@@ -486,6 +486,10 @@
       "environmental": {
         "threshold_pct": 1.0,
         "category": "1"
+      },
+      "organic_peroxides": {
+        "threshold_pct": 1.0,
+        "category": "F"
       }
     },
     "oels": [

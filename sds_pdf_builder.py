@@ -293,9 +293,20 @@ def build_section_2_hazards(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
     # --- Pictogram row ---
     pic_row = _draw_pictogram_row(clf.pictograms_needed, brand)
 
-    elems.append(KeepTogether([bar, Spacer(1, 2*mm),
-                                Paragraph("GHS Classification:", styles["subhead"]),
-                                clf_tbl, Spacer(1, 3*mm)]))
+    head_block = [bar, Spacer(1, 2*mm)]
+    if p.is_pesticide:
+        reg = f" (EPA Reg. No. {_esc(p.epa_reg_no)})" if p.epa_reg_no else ""
+        head_block.append(Paragraph(
+            "<i>This chemical is a pesticide product registered by the U.S. "
+            "Environmental Protection Agency and is subject to certain "
+            f"labeling requirements under FIFRA{reg}. These requirements "
+            "differ from the classification criteria and hazard information "
+            "required for non-pesticide safety data sheets. See Section 15 "
+            "for FIFRA hazard information.</i>", styles["body_small"]))
+        head_block.append(Spacer(1, 2*mm))
+    head_block += [Paragraph("GHS Classification:", styles["subhead"]),
+                   clf_tbl, Spacer(1, 3*mm)]
+    elems.append(KeepTogether(head_block))
 
     label_block = [
         Paragraph("Label Elements", styles["subhead"]),
@@ -861,6 +872,17 @@ def build_section_15_regulatory(p: SDSProduct, brand: BrandConfig, styles: dict)
     elems.append(CondPageBreak(28 * mm))
     elems.append(_section_bar("SECTION 15: REGULATORY INFORMATION", styles, brand))
     elems.append(Spacer(1, 2 * mm))
+    if p.is_pesticide:
+        reg = f" — EPA Reg. No. {_esc(p.epa_reg_no)}" if p.epa_reg_no else ""
+        elems.append(Paragraph("FIFRA Pesticide Information", styles["subhead"]))
+        elems.append(Paragraph(
+            "This product is a pesticide registered with the U.S. EPA under "
+            f"FIFRA{reg}. The pesticide label is the legally binding hazard "
+            "and use document; follow all label directions. The GHS "
+            "classification in Section 2 is provided for workplace "
+            "(HazCom 2012) purposes and may differ from the FIFRA label "
+            "signal word and precautionary statements.", styles["body_small"]))
+        elems.append(Spacer(1, 3 * mm))
     elems.append(Paragraph("United States Regulations", styles["subhead"]))
 
     # TSCA / SNUR / Export notice

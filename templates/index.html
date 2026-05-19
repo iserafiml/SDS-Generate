@@ -106,6 +106,16 @@
         <label class="form-label">Product Type</label>
         <input id="productType" type="text" class="form-control" placeholder="e.g. Oxidizing acid cleaner">
       </div>
+      <div class="col-md-4">
+        <div class="form-check mt-4">
+          <input class="form-check-input" type="checkbox" id="isPesticide">
+          <label class="form-check-label" for="isPesticide">EPA FIFRA-registered pesticide</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">EPA Reg. No. <small class="text-muted">(if pesticide)</small></label>
+        <input id="epaRegNo" type="text" class="form-control" placeholder="e.g. 12345-67">
+      </div>
     </div>
   </details>
 
@@ -784,6 +794,8 @@ function buildPayload() {
     product_name: document.getElementById("productName").value.trim(),
     product_code: document.getElementById("productCode").value.trim(),
     product_type: document.getElementById("productType").value.trim(),
+    is_pesticide: document.getElementById("isPesticide").checked,
+    epa_reg_no: document.getElementById("epaRegNo").value.trim(),
     manufacturer: {
       company_name:       document.getElementById("mfgCompany").value.trim(),
       phone:              document.getElementById("mfgPhone").value.trim(),

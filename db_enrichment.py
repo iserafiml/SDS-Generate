@@ -163,6 +163,7 @@ _SCHEMA_EXAMPLE = {
         "serious_eye_damage":  {"threshold_pct": 3.0, "category": "1"},
         "corrosive_to_metals": {"threshold_pct": 1.0, "category": "1"},
         "oxidizing_liquid":    {"threshold_pct": 1.0, "category": "2"},
+        "organic_peroxides":   {"threshold_pct": 1.0, "category": "F"},
         "flammable_liquid":    {"threshold_pct": 3.0, "category": "2"},
         "acute_toxicity_oral": {"threshold_pct": 1.0, "category": "4"},
         "acute_toxicity_inh":  {"threshold_pct": 1.0, "category": "4"},
@@ -194,6 +195,8 @@ PHYS_GCL: dict[str, dict[str, float]] = {
     "serious_eye_damage":   {"1": 3.0, "2": 10.0},
     "corrosive_to_metals":  {"1": 1.0},
     "oxidizing_liquid":     {"1": 1.0, "2": 1.0, "3": 1.0},
+    "organic_peroxides":    {"A": 1.0, "B": 1.0, "C": 1.0, "D": 1.0,
+                             "E": 1.0, "F": 1.0, "G": 1.0},
     "flammable_liquid":     {"1": 1.0, "2": 3.0, "3": 10.0, "4": 25.0},
     "acute_toxicity_oral":  {"1": 0.1, "2": 0.1, "3": 1.0, "4": 1.0},
     "acute_toxicity_inh":   {"1": 0.1, "2": 0.1, "3": 1.0, "4": 1.0},
@@ -247,7 +250,10 @@ _SYSTEM_PROMPT = (
     "classes & category->threshold_pct: skin_corrosion \"1A\"/\"1B\"/\"1C\" "
     "= 5.0, \"2\" = 10.0; serious_eye_damage \"1\" = 3.0, \"2\" = 10.0; "
     "corrosive_to_metals \"1\" = 1.0; oxidizing_liquid \"1\"/\"2\"/\"3\" = "
-    "1.0; flammable_liquid \"1\" = 1.0, \"2\" = 3.0, \"3\" = 10.0, \"4\" = "
+    "1.0; organic_peroxides type \"A\"-\"G\" = 1.0 (peracetic acid and "
+    "other peroxy acids/peroxides ARE organic peroxides — typically type "
+    "\"F\"; do NOT also list flammable_liquid for them); flammable_liquid "
+    "\"1\" = 1.0, \"2\" = 3.0, \"3\" = 10.0, \"4\" = "
     "25.0; acute_toxicity_oral & acute_toxicity_inh \"1\"/\"2\" = 0.1, "
     "\"3\"/\"4\" = 1.0 (category from the substance's LD50/LC50 band); "
     "stot_se \"1\" = 10.0, \"2\" = 1.0, \"3\" = 20.0; environmental "

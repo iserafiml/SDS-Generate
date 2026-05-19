@@ -90,6 +90,30 @@ rebuilt the chemical library from the company's authoritative data.
   fixed left box and the product name / subtitle are right-aligned, so they
   never overlap.
 
+### Rule-engine accuracy (v1.1)
+
+Driven by comparison against two professional reference SDSs for a 22%
+peracetic-acid product:
+
+- **Organic peroxides** hazard class added (Type A–G → H240/241/242,
+  GHS01/02, signal word); enrichment now assigns it (peracetic acid →
+  Type F). Was entirely missing — the defining hazard for PAA products.
+- **Flammability is now a mixture property, not additive**: a flammable
+  component is no longer auto-classified as a flammable liquid inside an
+  aqueous / oxidiser / organic-peroxide matrix without low-flash evidence
+  (removed a bogus Flammable Cat 3 on PAA blends).
+- **Acute toxicity by GHS ATE additivity** (100/ATEmix = ΣCi/ATEi for
+  oral & dermal) instead of "worst single component" — fixes systemic
+  over-severity (e.g. oral Cat 2 → Cat 4).
+- **Transport**: PAA + hydrogen-peroxide mixtures → **UN3149** (5.1(8),
+  PG II); generic organic peroxides → UN3109 type F — replaces the
+  previous UN3139/UN1760-only logic.
+- **Consistency net** strengthened: flags suppressed flammable, a
+  peroxide present without an organic-peroxide class, and carcinogenicity
+  stemming from a mist-only IARC entry.
+- **FIFRA**: optional "EPA-registered pesticide" flag adds the FIFRA
+  statement to Section 2 and a FIFRA block to Section 15.
+
 ### Known limitations
 
 AI-estimated content and the NFPA/HMIS heuristic must be reviewed before a
