@@ -1696,14 +1696,50 @@
     ],
     "ghs_triggers": {},
     "oels": [],
-    "toxicology": {},
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 8471 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: >21000 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": ""
+      },
+      "skin_result": "Not a skin irritant under standard test conditions.",
+      "eye_result": "May cause mild eye irritation.",
+      "stot_result": ""
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LC50",
+          "value": "16200 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "3910 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "Urea is readily biodegradable. It is rapidly hydrolyzed in aqueous environments by urease enzymes to ammonia and carbon dioxide. Half-life in water/soil is typically short (days to weeks depending on conditions).",
+    "bioaccumulation": "Urea is not expected to bioaccumulate due to its low log Kow (log Kow = -2.11). BCF is negligible.",
+    "mobility": "Urea is highly mobile in soil due to its high water solubility (~1080 g/L at 20°C) and low soil adsorption (Koc: approximately 5 L/kg).",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -1717,9 +1753,17 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "NJ",
+        "PA"
+      ]
     },
-    "threshold_basis": "pure"
+    "threshold_basis": "pure",
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 3
+    }
   },
   {
     "cas": "527-07-1",
@@ -1729,14 +1773,42 @@
     ],
     "ghs_triggers": {},
     "oels": [],
-    "toxicology": {},
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: >10000 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "",
+        "result": ""
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "",
+        "result": ""
+      },
+      "skin_result": "Not a skin irritant based on available data.",
+      "eye_result": "Not a serious eye irritant based on available data.",
+      "stot_result": ""
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Leuciscus idus",
+          "metric": "LC50",
+          "value": ">1000 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "Sodium gluconate is readily biodegradable. It undergoes rapid aerobic biodegradation in water and soil environments.",
+    "bioaccumulation": "Sodium gluconate is not expected to bioaccumulate due to its low log Kow and high water solubility.",
+    "mobility": "Sodium gluconate is highly mobile in soil due to its high water solubility and low adsorption to soil particles.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
@@ -1752,7 +1824,12 @@
       "prop_65_warning": "",
       "rtk_states": []
     },
-    "threshold_basis": "pure"
+    "threshold_basis": "pure",
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 3
+    }
   },
   {
     "cas": "67-63-0",
@@ -6165,20 +6242,78 @@
   {
     "cas": "27176-87-0",
     "name": "Dodecylbenzene (DDBSA)",
-    "ghs_triggers": {},
-    "oels": [],
-    "toxicology": {},
-    "aquatic_toxicology": {
-      "acute": [],
-      "chronic": []
+    "ghs_triggers": {
+      "skin_corrosion": {
+        "threshold_pct": 5.0,
+        "category": "1"
+      },
+      "serious_eye_damage": {
+        "threshold_pct": 3.0,
+        "category": "1"
+      },
+      "acute_toxicity_oral": {
+        "threshold_pct": 1.0,
+        "category": "4"
+      }
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "oels": [],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: 650 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: 1200 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: >1.59 mg/L (4 hr)"
+      },
+      "skin_result": "Causes skin irritation and corrosion; classified as a skin corrosive (Category 1).",
+      "eye_result": "Causes serious eye damage (Category 1).",
+      "stot_result": "May cause respiratory tract irritation upon inhalation of mists or vapors."
+    },
+    "aquatic_toxicology": {
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LC50",
+          "value": "10 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EC50",
+          "value": "3.6 mg/L",
+          "duration_hr": 48,
+          "endpoint": ""
+        }
+      ],
+      "chronic": [
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "NOEC",
+          "value": "0.5 mg/L",
+          "duration_days": 21,
+          "endpoint": ""
+        }
+      ]
+    },
+    "persistence": "Dodecylbenzenesulfonic acid (CAS 27176-87-0) is considered readily biodegradable under aerobic conditions. Primary biodegradation is well documented for linear alkylbenzene sulfonates. Ultimate biodegradation occurs under aerobic conditions, though persistence in anaerobic sediment environments may be greater.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate significantly based on its physicochemical properties and surfactant nature. Estimated BCF is low (BCF < 500).",
+    "mobility": "The substance has moderate to low mobility in soil due to strong adsorption to sediment and organic matter (estimated Koc: 1000–10000 L/kg). Mobility in aquatic environments is affected by its surfactant properties.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
-      "tsca_listed": false,
+      "tsca_listed": true,
       "sara_302": false,
       "sara_302_tpq_lbs": "",
       "sara_313": false,
@@ -6188,9 +6323,17 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "NJ",
+        "PA"
+      ]
     },
-    "threshold_basis": "pure"
+    "threshold_basis": "pure",
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 3
+    }
   },
   {
     "cas": "29132-58-9",
@@ -6285,20 +6428,53 @@
   {
     "cas": "61790-12-3",
     "name": "Tall Oil Fatty Acid",
-    "ghs_triggers": {},
+    "ghs_triggers": {
+      "flammable_liquid": {
+        "threshold_pct": 25.0,
+        "category": "4"
+      }
+    },
     "oels": [],
-    "toxicology": {},
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: >5000 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: >2000 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": ""
+      },
+      "skin_result": "May cause mild skin irritation.",
+      "eye_result": "May cause mild eye irritation.",
+      "stot_result": ""
+    },
     "aquatic_toxicology": {
-      "acute": [],
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LC50",
+          "value": ">100 mg/L",
+          "duration_hr": 96,
+          "endpoint": ""
+        }
+      ],
       "chronic": []
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "persistence": "Tall oil fatty acids are readily biodegradable. The substance is expected to biodegrade rapidly in aquatic and terrestrial environments.",
+    "bioaccumulation": "The substance is not expected to bioaccumulate significantly based on its physical-chemical properties and ready biodegradability.",
+    "mobility": "Low to moderate mobility in soil due to strong adsorption to organic matter. Koc estimated to be high given the long fatty acid chain lengths.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
-      "tsca_listed": false,
+      "tsca_listed": true,
       "sara_302": false,
       "sara_302_tpq_lbs": "",
       "sara_313": false,
@@ -6310,7 +6486,12 @@
       "prop_65_warning": "",
       "rtk_states": []
     },
-    "threshold_basis": "pure"
+    "threshold_basis": "pure",
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 3
+    }
   },
   {
     "cas": "63148-62-9",
@@ -6345,20 +6526,121 @@
   {
     "cas": "64742-88-7",
     "name": "Mineral Spirit",
-    "ghs_triggers": {},
-    "oels": [],
-    "toxicology": {},
-    "aquatic_toxicology": {
-      "acute": [],
-      "chronic": []
+    "ghs_triggers": {
+      "stot_re": {
+        "threshold_pct": 10.0,
+        "category": "2"
+      },
+      "aspiration": {
+        "threshold_pct": 10.0,
+        "category": "1"
+      },
+      "flammable_liquid": {
+        "threshold_pct": 10.0,
+        "category": "3"
+      },
+      "environmental": {
+        "threshold_pct": 1.0,
+        "category": "2"
+      }
     },
-    "persistence": "",
-    "bioaccumulation": "",
-    "mobility": "",
+    "oels": [
+      {
+        "authority": "ACGIH",
+        "type": "TWA",
+        "value": "100",
+        "unit": "ppm"
+      },
+      {
+        "authority": "ACGIH",
+        "type": "STEL",
+        "value": "150",
+        "unit": "ppm"
+      },
+      {
+        "authority": "OSHA",
+        "type": "PEL-TWA",
+        "value": "100",
+        "unit": "ppm"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "REL-TWA",
+        "value": "350",
+        "unit": "mg/m3"
+      },
+      {
+        "authority": "NIOSH",
+        "type": "CEIL",
+        "value": "1800",
+        "unit": "mg/m3"
+      }
+    ],
+    "toxicology": {
+      "oral_ld50": {
+        "route": "oral",
+        "species": "Rat",
+        "result": "LD50 Rat: >5000 mg/kg"
+      },
+      "dermal_ld50": {
+        "route": "dermal",
+        "species": "Rabbit",
+        "result": "LD50 Rabbit: >2000 mg/kg"
+      },
+      "inhalation_lc50": {
+        "route": "inhalation",
+        "species": "Rat",
+        "result": "LC50 Rat: >5.5 mg/L (4 hr [vapour])"
+      },
+      "skin_result": "Causes skin irritation. Defatting of skin may occur on prolonged or repeated contact.",
+      "eye_result": "Causes eye irritation.",
+      "stot_result": "May cause drowsiness or dizziness. Repeated exposure may cause central nervous system depression. May cause damage to organs (central nervous system, kidneys) through prolonged or repeated exposure."
+    },
+    "aquatic_toxicology": {
+      "acute": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "LL50",
+          "value": "2.2 mg/L",
+          "duration_hr": 96,
+          "endpoint": "OECD 203"
+        },
+        {
+          "type": "Aquatic Invertebrates",
+          "organism": "Daphnia magna",
+          "metric": "EL50",
+          "value": "1.6 mg/L",
+          "duration_hr": 48,
+          "endpoint": "OECD 202"
+        },
+        {
+          "type": "Algae",
+          "organism": "Pseudokirchneriella subcapitata",
+          "metric": "EL50",
+          "value": "1.0 mg/L",
+          "duration_hr": 72,
+          "endpoint": "OECD 201"
+        }
+      ],
+      "chronic": [
+        {
+          "type": "Fish",
+          "organism": "Oncorhynchus mykiss",
+          "metric": "NOELR",
+          "value": "0.1 mg/L",
+          "duration_days": 14,
+          "endpoint": "OECD 204"
+        }
+      ]
+    },
+    "persistence": "Not readily biodegradable based on standard OECD tests. The substance contains aliphatic and aromatic hydrocarbons which are inherently biodegradable but may persist in the environment under anaerobic conditions.",
+    "bioaccumulation": "The substance has moderate potential to bioaccumulate based on log Kow values of constituent hydrocarbons (estimated log Kow 3–7). BCF values for individual components are generally below 2000.",
+    "mobility": "Low to moderate mobility in soil. The substance has a high affinity for organic matter (estimated Koc: 400–10000 L/kg depending on fraction). Volatilisation from water surface is expected.",
     "iarc_classification": "Not Applicable",
     "ntp_classification": "Not Applicable",
     "regulatory": {
-      "tsca_listed": false,
+      "tsca_listed": true,
       "sara_302": false,
       "sara_302_tpq_lbs": "",
       "sara_313": false,
@@ -6368,9 +6650,18 @@
       "caa_112r": false,
       "prop_65": false,
       "prop_65_warning": "",
-      "rtk_states": []
+      "rtk_states": [
+        "MA",
+        "NJ",
+        "PA"
+      ]
     },
-    "threshold_basis": "pure"
+    "threshold_basis": "pure",
+    "_enrichment": {
+      "date": "2026-05-18",
+      "model": "claude-sonnet-4-6",
+      "v": 3
+    }
   },
   {
     "cas": "68391-01-5",

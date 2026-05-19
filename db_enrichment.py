@@ -33,7 +33,7 @@ from pathlib import Path
 #     current schema. The long TTL tracks regulatory drift (Prop 65 / IARC /
 #     OEL updates ~ yearly) — re-asking the same model more often than that
 #     adds cost and nondeterminism without improving accuracy.
-ENRICHMENT_SCHEMA_VERSION = 2
+ENRICHMENT_SCHEMA_VERSION = 3
 CURRENT_MODEL = "claude-sonnet-4-6"
 REVERIFY_AFTER_DAYS = 365
 
@@ -158,6 +158,17 @@ _SCHEMA_EXAMPLE = {
         "stot_re":                   {"threshold_pct": 10.0, "category": "1"},
         "aspiration":                {"threshold_pct": 10.0, "category": "1"},
     },
+    "ghs_physical_triggers": {
+        "skin_corrosion":      {"threshold_pct": 5.0, "category": "1A"},
+        "serious_eye_damage":  {"threshold_pct": 3.0, "category": "1"},
+        "corrosive_to_metals": {"threshold_pct": 1.0, "category": "1"},
+        "oxidizing_liquid":    {"threshold_pct": 1.0, "category": "2"},
+        "flammable_liquid":    {"threshold_pct": 3.0, "category": "2"},
+        "acute_toxicity_oral": {"threshold_pct": 1.0, "category": "4"},
+        "acute_toxicity_inh":  {"threshold_pct": 1.0, "category": "4"},
+        "stot_se":             {"threshold_pct": 10.0, "category": "1"},
+        "environmental":       {"threshold_pct": 1.0, "category": "1"},
+    },
 }
 
 # Authoritative GHS/CLP generic concentration limits (wt %) that trigger
@@ -173,12 +184,31 @@ HEALTH_GCL: dict[str, dict[str, float]] = {
     "aspiration":                {"1": 10.0},
 }
 
-# GHS health-hazard classes the classifier understands (used to merge enrichment
-# output into a record's ghs_triggers so they reach Section 2 + pictograms).
+# Physical / phys-chem / acute classes the classifier understands. Several of
+# these are really substance properties or use ATE/M-factor additivity; the
+# wt-% values below are pragmatic, conservative mixture cut-offs so a stub
+# chemical's physical hazards still reach Section 2 (better slightly
+# over-conservative than a blank hazard section). Pure-substance basis.
+PHYS_GCL: dict[str, dict[str, float]] = {
+    "skin_corrosion":       {"1": 5.0, "1A": 5.0, "1B": 5.0, "1C": 5.0, "2": 10.0},
+    "serious_eye_damage":   {"1": 3.0, "2": 10.0},
+    "corrosive_to_metals":  {"1": 1.0},
+    "oxidizing_liquid":     {"1": 1.0, "2": 1.0, "3": 1.0},
+    "flammable_liquid":     {"1": 1.0, "2": 3.0, "3": 10.0, "4": 25.0},
+    "acute_toxicity_oral":  {"1": 0.1, "2": 0.1, "3": 1.0, "4": 1.0},
+    "acute_toxicity_inh":   {"1": 0.1, "2": 0.1, "3": 1.0, "4": 1.0},
+    "stot_se":              {"1": 10.0, "2": 1.0, "3": 20.0},
+    "environmental":        {"1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0},
+}
+
+# Classes the classifier understands, merged from enrichment into a record's
+# ghs_triggers so they reach Section 2 + pictograms. Only added when absent —
+# curated hand-set triggers are never overwritten.
 _HEALTH_TRIGGER_KEYS = (
     "carcinogenicity", "germ_cell_mutagenicity", "reproductive_toxicity",
     "respiratory_sensitization", "skin_sensitization", "stot_re", "aspiration",
 )
+_PHYS_TRIGGER_KEYS = tuple(PHYS_GCL)
 
 _SYSTEM_PROMPT = (
     "You are a regulatory toxicology data specialist compiling authoritative "
@@ -188,7 +218,8 @@ _SYSTEM_PROMPT = (
     "lists, and the California OEHHA Proposition 65 list. "
     "Return ONLY one valid JSON object with EXACTLY these keys: oels, "
     "toxicology, aquatic_toxicology, persistence, bioaccumulation, mobility, "
-    "iarc_classification, ntp_classification, regulatory, ghs_health_triggers. "
+    "iarc_classification, ntp_classification, regulatory, ghs_health_triggers, "
+    "ghs_physical_triggers. "
     "Match the example schema exactly (same nested keys and value types; all "
     "leaf values that are not booleans/numbers/arrays are strings). "
     "Critical rules: (1) Only state data you are confident is correct for THIS "
@@ -210,7 +241,19 @@ _SYSTEM_PROMPT = (
     "toxicity Cat 1A/1B = 0.3, Cat 2 = 3.0; respiratory_sensitization = 0.1; "
     "skin_sensitization Cat 1/1B = 1.0 (sub-category 1A = 0.1); stot_re Cat 1 "
     "= 10.0, Cat 2 = 1.0; aspiration Cat 1 = 10.0. A cobalt(II) salt, for "
-    "example, is carcinogenicity 1B at 0.1. No markdown, no commentary."
+    "example, is carcinogenicity 1B at 0.1. "
+    "(6) ghs_physical_triggers: same rules for the physical / phys-chem / "
+    "acute classes the substance actually carries (omit the rest). Allowed "
+    "classes & category->threshold_pct: skin_corrosion \"1A\"/\"1B\"/\"1C\" "
+    "= 5.0, \"2\" = 10.0; serious_eye_damage \"1\" = 3.0, \"2\" = 10.0; "
+    "corrosive_to_metals \"1\" = 1.0; oxidizing_liquid \"1\"/\"2\"/\"3\" = "
+    "1.0; flammable_liquid \"1\" = 1.0, \"2\" = 3.0, \"3\" = 10.0, \"4\" = "
+    "25.0; acute_toxicity_oral & acute_toxicity_inh \"1\"/\"2\" = 0.1, "
+    "\"3\"/\"4\" = 1.0 (category from the substance's LD50/LC50 band); "
+    "stot_se \"1\" = 10.0, \"2\" = 1.0, \"3\" = 20.0; environmental "
+    "\"1\"/\"2\"/\"3\"/\"4\" = 1.0. Use the substance's true pure-substance "
+    "GHS classification; if it has none of these, return an empty object. "
+    "No markdown, no commentary."
 )
 
 
@@ -284,13 +327,16 @@ def enrich_chemical(client, record: dict, *, model: str = CURRENT_MODEL) -> tupl
     # Merge health-hazard GHS triggers so carcinogenicity, sensitization, etc.
     # reach Section 2 + pictograms via the normal classifier path. Only add a
     # class the record does not already declare (never override curated triggers).
-    inc_health = data.get("ghs_health_triggers")
-    if isinstance(inc_health, dict):
-        trig = record.setdefault("ghs_triggers", {})
-        for cls in _HEALTH_TRIGGER_KEYS:
-            spec = inc_health.get(cls)
+    trig = record.setdefault("ghs_triggers", {})
+    for src_key, keys in (("ghs_health_triggers", _HEALTH_TRIGGER_KEYS),
+                          ("ghs_physical_triggers", _PHYS_TRIGGER_KEYS)):
+        inc = data.get(src_key)
+        if not isinstance(inc, dict):
+            continue
+        for cls in keys:
+            spec = inc.get(cls)
             if cls in trig or not isinstance(spec, dict):
-                continue
+                continue           # never override a curated/hand-set trigger
             try:
                 trig[cls] = {
                     "threshold_pct": float(spec["threshold_pct"]),
