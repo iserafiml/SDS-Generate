@@ -60,6 +60,11 @@ class SDSIngredient:
     wt_percent_high: float = 0.0
     function: str = ""
     trade_secret: bool = False    # always False for regulatory SDS; reserved
+    # Supplied-grade active fraction (e.g. 0.5 for a "50%" raw material).
+    # The classifier multiplies wt_percent by this to obtain the pure-substance
+    # concentration ONLY for records whose thresholds are pure-substance based
+    # (threshold_basis=="pure"); 1.0 = neat / unknown (no conversion).
+    active_fraction: float = 1.0
 
 
 # ---------------------------------------------------------------------------

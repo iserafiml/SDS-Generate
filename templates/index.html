@@ -282,6 +282,7 @@ function addIngredientRow() {
     <td style="position:relative">
       <input type="hidden" id="rm_${idx}">
       <input type="hidden" id="name_${idx}">
+      <input type="hidden" id="af_${idx}" value="1">
       <input type="text" class="form-control form-control-sm" id="search_${idx}"
              autocomplete="off" placeholder="Search RM#, CAS or name…"
              oninput="searchMaterials(${idx})"
@@ -336,6 +337,7 @@ function searchMaterials(idx) {
   // Free typing also acts as the ingredient name (manual fallback).
   const q = document.getElementById(`search_${idx}`).value.trim();
   document.getElementById(`name_${idx}`).value = q;
+  document.getElementById(`af_${idx}`).value = 1;   // reset until re-selected
 
   clearTimeout(_searchTimers[idx]);
   const box = document.getElementById(`results_${idx}`);
@@ -367,6 +369,8 @@ function selectMaterial(idx, j) {
   document.getElementById(`name_${idx}`).value   = h.name;
   document.getElementById(`rm_${idx}`).value     = h.rm || "";
   document.getElementById(`cas_${idx}`).value    = h.cas || "";
+  document.getElementById(`af_${idx}`).value     =
+      (h.active_fraction != null ? h.active_fraction : 1);
   document.getElementById(`results_${idx}`).style.display = "none";
   lookupCas(idx);   // sets In-DB badge + reveals hazard button if needed
 }
@@ -518,6 +522,7 @@ function buildPayload() {
       name:            document.getElementById(`name_${i}`).value.trim(),
       wt_percent_low:  parseFloat(document.getElementById(`low_${i}`).value),
       wt_percent_high: parseFloat(document.getElementById(`high_${i}`).value),
+      active_fraction: parseFloat(document.getElementById(`af_${i}`).value) || 1,
       function:        document.getElementById(`func_${i}`).value.trim(),
       manual_hazards:  rowData[i].manualHazards.map(h => ({ key: h.key, category: h.category })),
     });

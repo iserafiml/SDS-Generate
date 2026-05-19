@@ -26,6 +26,11 @@ def _stub(cas: str, name: str) -> dict:
     return {
         "cas": cas,
         "name": name,
+        # AI enrichment fills ghs_triggers as pure-substance GHS generic
+        # concentration limits, so the classifier applies the grade's
+        # active_fraction (raw% -> pure%). Curated records omit this flag and
+        # keep their as-supplied thresholds unchanged.
+        "threshold_basis": "pure",
         "ghs_triggers": {},
         "oels": [],
         "toxicology": {},
@@ -60,6 +65,15 @@ def main() -> None:
     for cas in new:
         records.append(_stub(cas, name_by_cas[cas]))
 
+    # Migrate stub-origin records created before the basis flag existed:
+    # an empty ghs_triggers means no curated thresholds to regress, so it is
+    # safe to mark them pure-substance based.
+    migrated = 0
+    for r in records:
+        if not r.get("ghs_triggers") and "threshold_basis" not in r:
+            r["threshold_basis"] = "pure"
+            migrated += 1
+
     fd, tmp = tempfile.mkstemp(dir=str(DB.parent), prefix=".rmdb_", suffix=".json")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
@@ -70,7 +84,8 @@ def main() -> None:
             os.unlink(tmp)
         raise
 
-    print(f"Added {len(new)} stub records (DB now {len(records)} chemicals).")
+    print(f"Added {len(new)} stub records, migrated {migrated} to "
+          f"threshold_basis=pure (DB now {len(records)} chemicals).")
     if new:
         print("New CAS:", ", ".join(new[:12]) + (" ..." if len(new) > 12 else ""))
 

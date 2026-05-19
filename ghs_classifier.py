@@ -314,10 +314,19 @@ class GHSClassifier:
         hazardous: list[str] = []     # subset that triggered ≥1 hazard
 
         for ing in ingredients:
-            conc = ing.wt_percent_high      # conservative: use upper concentration bound
             rec = self._db.get(ing.cas_number.strip())
             if not rec:
                 continue
+            # Upper concentration bound (conservative). When the record's
+            # GHS thresholds are pure-substance based, convert the supplied
+            # raw-material % to pure-substance % via the grade's active
+            # fraction. Curated records (no flag) keep legacy behaviour →
+            # zero regression on validated classifications.
+            conc = ing.wt_percent_high
+            if rec.get("threshold_basis") == "pure":
+                af = getattr(ing, "active_fraction", 1.0) or 1.0
+                af = af if 0 < af <= 1 else 1.0
+                conc *= af
             if ing.name not in evaluated:
                 evaluated.append(ing.name)
             for hazard_class, trigger in rec.get("ghs_triggers", {}).items():

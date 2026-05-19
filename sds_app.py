@@ -59,6 +59,7 @@ for _rm, _rec in _rm_index.items():
         "cas": _cas,
         "name": _rec.get("name", ""),
         "in_db": _cas in _db,
+        "active_fraction": _rec.get("active_fraction", 1.0),
     })
     _seen_cas.add(_cas)
 for _cas, _rec in _db.items():
@@ -68,6 +69,7 @@ for _cas, _rec in _db.items():
             "cas": _cas,
             "name": _rec.get("name", ""),
             "in_db": True,
+            "active_fraction": 1.0,
         })
 
 # ---------------------------------------------------------------------------
@@ -124,6 +126,7 @@ def _parse_product(data: dict) -> SDSProduct:
             wt_percent_low=float(row.get("wt_percent_low") or 0),
             wt_percent_high=float(row.get("wt_percent_high") or 0),
             function=row.get("function", ""),
+            active_fraction=float(row.get("active_fraction") or 1.0),
         )
         for row in data.get("ingredients", [])
     ]
