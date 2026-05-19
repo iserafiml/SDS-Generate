@@ -46,21 +46,24 @@
     .cas-cell { min-width: 140px; }
     .pct-cell  { width: 80px; }
     .action-cell { white-space: nowrap; }
+    /* Let the autocomplete drop out of the table without being clipped. */
+    .ingredient-wrap { overflow: visible; }
     .material-results {
-      position: absolute; z-index: 1000; left: 0; right: 0; top: 100%;
-      background: #fff; border: 1px solid #ced4da; border-radius: .25rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,.12); max-height: 260px;
-      overflow-y: auto; margin-top: 2px;
+      position: absolute; z-index: 1055; left: 0; right: auto; top: 100%;
+      min-width: 100%; width: max-content; max-width: 560px;
+      background: #fff; border: 1px solid #ced4da; border-radius: .375rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18); max-height: 340px;
+      overflow-y: auto; margin-top: 3px;
     }
     .material-hit {
-      padding: 5px 10px; cursor: pointer; border-bottom: 1px solid #f0f0f0;
-      display: flex; flex-direction: column; line-height: 1.25;
+      padding: 8px 14px; cursor: pointer; border-bottom: 1px solid #eee;
+      display: flex; flex-direction: column; line-height: 1.3;
     }
     .material-hit:last-child { border-bottom: none; }
     .material-hit:hover { background: #eef4ff; }
-    .mh-name { font-size: .85rem; font-weight: 600; }
-    .mh-meta { font-size: .72rem; color: #6c757d; }
-    .mh-meta .badge { font-size: .62rem; }
+    .mh-name { font-size: .92rem; font-weight: 600; }
+    .mh-meta { font-size: .78rem; color: #6c757d; margin-top: 1px; }
+    .mh-meta .badge { font-size: .66rem; }
   </style>
 </head>
 <body>
@@ -126,11 +129,11 @@
   <details open>
     <summary><span class="badge bg-secondary me-1">3</span> Ingredients</summary>
     <div class="section-body">
-      <div class="table-responsive">
+      <div class="table-responsive ingredient-wrap">
         <table class="table table-bordered align-middle mb-2" id="ingredientTable">
           <thead class="table-light">
             <tr>
-              <th style="min-width:240px">Material <small class="fw-normal text-muted">(type RM#, CAS or name)</small></th>
+              <th style="min-width:300px">Material <small class="fw-normal text-muted">(type RM#, CAS or name)</small></th>
               <th class="cas-cell">CAS Number</th>
               <th class="pct-cell text-center">Low %</th>
               <th class="pct-cell text-center">High %</th>
