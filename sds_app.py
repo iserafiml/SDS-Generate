@@ -51,26 +51,43 @@ if _RM_INDEX_PATH.exists():
 
 # Unified searchable pool: every RM# entry plus any DB chemical without an RM.
 _search_pool: list[dict] = []
-_seen_cas: set[str] = set()
-for _rm, _rec in _rm_index.items():
-    _cas = _rec.get("cas", "")
-    _search_pool.append({
-        "rm": _rm,
-        "cas": _cas,
-        "name": _rec.get("name", ""),
-        "in_db": _cas in _db,
-        "active_fraction": _rec.get("active_fraction", 1.0),
-    })
-    _seen_cas.add(_cas)
-for _cas, _rec in _db.items():
-    if _cas not in _seen_cas:
-        _search_pool.append({
-            "rm": "",
-            "cas": _cas,
-            "name": _rec.get("name", ""),
-            "in_db": True,
-            "active_fraction": 1.0,
+
+
+def _rebuild_search_pool() -> None:
+    global _search_pool
+    pool, seen = [], set()
+    for rm, rec in _rm_index.items():
+        cas = rec.get("cas", "")
+        pool.append({
+            "rm": rm, "cas": cas, "name": rec.get("name", ""),
+            "in_db": cas in _db,
+            "active_fraction": rec.get("active_fraction", 1.0),
         })
+        seen.add(cas)
+    for cas, rec in _db.items():
+        if cas not in seen:
+            pool.append({
+                "rm": "", "cas": cas, "name": rec.get("name", ""),
+                "in_db": True, "active_fraction": 1.0,
+            })
+    _search_pool = pool
+
+
+def _reload_library() -> None:
+    """Re-read rm_index + DB and refresh in-memory state after an add,
+    so a new material is usable without restarting the server."""
+    global _rm_index
+    with open(BASE / "data/raw_material_db.json", encoding="utf-8") as f:
+        fresh = {r["cas"]: r for r in json.load(f)}
+    gen._db.clear()
+    gen._db.update(fresh)            # classifier shares this dict reference
+    globals()["_db"] = gen._db
+    with open(_RM_INDEX_PATH, encoding="utf-8") as f:
+        _rm_index = json.load(f)
+    _rebuild_search_pool()
+
+
+_rebuild_search_pool()
 
 # ---------------------------------------------------------------------------
 # In-memory job store
@@ -256,6 +273,25 @@ def search_materials():
         if len(starts) >= 20:
             break
     return jsonify((starts + contains)[:20])
+
+
+@app.route("/api/add_material", methods=["POST"])
+def add_material_route():
+    data = request.get_json(force=True) or {}
+    try:
+        from material_admin import add_material
+        result = add_material(
+            name=(data.get("name") or "").strip(),
+            cas=(data.get("cas") or "").strip(),
+            strength_pct=data.get("strength"),
+            synonyms=(data.get("synonyms") or "").strip(),
+        )
+        _reload_library()              # usable immediately, no restart
+        return jsonify({"ok": True, **result})
+    except ValueError as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
+    except Exception as e:            # noqa: BLE001
+        return jsonify({"ok": False, "error": f"Unexpected error: {e}"}), 500
 
 
 @app.route("/generate", methods=["POST"])

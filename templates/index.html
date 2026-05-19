@@ -149,6 +149,10 @@
       <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addIngredientRow()">
         + Add Ingredient
       </button>
+      <button type="button" class="btn btn-outline-primary btn-sm ms-2"
+              data-bs-toggle="modal" data-bs-target="#addMaterialModal">
+        + New material to library
+      </button>
       <div class="form-check mt-3">
         <input class="form-check-input" type="checkbox" id="fuzzyFormula">
         <label class="form-check-label" for="fuzzyFormula">
@@ -208,6 +212,42 @@
 </div><!-- /container -->
 
 <!-- ── GHS Hazard Modal ───────────────────────────────────────────── -->
+<div class="modal fade" id="addMaterialModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add new material to library</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">
+          <label class="form-label">Material name <span class="text-danger">*</span></label>
+          <input id="amName" class="form-control" placeholder="e.g. Sodium Gluconate 60%">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">CAS <small class="text-muted">(blank = look up via PubChem, flagged for review)</small></label>
+          <input id="amCas" class="form-control" placeholder="e.g. 527-07-1">
+        </div>
+        <div class="row g-2">
+          <div class="col-6">
+            <label class="form-label">Supplied strength %</label>
+            <input id="amStrength" type="number" step="0.1" class="form-control" placeholder="parse from name / 100">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Synonyms</label>
+            <input id="amSyn" class="form-control" placeholder="optional">
+          </div>
+        </div>
+        <div id="amResult" class="small mt-3"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="amSubmit" onclick="submitNewMaterial()">Add to library</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="hazardModal" tabindex="-1" aria-labelledby="hazardModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
@@ -466,6 +506,39 @@ function renderRowPills(idx) {
   container.innerHTML = hazards.map(h =>
     `<span class="badge bg-secondary hazard-pill">${h.display} ${h.category}</span>`
   ).join("");
+}
+
+// ── Add material to library ───────────────────────────────────────────
+async function submitNewMaterial() {
+  const btn = document.getElementById("amSubmit");
+  const out = document.getElementById("amResult");
+  const name = document.getElementById("amName").value.trim();
+  if (!name) { out.innerHTML = '<span class="text-danger">Name is required.</span>'; return; }
+  const sv = document.getElementById("amStrength").value;
+  btn.disabled = true; out.textContent = "Adding…";
+  try {
+    const res = await fetch("/api/add_material", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        cas: document.getElementById("amCas").value.trim(),
+        strength: sv === "" ? null : parseFloat(sv),
+        synonyms: document.getElementById("amSyn").value.trim(),
+      }),
+    });
+    const d = await res.json();
+    if (!d.ok) { out.innerHTML = `<span class="text-danger">${d.error}</span>`; btn.disabled = false; return; }
+    out.innerHTML =
+      `<span class="text-success">✓ Added <strong>${d.rm}</strong> — ${d.name}</span><br>` +
+      `CAS: ${d.cas || "(unresolved)"} [${d.cas_source}] · ` +
+      `strength ${d.strength_pct}% (af ${d.active_fraction})` +
+      (d.needs_review ? '<br><span class="text-warning">⚠ CAS auto-resolved — confirm before production use</span>' : "") +
+      '<br><span class="text-muted">Now searchable in the material box above.</span>';
+    ["amName","amCas","amStrength","amSyn"].forEach(i => document.getElementById(i).value = "");
+  } catch (e) {
+    out.innerHTML = '<span class="text-danger">Network error.</span>';
+  }
+  btn.disabled = false;
 }
 
 // ── Validation ────────────────────────────────────────────────────────
