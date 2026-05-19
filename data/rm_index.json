@@ -2023,8 +2023,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0171": {
     "cas": "144-55-8",
@@ -2036,8 +2036,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0172": {
     "cas": "2809-21-4",
@@ -2049,8 +2049,8 @@
     "active_fraction": 0.6,
     "strength_pct": 60.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0173": {
     "cas": "",
@@ -2073,8 +2073,8 @@
     "active_fraction": 0.98,
     "strength_pct": 98.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0175": {
     "cas": "",
@@ -2097,8 +2097,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0177": {
     "cas": "1330-20-7",
@@ -2110,8 +2110,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0178": {
     "cas": "7778-54-3",
@@ -2123,8 +2123,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0179": {
     "cas": "",
@@ -2147,8 +2147,8 @@
     "active_fraction": 0.1,
     "strength_pct": 10.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0181": {
     "cas": "",
@@ -2171,8 +2171,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0183": {
     "cas": "",
@@ -2195,8 +2195,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0185": {
     "cas": "",
@@ -2230,8 +2230,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0188": {
     "cas": "50-70-4",
@@ -2243,8 +2243,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0189": {
     "cas": "10141-05-6",
@@ -2256,8 +2256,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0190": {
     "cas": "3710-84-7",
@@ -2269,8 +2269,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0191": {
     "cas": "",
@@ -2326,8 +2326,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0197": {
     "cas": "7775-27-1",
@@ -2339,8 +2339,8 @@
     "active_fraction": 0.93,
     "strength_pct": 93.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0198": {
     "cas": "16731-55-8",
@@ -2352,8 +2352,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0199": {
     "cas": "62-54-4",
@@ -2365,8 +2365,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0200": {
     "cas": "",
@@ -2400,8 +2400,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0203": {
     "cas": "10124-56-8",
@@ -2413,8 +2413,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0204": {
     "cas": "",
@@ -2437,8 +2437,8 @@
     "active_fraction": 0.25,
     "strength_pct": 25.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0206": {
     "cas": "127-09-3",
@@ -2450,8 +2450,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0207": {
     "cas": "7447-40-7",
@@ -2463,8 +2463,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0208": {
     "cas": "7558-79-4",
@@ -2476,8 +2476,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0209": {
     "cas": "7558-80-7",
@@ -2489,8 +2489,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0300": {
     "cas": "7758-98-7",
@@ -2550,8 +2550,8 @@
     "active_fraction": 0.9,
     "strength_pct": 90.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0411": {
     "cas": "77-92-9",
@@ -2563,8 +2563,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0412": {
     "cas": "",
@@ -2598,8 +2598,8 @@
     "active_fraction": 1.0,
     "strength_pct": 100.0,
     "strength_source": "default",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0415": {
     "cas": "7664-38-2",
@@ -2611,8 +2611,8 @@
     "active_fraction": 0.75,
     "strength_pct": 75.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0416": {
     "cas": "13780-06-8",
@@ -2624,8 +2624,8 @@
     "active_fraction": 0.94,
     "strength_pct": 94.0,
     "strength_source": "name",
-    "needs_review": true,
-    "cas_source": "pubchem-auto"
+    "needs_review": false,
+    "cas_source": "confirmed"
   },
   "RM0417": {
     "cas": "",
