@@ -336,16 +336,49 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
     def _num(v: float) -> str:
         return f"{v:g}"
 
+    # Standard GHS disclosure bands for the fuzzy/proprietary view.
+    _BAND_EDGES = [0.0, 0.1, 1.0, 5.0, 10.0, 30.0, 60.0, 100.0]
+
+    def _band(lo: float, hi: float) -> tuple[str, str]:
+        if hi <= 0.1:
+            return "—", "< 0.1"
+        # lower edge = lower bound of the band containing lo;
+        # upper edge = upper bound of the band containing hi (widens the range).
+        lo_edge = max((e for e in _BAND_EDGES if e <= max(lo, 0.1)), default=0.1)
+        hi_edge = min((e for e in _BAND_EDGES if e >= hi), default=100.0)
+        if lo_edge < 0.1:
+            lo_edge = 0.1
+        return _num(lo_edge), _num(hi_edge)
+
     def _pct(ing) -> tuple[str, str]:
         lo, hi = ing.wt_percent_low, ing.wt_percent_high
+        if p.fuzzy_formula:
+            return _band(lo, hi)
         if lo == 0 and hi == 0:
             return "—", "< 0.1"          # trace component (still disclosed)
         return _num(lo), _num(hi)
 
+    clf = p.classification
+    known = set(getattr(clf, "classified_ingredients", []) or [])
+    hazardous = set(getattr(clf, "hazardous_ingredients", []) or [])
+
+    def _aggregatable(ing) -> bool:
+        # Only known-and-non-hazardous components may be aggregated. Unknown
+        # CAS or anything that triggered a hazard is always disclosed.
+        return (p.fuzzy_formula and ing.name in known
+                and ing.name not in hazardous)
+
     header = [Paragraph(h, style_h) for h in
                ["Chemical Name", "CAS Number", "Wt% Low", "Wt% High", "Function"]]
     rows = [header]
+    agg_lo = agg_hi = 0.0
+    agg_n = 0
     for ing in p.ingredients:
+        if _aggregatable(ing):
+            agg_lo += ing.wt_percent_low
+            agg_hi += ing.wt_percent_high
+            agg_n += 1
+            continue
         lo, hi = _pct(ing)
         rows.append([
             Paragraph(_esc(ing.name), style_b),
@@ -353,6 +386,16 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
             Paragraph(lo, style_b),
             Paragraph(hi, style_b),
             Paragraph(_esc(ing.function) or "Not specified", style_b),
+        ])
+    if agg_n:
+        blo, bhi = _band(agg_lo, agg_hi)
+        rows.append([
+            Paragraph("Other ingredients (non-hazardous to health and the "
+                      "environment)", style_b),
+            Paragraph("Proprietary", style_b),
+            Paragraph(blo, style_b),
+            Paragraph(bhi, style_b),
+            Paragraph("Proprietary", style_b),
         ])
 
     tbl = Table(rows, colWidths=col_w)
@@ -368,14 +411,22 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
         ("VALIGN",         (0, 0), (-1, -1), "TOP"),
     ]))
 
-    note = Paragraph(
-        "<i>Additional Information: " + _esc(p.additional_ingredient_info) + "</i>",
-        styles["body_small"],
-    )
-    elems.append(KeepTogether([
+    block = [
         _section_bar("SECTION 3: COMPOSITION/INFORMATION ON INGREDIENTS", styles, brand),
-        Spacer(1, 2*mm), tbl, Spacer(1, 1*mm), note,
-    ]))
+        Spacer(1, 2*mm), tbl, Spacer(1, 1*mm),
+    ]
+    if p.fuzzy_formula:
+        block.append(Paragraph(
+            "<i>The specific chemical identity and/or exact percentage of some "
+            "components is withheld as a trade secret. Concentrations are "
+            "disclosed as ranges; all hazardous components and the hazards of "
+            "this product are fully reflected in this Safety Data Sheet.</i>",
+            styles["body_small"]))
+        block.append(Spacer(1, 1*mm))
+    block.append(Paragraph(
+        "<i>Additional Information: " + _esc(p.additional_ingredient_info) + "</i>",
+        styles["body_small"]))
+    elems.append(KeepTogether(block))
     elems.append(Spacer(1, 3 * mm))
     return elems
 

@@ -140,6 +140,7 @@ def _parse_product(data: dict) -> SDSProduct:
             website=m.get("website", ""),
         ),
         ingredients=ingredients,
+        fuzzy_formula=bool(data.get("fuzzy_formula")),
         physical_properties=SDSPhysicalProperties(
             appearance=phys.get("appearance") or _NOT_AVAIL,
             odour=phys.get("odour") or _NOT_AVAIL,

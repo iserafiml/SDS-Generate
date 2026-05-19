@@ -310,14 +310,20 @@ class GHSClassifier:
         """Return a fully populated GHSClassification for the ingredient mixture."""
         # Step 1: determine worst-case triggered hazard class → (category, trigger name)
         triggered: dict[str, tuple[str, str]] = {}
+        evaluated: list[str] = []     # ingredients with a DB record (known)
+        hazardous: list[str] = []     # subset that triggered ≥1 hazard
 
         for ing in ingredients:
             conc = ing.wt_percent_high      # conservative: use upper concentration bound
             rec = self._db.get(ing.cas_number.strip())
             if not rec:
                 continue
+            if ing.name not in evaluated:
+                evaluated.append(ing.name)
             for hazard_class, trigger in rec.get("ghs_triggers", {}).items():
                 if conc >= trigger["threshold_pct"]:
+                    if ing.name not in hazardous:
+                        hazardous.append(ing.name)
                     cat = str(trigger["category"])
                     existing_cat = triggered.get(hazard_class, (None, ""))[0]
                     if existing_cat is None or self._is_more_severe(cat, existing_cat):
@@ -342,6 +348,8 @@ class GHSClassifier:
             pictograms_needed=pictograms,
             all_h_statements=h_stmts,
             all_p_statements=p_stmts,
+            classified_ingredients=evaluated,
+            hazardous_ingredients=hazardous,
         )
 
     # ------------------------------------------------------------------

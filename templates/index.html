@@ -146,6 +146,18 @@
       <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addIngredientRow()">
         + Add Ingredient
       </button>
+      <div class="form-check mt-3">
+        <input class="form-check-input" type="checkbox" id="fuzzyFormula">
+        <label class="form-check-label" for="fuzzyFormula">
+          <strong>Fuzzy / proprietary formula</strong>
+          <small class="text-muted d-block">
+            Section 3 only: known non-hazardous components are aggregated as
+            "Other ingredients" and percentages become standard disclosure
+            ranges. Hazard classification and Sections 8/11/12/15 still use the
+            true formula.
+          </small>
+        </label>
+      </div>
     </div>
   </details>
 
@@ -520,6 +532,7 @@ function buildPayload() {
       website:            document.getElementById("mfgWebsite").value.trim(),
     },
     ingredients,
+    fuzzy_formula: document.getElementById("fuzzyFormula").checked,
     physical: {
       appearance: document.getElementById("appearance").value.trim(),
       odour:      document.getElementById("odour").value.trim(),

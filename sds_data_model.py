@@ -35,6 +35,11 @@ class GHSClassification:
     pictograms_needed: list[str] = field(default_factory=list)    # deduplicated list
     all_h_statements: list[str] = field(default_factory=list)     # ordered by H-code number
     all_p_statements: list[str] = field(default_factory=list)     # grouped P2xx/P3xx/P4xx/P5xx
+    # Ingredient names the classifier evaluated (CAS found in DB) and the
+    # subset that triggered ≥1 hazard. Used by the fuzzy-formula renderer to
+    # decide which ingredients are safe to aggregate as "non-hazardous".
+    classified_ingredients: list[str] = field(default_factory=list)
+    hazardous_ingredients: list[str] = field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
@@ -207,6 +212,11 @@ class SDSProduct:
     # ---- Section 3: Composition/Information on Ingredients ----
     ingredients: list[SDSIngredient] = field(default_factory=list)
     additional_ingredient_info: str = "None"
+    # When True, Section 3 is rendered "fuzzy": exact %s become standard
+    # disclosure bands and known non-hazardous proprietary components are
+    # aggregated into one row. Classification & Sections 8/11/12/15 still use
+    # the true ingredient list and true concentrations.
+    fuzzy_formula: bool = False
 
     # ---- Section 4: First Aid Measures ----
     first_aid_inhalation: str = ""
