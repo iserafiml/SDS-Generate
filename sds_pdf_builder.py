@@ -137,31 +137,44 @@ def _build_doc(story: list, out: Path, brand: BrandConfig,
 
 
 def _draw_sds_footer(canvas, doc, brand: BrandConfig, sds: SDSDocument) -> None:
+    # Soft full-width band behind the footer (Apple-clean tray look).
+    band_h = 16 * mm
+    canvas.setFillColor(colors.HexColor("#F7F8FA"))
+    canvas.rect(0, 0, PAGE_W, band_h, stroke=0, fill=1)
+
+    # Thin accent rule above the band.
     c_accent = _hex(brand.accent)
-    y_rule = 17 * mm
+    y_rule = band_h + 1 * mm
     canvas.setStrokeColor(c_accent)
-    canvas.setLineWidth(1.5)
+    canvas.setLineWidth(1.2)
     canvas.line(MARGIN, y_rule, PAGE_W - MARGIN, y_rule)
 
-    canvas.setFont(FONT_BODY, 6.5)
-    canvas.setFillColor(colors.HexColor("#555555"))
-
     p = sds.product
+    mfr = p.manufacturer
+
+    # Top line: provenance / context, muted grey.
+    canvas.setFont(FONT_BODY, 6.5)
+    canvas.setFillColor(colors.HexColor("#6B7280"))
     left_text = (
-        f"{brand.company_name}  |  "
-        f"{p.product_name} ({p.product_code})  |  "
-        f"Safety Data Sheet  |  "
-        f"According to OSHA HCS 2012, 29 CFR 1910.1200  |  "
+        f"{brand.company_name}  ·  "
+        f"{p.product_name} ({p.product_code})  ·  "
+        f"Safety Data Sheet  ·  OSHA HCS 2012, 29 CFR 1910.1200  ·  "
         f"Prepared {p.preparation_date}"
     )
-    canvas.drawString(MARGIN, 12 * mm, left_text)
+    canvas.drawString(MARGIN, 11 * mm, left_text)
 
-    mfr = p.manufacturer
+    # Bottom-left: emergency call-out — bold red so it pops at a glance.
     if mfr.emergency_provider and mfr.emergency_phone:
-        emerg = f"EMERGENCY: {mfr.emergency_provider} {mfr.emergency_phone}"
-        canvas.drawString(MARGIN, 8 * mm, emerg)
+        canvas.setFont(FONT_BOLD, 7.5)
+        canvas.setFillColor(colors.HexColor("#C0392B"))
+        canvas.drawString(MARGIN, 6 * mm,
+                          f"EMERGENCY: {mfr.emergency_provider}  "
+                          f"{mfr.emergency_phone}")
 
-    canvas.drawRightString(PAGE_W - MARGIN, 8 * mm, f"Page {doc.page}")
+    # Bottom-right: page number, muted.
+    canvas.setFont(FONT_BODY, 7)
+    canvas.setFillColor(colors.HexColor("#6B7280"))
+    canvas.drawRightString(PAGE_W - MARGIN, 6 * mm, f"Page {doc.page}")
 
 
 # ---------------------------------------------------------------------------
@@ -206,9 +219,26 @@ def _build_sds_cover_header(p: SDSProduct, brand: BrandConfig, styles: dict) -> 
         ParagraphStyle("CvrDate", fontName=FONT_BODY, fontSize=7,
                        textColor=colors.HexColor("#A0C0E8"), alignment=TA_RIGHT),
     )
+    # Soft pill-style badge with the generated date / revision.
+    badge_text = (
+        f"Generated {p.generated_date or p.preparation_date}"
+        + (f"  ·  Rev {p.revision_number}" if p.revision_number else "")
+    )
+    badge_para = Paragraph(
+        _esc(badge_text),
+        ParagraphStyle(
+            "CvrBadge", fontName=FONT_BOLD, fontSize=6.5,
+            textColor=c_primary, alignment=TA_RIGHT,
+            backColor=colors.white, borderColor=colors.white,
+            borderWidth=0, borderPadding=(2, 6, 2, 6), borderRadius=6,
+            leading=10, spaceBefore=3,
+        ),
+    )
 
     header_tbl = Table(
-        [[logo_cell, [name_para, sub_para, std_para], [code_para, date_para]]],
+        [[logo_cell,
+          [name_para, sub_para, std_para],
+          [code_para, date_para, badge_para]]],
         colWidths=[logo_w, mid_w, code_w],
         rowHeights=[24 * mm],
     )
@@ -419,14 +449,14 @@ def build_section_3_composition(p: SDSProduct, brand: BrandConfig, styles: dict)
 
     tbl = Table(rows, colWidths=col_w, repeatRows=1)
     tbl.setStyle(TableStyle([
-        ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-        ("GRID",           (0, 0), (-1, -1), 0.5, colors.HexColor("#C8D8E8")),
-        ("BOX",            (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-        ("LEFTPADDING",    (0, 0), (-1, -1), 4),
-        ("RIGHTPADDING",   (0, 0), (-1, -1), 4),
-        ("TOPPADDING",     (0, 0), (-1, -1), 3),
-        ("BOTTOMPADDING",  (0, 0), (-1, -1), 3),
+        ("BACKGROUND",     (0, 0), (-1, 0),  _hex(brand.primary)),
+        ("LINEBELOW",      (0, 0), (-1, 0),  0.5, _hex(brand.primary)),
+        ("LINEBELOW",      (0, 1), (-1, -2), 0.25, colors.HexColor("#E5E7EB")),
+        ("LINEBELOW",      (0, -1), (-1, -1), 0.5, _hex(brand.primary)),
+        ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+        ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+        ("TOPPADDING",     (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
         ("VALIGN",         (0, 0), (-1, -1), "TOP"),
     ]))
 
@@ -580,15 +610,15 @@ def build_section_8_exposure(p: SDSProduct, brand: BrandConfig, styles: dict) ->
 
         oel_tbl = Table(oel_rows, colWidths=oel_col_w, repeatRows=1)
         oel_tbl.setStyle(TableStyle([
-            ("BACKGROUND",   (0, 0), (-1, 0),  c_sec),
-            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-            ("GRID",         (0, 0), (-1, -1), 0.4, colors.HexColor("#C8D8E8")),
-            ("BOX",          (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-            ("LEFTPADDING",  (0, 0), (-1, -1), 4),
-            ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-            ("TOPPADDING",   (0, 0), (-1, -1), 2),
-            ("BOTTOMPADDING",(0, 0), (-1, -1), 2),
-            ("VALIGN",       (0, 0), (-1, -1), "TOP"),
+            ("BACKGROUND",     (0, 0), (-1, 0),  _hex(brand.primary)),
+            ("LINEBELOW",      (0, 0), (-1, 0),  0.5, _hex(brand.primary)),
+            ("LINEBELOW",      (0, 1), (-1, -2), 0.25, colors.HexColor("#E5E7EB")),
+            ("LINEBELOW",      (0, -1), (-1, -1), 0.5, _hex(brand.primary)),
+            ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+            ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+            ("TOPPADDING",     (0, 0), (-1, -1), 5),
+            ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
+            ("VALIGN",         (0, 0), (-1, -1), "TOP"),
         ]))
         elems.append(oel_tbl)
         elems.append(Paragraph(
@@ -713,14 +743,14 @@ def build_section_11_toxicology(p: SDSProduct, brand: BrandConfig, styles: dict)
             ])
         tox_tbl = Table(tox_rows, colWidths=col_w, repeatRows=1)
         tox_tbl.setStyle(TableStyle([
-            ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
-            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-            ("GRID",           (0, 0), (-1, -1), 0.4, colors.HexColor("#C8D8E8")),
-            ("BOX",            (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-            ("LEFTPADDING",    (0, 0), (-1, -1), 4),
-            ("RIGHTPADDING",   (0, 0), (-1, -1), 4),
-            ("TOPPADDING",     (0, 0), (-1, -1), 2),
-            ("BOTTOMPADDING",  (0, 0), (-1, -1), 2),
+            ("BACKGROUND",     (0, 0), (-1, 0),  _hex(brand.primary)),
+            ("LINEBELOW",      (0, 0), (-1, 0),  0.5, _hex(brand.primary)),
+            ("LINEBELOW",      (0, 1), (-1, -2), 0.25, colors.HexColor("#E5E7EB")),
+            ("LINEBELOW",      (0, -1), (-1, -1), 0.5, _hex(brand.primary)),
+            ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+            ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+            ("TOPPADDING",     (0, 0), (-1, -1), 5),
+            ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
             ("VALIGN",         (0, 0), (-1, -1), "TOP"),
         ]))
         elems.append(tox_tbl)
@@ -788,14 +818,14 @@ def build_section_12_ecology(p: SDSProduct, brand: BrandConfig, styles: dict) ->
             ])
         tbl = Table(rows, colWidths=col_w, repeatRows=1)
         tbl.setStyle(TableStyle([
-            ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
-            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-            ("GRID",           (0, 0), (-1, -1), 0.4, colors.HexColor("#C8D8E8")),
-            ("BOX",            (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-            ("LEFTPADDING",    (0, 0), (-1, -1), 4),
-            ("RIGHTPADDING",   (0, 0), (-1, -1), 4),
-            ("TOPPADDING",     (0, 0), (-1, -1), 2),
-            ("BOTTOMPADDING",  (0, 0), (-1, -1), 2),
+            ("BACKGROUND",     (0, 0), (-1, 0),  _hex(brand.primary)),
+            ("LINEBELOW",      (0, 0), (-1, 0),  0.5, _hex(brand.primary)),
+            ("LINEBELOW",      (0, 1), (-1, -2), 0.25, colors.HexColor("#E5E7EB")),
+            ("LINEBELOW",      (0, -1), (-1, -1), 0.5, _hex(brand.primary)),
+            ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+            ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+            ("TOPPADDING",     (0, 0), (-1, -1), 5),
+            ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
             ("VALIGN",         (0, 0), (-1, -1), "TOP"),
         ]))
         return [Paragraph(title, styles["subhead"]), tbl, Spacer(1, 2*mm)]
@@ -920,14 +950,14 @@ def build_section_15_regulatory(p: SDSProduct, brand: BrandConfig, styles: dict)
             ])
         reg_tbl = Table(reg_rows, colWidths=col_w, repeatRows=1)
         reg_tbl.setStyle(TableStyle([
-            ("BACKGROUND",     (0, 0), (-1, 0),  c_sec),
-            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-            ("GRID",           (0, 0), (-1, -1), 0.4, colors.HexColor("#C8D8E8")),
-            ("BOX",            (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-            ("LEFTPADDING",    (0, 0), (-1, -1), 3),
-            ("RIGHTPADDING",   (0, 0), (-1, -1), 3),
-            ("TOPPADDING",     (0, 0), (-1, -1), 2),
-            ("BOTTOMPADDING",  (0, 0), (-1, -1), 2),
+            ("BACKGROUND",     (0, 0), (-1, 0),  _hex(brand.primary)),
+            ("LINEBELOW",      (0, 0), (-1, 0),  0.5, _hex(brand.primary)),
+            ("LINEBELOW",      (0, 1), (-1, -2), 0.25, colors.HexColor("#E5E7EB")),
+            ("LINEBELOW",      (0, -1), (-1, -1), 0.5, _hex(brand.primary)),
+            ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+            ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+            ("TOPPADDING",     (0, 0), (-1, -1), 5),
+            ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
             ("VALIGN",         (0, 0), (-1, -1), "TOP"),
         ]))
         elems.append(reg_tbl)
@@ -1179,27 +1209,28 @@ def _draw_pictogram_row(codes: list[str], brand: BrandConfig) -> list:
 
 def _make_styles(brand: BrandConfig) -> dict:
     c_primary = _hex(brand.primary)
-    c_dark = colors.HexColor("#1C1C1C")
+    c_body = colors.HexColor("#333333")          # softer than pure black
+    c_muted = colors.HexColor("#6B7280")
     return {
         "body": ParagraphStyle(
-            "body", fontName=FONT_BODY, fontSize=8.5, leading=12,
-            textColor=c_dark, spaceAfter=2,
+            "body", fontName=FONT_BODY, fontSize=8.5, leading=14,
+            textColor=c_body, spaceAfter=4,
         ),
         "body_small": ParagraphStyle(
-            "body_small", fontName=FONT_BODY, fontSize=7, leading=10,
-            textColor=colors.HexColor("#555555"),
+            "body_small", fontName=FONT_BODY, fontSize=7.5, leading=11,
+            textColor=c_muted, spaceAfter=3,
         ),
         "bullet": ParagraphStyle(
-            "bullet", fontName=FONT_BODY, fontSize=8.5, leading=12,
-            textColor=c_dark, leftIndent=8, spaceAfter=1,
+            "bullet", fontName=FONT_BODY, fontSize=8.5, leading=14,
+            textColor=c_body, leftIndent=10, spaceAfter=2,
         ),
         "bullet_small": ParagraphStyle(
-            "bullet_small", fontName=FONT_BODY, fontSize=7.5, leading=11,
-            textColor=colors.HexColor("#333333"), leftIndent=8, spaceAfter=1,
+            "bullet_small", fontName=FONT_BODY, fontSize=7.5, leading=12,
+            textColor=c_body, leftIndent=10, spaceAfter=2,
         ),
         "subhead": ParagraphStyle(
-            "subhead", fontName=FONT_BOLD, fontSize=8.5, leading=12,
-            textColor=c_dark, spaceBefore=4, spaceAfter=2,
+            "subhead", fontName=FONT_BOLD, fontSize=9, leading=13,
+            textColor=c_primary, spaceBefore=5, spaceAfter=3,
         ),
         "section_bar_text": ParagraphStyle(
             "section_bar_text", fontName=FONT_BOLD, fontSize=9.5, leading=13,
@@ -1226,15 +1257,15 @@ def _section_bar(title: str, styles: dict, brand: BrandConfig | None = None):
 
 def _two_col_table(rows: list, brand: BrandConfig,
                    col_widths: list | None = None) -> Table:
-    c_sec = _hex(brand.secondary)
-    c_lt  = _hex(brand.light_bg)
+    c_primary = _hex(brand.primary)
+    c_rule = colors.HexColor("#E5E7EB")          # hairline divider
     if col_widths is None:
         col_widths = [CONTENT_W * 0.3, CONTENT_W * 0.7]
 
-    style_h = ParagraphStyle("th", fontName=FONT_BOLD, fontSize=8,
-                              textColor=colors.white, leading=10)
-    style_b = ParagraphStyle("td", fontName=FONT_BODY, fontSize=8,
-                              textColor=colors.HexColor("#1C1C1C"), leading=10)
+    style_h = ParagraphStyle("th", fontName=FONT_BOLD, fontSize=8.5,
+                              textColor=colors.white, leading=11)
+    style_b = ParagraphStyle("td", fontName=FONT_BODY, fontSize=8.5,
+                              textColor=colors.HexColor("#333333"), leading=12)
     formatted: list = []
     for i, row in enumerate(rows):
         st = style_h if i == 0 else style_b
@@ -1244,17 +1275,19 @@ def _two_col_table(rows: list, brand: BrandConfig,
         ])
 
     tbl = Table(formatted, colWidths=col_widths, repeatRows=1)
-    tbl.setStyle(TableStyle([
-        ("BACKGROUND",   (0, 0), (-1, 0),  c_sec),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, c_lt]),
-        ("GRID",         (0, 0), (-1, -1), 0.4, colors.HexColor("#C8D8E8")),
-        ("BOX",          (0, 0), (-1, -1), 1.0, _hex(brand.secondary)),
-        ("LEFTPADDING",  (0, 0), (-1, -1), 5),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
-        ("TOPPADDING",   (0, 0), (-1, -1), 3),
-        ("BOTTOMPADDING",(0, 0), (-1, -1), 3),
-        ("VALIGN",       (0, 0), (-1, -1), "TOP"),
-    ]))
+    style = [
+        ("BACKGROUND",     (0, 0), (-1, 0),  c_primary),
+        # No vertical inner lines; only thin horizontal rules below each row.
+        ("LINEBELOW",      (0, 0), (-1, 0),  0.5, c_primary),
+        ("LINEBELOW",      (0, 1), (-1, -2), 0.25, c_rule),
+        ("LINEBELOW",      (0, -1), (-1, -1), 0.5, c_primary),
+        ("LEFTPADDING",    (0, 0), (-1, -1), 6),
+        ("RIGHTPADDING",   (0, 0), (-1, -1), 6),
+        ("TOPPADDING",     (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING",  (0, 0), (-1, -1), 5),
+        ("VALIGN",         (0, 0), (-1, -1), "TOP"),
+    ]
+    tbl.setStyle(TableStyle(style))
     return tbl
 
 
